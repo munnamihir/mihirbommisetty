@@ -550,91 +550,6 @@
   }
 </style>
 </head>
-  <script>
-/* =========================
-   PARTICLES BACKGROUND
-========================= */
-const canvas = document.getElementById("particles");
-if (canvas) {
-  const ctx = canvas.getContext("2d");
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let particles = [];
-
-  for (let i = 0; i < 80; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5,
-      d: Math.random() * 0.5
-    });
-  }
-
-  function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#00e5ff";
-
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
-
-      p.y += p.d;
-      if (p.y > canvas.height) {
-        p.y = 0;
-        p.x = Math.random() * canvas.width;
-      }
-    });
-
-    requestAnimationFrame(drawParticles);
-  }
-
-  drawParticles();
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-});
-
-reveals.forEach(el => observer.observe(el));
-
-/* =========================
-   TIMELINE ANIMATION
-========================= */
-const timelineItems = document.querySelectorAll(".exp-item");
-
-const timelineObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-});
-
-timelineItems.forEach(el => timelineObserver.observe(el));
-
-/* =========================
-   RESPONSIVE CANVAS FIX
-========================= */
-window.addEventListener("resize", () => {
-  if (canvas) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-});
-</script>
 <body>
 
 <!-- NAV -->
@@ -692,7 +607,7 @@ window.addEventListener("resize", () => {
       </div>
       <div class="about-info">
         <div class="info-item"><div class="info-icon">📍</div><div><div class="info-label">Location</div><div class="info-value">Mechanicsburg, PA</div></div></div>
-        <div class="info-item"><div class="info-icon">📧</div><div><div class="info-label">Email</div><div class="info-value"><a href="mailto:mihirbommisettys@gmail.com">mihirbommisettys@gmail.com</a></div></div></div>
+        <div class="info-item"><div class="info-icon">📧</div><div><div class="info-label">Email</div><div class="info-value"><a href="/cdn-cgi/l/email-protection#b7dadedfdec5d5d8dadadec4d2c3c3cec4f7d0dad6dedb99d4d8da"><span class="__cf_email__" data-cfemail="5d303435342f3f323030342e382929242e1d3a303c3431733e3230">[email&#160;protected]</span></a></div></div></div>
         <div class="info-item"><div class="info-icon">📞</div><div><div class="info-label">Phone</div><div class="info-value">(551) 349-4114</div></div></div>
         <div class="info-item"><div class="info-icon">🔗</div><div><div class="info-label">LinkedIn</div><div class="info-value"><a href="https://linkedin.com/in/mihirbommisetty" target="_blank">linkedin.com/in/mihirbommisetty</a></div></div></div>
         <div class="info-item"><div class="info-icon">🎓</div><div><div class="info-label">Education</div><div class="info-value">MSc Computer Science — Stevens Institute of Technology</div></div></div>
@@ -1047,7 +962,8 @@ window.addEventListener("resize", () => {
     </div><!-- end devtools panel -->
   </div>
 </section>
-<script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   /* ── State ── */
   let _key=null, _iv=null, _cipher=null, _encTimer=null;
@@ -1607,9 +1523,10 @@ window.addEventListener("resize", () => {
     <h2 class="contact-title">Let's Build<br><span style="color:var(--cyan)">Something.</span></h2>
     <p class="contact-sub">Open to senior full stack roles, interesting projects, and conversations about encrypted systems. Based in Mechanicsburg, PA.</p>
     <div class="contact-cards">
-      <a href="mailto:mihirbommisettys@gmail.com">mihirbommisettys@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#8ae7e3e2e3f8e8e5e7e7e3f9effefef3f9caede7ebe3e6a4e9e5e7" class="contact-card">
         <div class="contact-card-icon">📧</div>
         <div class="contact-card-label">Email</div>
+        <div class="contact-card-value"><span class="__cf_email__" data-cfemail="cfa2a6a7a6bdada0a2a2a6bcaabbbbb6bc8fa8a2aea6a3e1aca0a2">[email&#160;protected]</span></div>
       </a>
       <a href="https://linkedin.com/in/mihirbommisetty" target="_blank" class="contact-card">
         <div class="contact-card-icon">🔗</div>
@@ -1634,7 +1551,8 @@ window.addEventListener("resize", () => {
 <footer>
   <p>Designed &amp; built by <span>Mihir Bommisetty</span> · 2025 · All rights reserved</p>
 </footer>
-<script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // PARTICLE CANVAS
 (function() {
   const canvas = document.getElementById('particles');
