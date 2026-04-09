@@ -1666,7 +1666,10 @@
     }
   }
 
-
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    drawDataBits(t);
+    rings.forEach(ring => drawRing(ring, t));
     drawCore(t);
     t++;
     requestAnimationFrame(animate);
