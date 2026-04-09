@@ -550,6 +550,91 @@
   }
 </style>
 </head>
+  <script>
+/* =========================
+   PARTICLES BACKGROUND
+========================= */
+const canvas = document.getElementById("particles");
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let particles = [];
+
+  for (let i = 0; i < 80; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5,
+      d: Math.random() * 0.5
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00e5ff";
+
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+
+      p.y += p.d;
+      if (p.y > canvas.height) {
+        p.y = 0;
+        p.x = Math.random() * canvas.width;
+      }
+    });
+
+    requestAnimationFrame(drawParticles);
+  }
+
+  drawParticles();
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+reveals.forEach(el => observer.observe(el));
+
+/* =========================
+   TIMELINE ANIMATION
+========================= */
+const timelineItems = document.querySelectorAll(".exp-item");
+
+const timelineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+timelineItems.forEach(el => timelineObserver.observe(el));
+
+/* =========================
+   RESPONSIVE CANVAS FIX
+========================= */
+window.addEventListener("resize", () => {
+  if (canvas) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+});
+</script>
 <body>
 
 <!-- NAV -->
