@@ -560,6 +560,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#quantummail">QuantumMail</a></li>
+    <li><a href="#demo">Live Demo</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -813,6 +814,421 @@
     </div>
   </div>
 </section>
+
+
+<!-- LIVE ENCRYPTION DEMO -->
+<section id="demo" style="background:var(--bg);padding:5rem 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="section-tag">Live Demo</p>
+    <h2 class="section-title">Try the <span class="dim">Encryption</span></h2>
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:2rem;max-width:580px;line-height:1.9;">
+      Real AES-256-GCM running entirely in your browser. Watch the DevTools panel below — every log, every byte count, every timing entry is live. Your message never leaves this tab.
+    </p>
+
+    <!-- Input + Crypto output -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem;">
+
+      <!-- LEFT: Input & controls -->
+      <div style="display:flex;flex-direction:column;gap:0.9rem;">
+        <div style="border:1px solid var(--border);border-radius:12px;padding:1.1rem;background:var(--bg2);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);">Your Message</span>
+            <span id="demoCharCount" style="font-size:0.6rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">0 chars</span>
+          </div>
+          <textarea id="demoInput" placeholder="Type your secret message..." style="width:100%;height:110px;background:var(--bg3);border:1px solid rgba(0,229,255,0.15);border-radius:6px;padding:0.7rem;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:0.78rem;resize:none;outline:none;line-height:1.7;transition:border-color 0.3s;"></textarea>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;">
+          <div style="border:1px solid var(--border);border-radius:8px;padding:0.75rem 0.5rem;background:var(--bg2);text-align:center;">
+            <div style="font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:var(--cyan);">256</div>
+            <div style="font-size:0.5rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Key Bits</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:8px;padding:0.75rem 0.5rem;background:var(--bg2);text-align:center;">
+            <div style="font-family:'Orbitron',sans-serif;font-size:0.6rem;font-weight:700;color:var(--cyan);">AES-GCM</div>
+            <div style="font-size:0.5rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Algorithm</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:8px;padding:0.75rem 0.5rem;background:var(--bg2);text-align:center;">
+            <div id="demoCipherBytes" style="font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:var(--gold);">—</div>
+            <div style="font-size:0.5rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Bytes</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:8px;padding:0.75rem 0.5rem;background:var(--bg2);text-align:center;">
+            <div id="demoStatusBadge" style="font-family:'Orbitron',sans-serif;font-size:0.5rem;font-weight:700;color:var(--green);">READY</div>
+            <div style="font-size:0.5rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Status</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.7rem;">
+          <button onclick="demoDecrypt()" style="flex:1;background:rgba(0,229,255,0.06);border:1px solid var(--cyan);border-radius:6px;padding:0.65rem;color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;">↺ Decrypt &amp; Verify</button>
+          <button onclick="demoNewKey()" style="flex:1;background:rgba(245,197,24,0.06);border:1px solid var(--gold);border-radius:6px;padding:0.65rem;color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;">⟳ New Key</button>
+        </div>
+        <div id="demoDecryptResult" style="display:none;border-radius:8px;padding:0.9rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;line-height:1.8;word-break:break-all;"></div>
+      </div>
+
+      <!-- RIGHT: Crypto output -->
+      <div style="display:flex;flex-direction:column;gap:0.9rem;">
+        <div style="border:1px solid rgba(245,197,24,0.22);border-radius:12px;padding:1.1rem;background:var(--bg2);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">AES-256 Key (hex)</span>
+            <span style="font-size:0.55rem;color:var(--muted);">never transmitted</span>
+          </div>
+          <div id="demoKeyDisplay" style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--gold);word-break:break-all;line-height:1.8;padding:0.65rem;background:var(--bg3);border-radius:6px;border:1px solid rgba(245,197,24,0.08);">Generating...</div>
+        </div>
+        <div style="border:1px solid rgba(57,255,20,0.22);border-radius:12px;padding:1.1rem;background:var(--bg2);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);">IV / Nonce (hex)</span>
+            <span style="font-size:0.55rem;color:var(--muted);">96-bit · unique per message</span>
+          </div>
+          <div id="demoIvDisplay" style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--green);word-break:break-all;line-height:1.8;padding:0.65rem;background:var(--bg3);border-radius:6px;border:1px solid rgba(57,255,20,0.08);">Type to generate IV...</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:12px;padding:1.1rem;background:var(--bg2);flex:1;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);">Ciphertext (base64)</span>
+            <span id="demoEncBytes" style="font-size:0.55rem;color:var(--muted);">AES-256-GCM output</span>
+          </div>
+          <div id="demoCipherDisplay" style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:var(--text);word-break:break-all;line-height:1.8;padding:0.65rem;background:var(--bg3);border-radius:6px;border:1px solid var(--border);max-height:130px;overflow-y:auto;opacity:0.45;transition:opacity 0.3s;">Type a message to see ciphertext...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ DEVTOOLS PANEL ═══════════════ -->
+    <div style="border:1px solid rgba(0,229,255,0.18);border-radius:12px;overflow:hidden;box-shadow:0 0 40px rgba(0,229,255,0.04);">
+
+      <!-- Chrome-style title bar -->
+      <div style="background:#111720;padding:7px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div style="width:11px;height:11px;border-radius:50%;background:#ff5f57;flex-shrink:0;"></div>
+        <div style="width:11px;height:11px;border-radius:50%;background:#febc2e;flex-shrink:0;"></div>
+        <div style="width:11px;height:11px;border-radius:50%;background:#28c840;flex-shrink:0;"></div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:rgba(255,255,255,0.28);margin-left:8px;letter-spacing:0.5px;">Chrome DevTools — quantum-encryption-demo.html</span>
+        <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(0,229,255,0.5);">&#9679; Live</span>
+      </div>
+
+      <!-- Tab bar -->
+      <div style="background:#0f1520;display:flex;align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <button id="dtTab-console" onclick="dtSwitch('console')" style="padding:7px 18px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;background:transparent;border:none;border-bottom:2px solid #00e5ff;color:#00e5ff;cursor:pointer;letter-spacing:0.3px;">Console</button>
+        <button id="dtTab-network" onclick="dtSwitch('network')" style="padding:7px 18px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;background:transparent;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,0.38);cursor:pointer;letter-spacing:0.3px;">Network</button>
+        <button id="dtTab-performance" onclick="dtSwitch('performance')" style="padding:7px 18px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;background:transparent;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,0.38);cursor:pointer;letter-spacing:0.3px;">Performance</button>
+        <div style="margin-left:auto;display:flex;align-items:center;padding-right:12px;gap:8px;">
+          <button onclick="dtClearConsole()" style="background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:3px 10px;color:rgba(255,255,255,0.38);font-family:'JetBrains Mono',monospace;font-size:0.58rem;cursor:pointer;" title="Clear console">&#9249;</button>
+          <span id="dtLogCount" style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(0,229,255,0.5);">0 entries</span>
+        </div>
+      </div>
+
+      <!-- ── CONSOLE PANEL ── -->
+      <div id="dtPanel-console" style="height:240px;overflow-y:auto;background:#0a0e17;">
+        <!-- Console toolbar -->
+        <div style="position:sticky;top:0;background:#0d1320;border-bottom:1px solid rgba(255,255,255,0.05);padding:4px 10px;display:flex;align-items:center;gap:8px;z-index:1;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.25);">Filter</span>
+          <div style="display:flex;gap:4px;">
+            <span class="dt-filter-btn" style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:1px 7px;border-radius:3px;background:rgba(0,229,255,0.12);color:#00e5ff;cursor:default;">All</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:1px 7px;border-radius:3px;color:rgba(255,255,255,0.25);">Errors</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:1px 7px;border-radius:3px;color:rgba(255,255,255,0.25);">Warnings</span>
+          </div>
+        </div>
+        <div id="dtConsoleLog" style="padding:2px 0;"></div>
+      </div>
+
+      <!-- ── NETWORK PANEL ── -->
+      <div id="dtPanel-network" style="height:240px;overflow-y:auto;background:#0a0e17;display:none;">
+        <!-- Filter bar -->
+        <div style="position:sticky;top:0;background:#0d1320;border-bottom:1px solid rgba(255,255,255,0.05);padding:4px 10px;display:flex;align-items:center;gap:8px;z-index:1;">
+          <div style="display:flex;gap:4px;" id="netFilterBtns">
+            <button onclick="dtNetFilter('All')" style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:2px 8px;border-radius:3px;background:rgba(0,229,255,0.12);color:#00e5ff;border:none;cursor:pointer;">All</button>
+            <button onclick="dtNetFilter('XHR')" style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:2px 8px;border-radius:3px;background:transparent;color:rgba(255,255,255,0.35);border:none;cursor:pointer;">XHR</button>
+            <button onclick="dtNetFilter('Fetch')" style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:2px 8px;border-radius:3px;background:transparent;color:rgba(255,255,255,0.35);border:none;cursor:pointer;">Fetch</button>
+            <button onclick="dtNetFilter('JS')" style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:2px 8px;border-radius:3px;background:transparent;color:rgba(255,255,255,0.35);border:none;cursor:pointer;">JS</button>
+            <button onclick="dtNetFilter('Font')" style="font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:2px 8px;border-radius:3px;background:transparent;color:rgba(255,255,255,0.35);border:none;cursor:pointer;">Font</button>
+          </div>
+          <span id="netSummary" style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);"></span>
+        </div>
+        <!-- Table header -->
+        <div style="display:grid;grid-template-columns:3fr 1fr 1fr 1fr;padding:4px 10px;border-bottom:1px solid rgba(255,255,255,0.05);background:#0d1320;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);">Name</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);">Type</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);">Size</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);">Time</span>
+        </div>
+        <div id="dtNetworkList"></div>
+        <!-- Footer -->
+        <div id="dtNetworkFooter" style="position:sticky;bottom:0;background:#0d1320;border-top:1px solid rgba(255,255,255,0.05);padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);display:flex;gap:16px;"></div>
+      </div>
+
+      <!-- ── PERFORMANCE PANEL ── -->
+      <div id="dtPanel-performance" style="height:240px;overflow-y:auto;background:#0a0e17;display:none;">
+        <div style="position:sticky;top:0;background:#0d1320;border-bottom:1px solid rgba(255,255,255,0.05);padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.28);">Crypto operation timings (ms)</div>
+        <div id="dtPerfBars" style="padding:12px 16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.25);text-align:center;margin-top:40px;">Perform an encryption to see timings</div>
+        </div>
+      </div>
+
+    </div><!-- end devtools panel -->
+  </div>
+</section>
+
+<script>
+(function(){
+  /* ── State ── */
+  let _key=null, _iv=null, _cipher=null, _encTimer=null;
+  let _logCount=0, _timings=[], _currentFilter='All';
+  const _t0=performance.now();
+
+  /* ── Helpers ── */
+  function bufToHex(b){return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}
+  function bufToB64(b){let s='',u=new Uint8Array(b);for(let i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s);}
+  function fmt(n){return n.toFixed(2);}
+  function ts(){return ((performance.now()-_t0)/1000).toFixed(3);}
+
+  /* ── DevTools Console ── */
+  const TYPE_COLORS={init:'rgba(255,255,255,0.28)',keygen:'#f5c518',encrypt:'#00e5ff',decrypt:'#39ff14',verify:'#39ff14',error:'#ff6b6b',warn:'#febc2e',info:'rgba(255,255,255,0.5)'};
+  const TYPE_BG={init:'rgba(255,255,255,0.04)',keygen:'rgba(245,197,24,0.08)',encrypt:'rgba(0,229,255,0.07)',decrypt:'rgba(57,255,20,0.07)',verify:'rgba(57,255,20,0.07)',error:'rgba(255,80,80,0.08)',warn:'rgba(254,188,46,0.07)',info:'rgba(255,255,255,0.03)'};
+
+  function dtLog(type, msg, extra){
+    const log=document.getElementById('dtConsoleLog');
+    if(!log)return;
+    _logCount++;
+    document.getElementById('dtLogCount').textContent=_logCount+' entr'+ (_logCount===1?'y':'ies');
+    const row=document.createElement('div');
+    row.style.cssText='display:grid;grid-template-columns:70px 70px 1fr;align-items:baseline;padding:2px 10px;border-bottom:1px solid rgba(255,255,255,0.03);font-family:\'JetBrains Mono\',monospace;font-size:0.62rem;line-height:1.6;background:'+( TYPE_BG[type]||'transparent')+';transition:background 0.15s;';
+    row.onmouseover=()=>row.style.background='rgba(255,255,255,0.06)';
+    row.onmouseout =()=>row.style.background=(TYPE_BG[type]||'transparent');
+    const tsEl=document.createElement('span');
+    tsEl.style.cssText='color:rgba(255,255,255,0.2);font-size:0.58rem;';
+    tsEl.textContent=ts()+'s';
+    const typeEl=document.createElement('span');
+    typeEl.style.cssText='color:'+( TYPE_COLORS[type]||'#fff')+';font-weight:500;';
+    typeEl.textContent='['+type+']';
+    const msgEl=document.createElement('span');
+    msgEl.style.cssText='color:rgba(220,230,245,0.85);';
+    msgEl.innerHTML=msg+(extra?'<span style="color:rgba(255,255,255,0.3);margin-left:8px;">// '+extra+'</span>':'');
+    row.appendChild(tsEl); row.appendChild(typeEl); row.appendChild(msgEl);
+    log.appendChild(row);
+    const panel=document.getElementById('dtPanel-console');
+    if(panel) panel.scrollTop=panel.scrollHeight;
+  }
+
+  window.dtClearConsole=function(){
+    const l=document.getElementById('dtConsoleLog');
+    if(l)l.innerHTML='';
+    _logCount=0;
+    document.getElementById('dtLogCount').textContent='0 entries';
+  };
+
+  /* ── DevTools Tab Switching ── */
+  window.dtSwitch=function(tab){
+    ['console','network','performance'].forEach(t=>{
+      const p=document.getElementById('dtPanel-'+t);
+      const b=document.getElementById('dtTab-'+t);
+      if(p) p.style.display= t===tab ?'block':'none';
+      if(b){b.style.color= t===tab ?'#00e5ff':'rgba(255,255,255,0.38)'; b.style.borderBottom= t===tab?'2px solid #00e5ff':'2px solid transparent';}
+    });
+    if(tab==='network') dtBuildNetwork();
+    if(tab==='performance') dtBuildPerf();
+  };
+
+  /* ── Network Tab ── */
+  window.dtNetFilter=function(f){
+    _currentFilter=f;
+    document.querySelectorAll('#netFilterBtns button').forEach(b=>{
+      const active=b.textContent===f;
+      b.style.background=active?'rgba(0,229,255,0.12)':'transparent';
+      b.style.color=active?'#00e5ff':'rgba(255,255,255,0.35)';
+    });
+    dtBuildNetwork();
+  };
+
+  function dtBuildNetwork(){
+    const list=document.getElementById('dtNetworkList');
+    const footer=document.getElementById('dtNetworkFooter');
+    if(!list)return;
+    const entries=performance.getEntriesByType('resource');
+    let filtered=entries.filter(e=>{
+      if(_currentFilter==='All') return true;
+      if(_currentFilter==='XHR') return e.initiatorType==='xmlhttprequest';
+      if(_currentFilter==='Fetch') return e.initiatorType==='fetch';
+      if(_currentFilter==='JS') return e.initiatorType==='script';
+      if(_currentFilter==='Font') return e.initiatorType==='css'||e.name.match(/\.(woff2?|ttf|otf)/i);
+      return true;
+    });
+    list.innerHTML='';
+    if((_currentFilter==='XHR'||_currentFilter==='Fetch')&&filtered.length===0){
+      const note=document.createElement('div');
+      note.style.cssText='padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;';
+      note.innerHTML='<div style="font-family:\'JetBrains Mono\',monospace;font-size:1.2rem;color:#39ff14;">&#10003;</div>'
+        +'<div style="font-family:\'JetBrains Mono\',monospace;font-size:0.7rem;color:#39ff14;font-weight:500;">0 '+_currentFilter+' requests detected</div>'
+        +'<div style="font-family:\'JetBrains Mono\',monospace;font-size:0.62rem;color:rgba(255,255,255,0.35);text-align:center;max-width:340px;line-height:1.7;">Encryption runs entirely via Web Crypto API (browser built-in). No data transmitted to any server or external endpoint.</div>';
+      list.appendChild(note);
+    } else {
+      filtered.forEach((e,i)=>{
+        const name=e.name.split('/').pop().split('?')[0]||e.name;
+        const size=e.transferSize?Math.round(e.transferSize/1024*10)/10+'KB':'(cached)';
+        const time=Math.round(e.duration)+'ms';
+        const isXhrFetch=e.initiatorType==='xmlhttprequest'||e.initiatorType==='fetch';
+        const row=document.createElement('div');
+        row.style.cssText='display:grid;grid-template-columns:3fr 1fr 1fr 1fr;padding:3px 10px;border-bottom:1px solid rgba(255,255,255,0.03);align-items:center;'+(isXhrFetch?'background:rgba(255,80,80,0.06);':'');
+        row.innerHTML='<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.6rem;color:'+(isXhrFetch?'#ff6b6b':'rgba(200,216,232,0.7)')+';overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="'+e.name+'">'+name+'</span>'
+          +'<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);">'+e.initiatorType+'</span>'
+          +'<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);">'+size+'</span>'
+          +'<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);">'+time+'</span>';
+        list.appendChild(row);
+      });
+    }
+    const xhr=entries.filter(e=>e.initiatorType==='xmlhttprequest'||e.initiatorType==='fetch');
+    footer.innerHTML='<span>'+filtered.length+' request'+(filtered.length!==1?'s':'')+'</span>'
+      +(xhr.length===0?'<span style="color:#39ff14;">&#10003; 0 XHR/Fetch calls — 100% client-side</span>':'<span style="color:#ff6b6b;">'+xhr.length+' outbound request(s)</span>');
+  }
+
+  /* ── Performance Tab ── */
+  function dtBuildPerf(){
+    const el=document.getElementById('dtPerfBars');
+    if(!el||_timings.length===0) return;
+    const maxT=Math.max(..._timings.map(t=>t.ms), 1);
+    el.innerHTML='';
+    _timings.slice(-8).forEach(t=>{
+      const pct=Math.min(100,Math.round(t.ms/maxT*100));
+      const col=TYPE_COLORS[t.type]||'#00e5ff';
+      const wrap=document.createElement('div');
+      wrap.style.cssText='display:grid;grid-template-columns:140px 1fr 55px;align-items:center;gap:10px;';
+      wrap.innerHTML='<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.62rem;color:'+col+';">'+t.label+'</span>'
+        +'<div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden;"><div style="height:100%;width:'+pct+'%;background:'+col+';border-radius:4px;transition:width 0.4s ease;"></div></div>'
+        +'<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.62rem;color:rgba(255,255,255,0.4);text-align:right;">'+fmt(t.ms)+'ms</span>';
+      el.appendChild(wrap);
+    });
+  }
+
+  function addTiming(type,label,ms){
+    _timings.push({type,label,ms});
+    if(_timings.length>20) _timings.shift();
+    if(document.getElementById('dtPanel-performance').style.display!=='none') dtBuildPerf();
+  }
+
+  /* ── Crypto Functions ── */
+  async function initKey(){
+    dtLog('init','Web Crypto API initialized — AES-256-GCM');
+    const t=performance.now();
+    dtLog('keygen','Generating AES-256-GCM key (256-bit)...');
+    _key=await crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt','decrypt']);
+    const elapsed=performance.now()-t;
+    const raw=await crypto.subtle.exportKey('raw',_key);
+    const hex=bufToHex(raw);
+    const kd=document.getElementById('demoKeyDisplay');
+    if(kd)kd.textContent=hex;
+    dtLog('keygen','&#10003; Key generated and stored in memory','exportable=true, transmitted=false');
+    dtLog('keygen','Key: '+hex.slice(0,32)+'...','256 bits / 64 hex chars');
+    addTiming('keygen','Key generation',elapsed);
+    dtLog('init','Ready — awaiting input');
+  }
+
+  async function encryptNow(msg){
+    if(!_key||!msg.trim()){
+      ['demoCipherDisplay','demoIvDisplay'].forEach(id=>{
+        const el=document.getElementById(id);
+        if(el){el.textContent=id==='demoIvDisplay'?'Type to generate IV...':'Type a message to see ciphertext...';el.style.opacity='0.45';}
+      });
+      document.getElementById('demoCipherBytes').textContent='—';
+      document.getElementById('demoEncBytes').textContent='AES-256-GCM output';
+      setStatus('READY','var(--green)');
+      _cipher=null;_iv=null;
+      return;
+    }
+    setStatus('ENCRYPTING','var(--gold)');
+    const encoded=new TextEncoder().encode(msg);
+    dtLog('encrypt','Input: "'+msg.slice(0,40)+(msg.length>40?'...':'')+'"',encoded.length+' bytes UTF-8');
+    const t1=performance.now();
+    _iv=crypto.getRandomValues(new Uint8Array(12));
+    const ivHex=bufToHex(_iv);
+    const ivEl=document.getElementById('demoIvDisplay');
+    if(ivEl)ivEl.textContent=ivHex;
+    dtLog('encrypt','Generated 96-bit IV via crypto.getRandomValues()',ivHex);
+    const t2=performance.now();
+    _cipher=await crypto.subtle.encrypt({name:'AES-GCM',iv:_iv},_key,encoded);
+    const elapsed=performance.now()-t1;
+    const ivTime=t2-t1;
+    const encTime=performance.now()-t2;
+    const b64=bufToB64(_cipher);
+    const byteLen=new Uint8Array(_cipher).length;
+    const cd=document.getElementById('demoCipherDisplay');
+    if(cd){cd.textContent=b64;cd.style.opacity='1';}
+    document.getElementById('demoCipherBytes').textContent=byteLen;
+    document.getElementById('demoEncBytes').textContent=byteLen+' bytes';
+    dtLog('encrypt','&#10003; AES-256-GCM complete',encoded.length+' → '+byteLen+' bytes (+16-byte auth tag)');
+    dtLog('encrypt','Ciphertext: '+b64.slice(0,48)+'...','base64');
+    dtLog('encrypt','Timing: IV '+fmt(ivTime)+'ms | AES-GCM '+fmt(encTime)+'ms | total '+fmt(elapsed)+'ms');
+    addTiming('encrypt','IV generation',ivTime);
+    addTiming('encrypt','AES-256-GCM enc',encTime);
+    setStatus('ENCRYPTED','var(--cyan)');
+    const dr=document.getElementById('demoDecryptResult');
+    if(dr)dr.style.display='none';
+  }
+
+  window.demoDecrypt=async function(){
+    const res=document.getElementById('demoDecryptResult');
+    if(!_cipher||!_key||!_iv){
+      res.style.display='block';
+      res.style.cssText='display:block;border:1px solid rgba(255,80,80,0.3);border-radius:8px;padding:0.9rem 1rem;background:rgba(255,80,80,0.05);color:#ff6b6b;font-family:\'JetBrains Mono\',monospace;font-size:0.72rem;line-height:1.8;';
+      res.textContent='&#10007; Nothing encrypted yet — type a message first.';
+      dtLog('error','Decrypt called with no ciphertext — skipped');
+      return;
+    }
+    dtLog('decrypt','Decrypting with stored key + IV...');
+    const t=performance.now();
+    try{
+      const dec=await crypto.subtle.decrypt({name:'AES-GCM',iv:_iv},_key,_cipher);
+      const elapsed=performance.now()-t;
+      const text=new TextDecoder().decode(dec);
+      dtLog('verify','&#10003; GCM authentication tag verified — data untampered');
+      dtLog('verify','&#10003; Plaintext recovered: "'+text.slice(0,60)+(text.length>60?'...':'')+'"',elapsed.toFixed(2)+'ms');
+      addTiming('decrypt','AES-256-GCM dec',elapsed);
+      res.style.cssText='display:block;border:1px solid rgba(57,255,20,0.3);border-radius:8px;padding:0.9rem 1rem;background:rgba(57,255,20,0.04);color:var(--green);font-family:\'JetBrains Mono\',monospace;font-size:0.72rem;line-height:1.8;word-break:break-all;';
+      res.innerHTML='&#10003; Decryption successful! ('+fmt(elapsed)+'ms)<br><span style="color:var(--text);opacity:0.8;">"'+text.replace(/</g,'&lt;')+'"</span>';
+      setStatus('VERIFIED','var(--green)');
+    }catch(e){
+      dtLog('error','&#10007; Decryption failed — authentication tag mismatch');
+      res.style.cssText='display:block;border:1px solid rgba(255,80,80,0.3);border-radius:8px;padding:0.9rem 1rem;background:rgba(255,80,80,0.05);color:#ff6b6b;font-family:\'JetBrains Mono\',monospace;font-size:0.72rem;';
+      res.textContent='&#10007; Decryption failed — data may have been tampered.';
+    }
+  };
+
+  window.demoNewKey=async function(){
+    dtLog('keygen','--- New key requested — discarding previous key ---');
+    const kd=document.getElementById('demoKeyDisplay');
+    if(kd)kd.textContent='Generating new key...';
+    setStatus('NEW KEY','var(--gold)');
+    _cipher=null;_iv=null;
+    const t=performance.now();
+    _key=await crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt','decrypt']);
+    const elapsed=performance.now()-t;
+    const raw=await crypto.subtle.exportKey('raw',_key);
+    const hex=bufToHex(raw);
+    if(kd)kd.textContent=hex;
+    dtLog('keygen','&#10003; New key generated ('+fmt(elapsed)+'ms) — previous key is gone','non-recoverable');
+    addTiming('keygen','Key generation',elapsed);
+    const msg=document.getElementById('demoInput').value;
+    if(msg.trim()) encryptNow(msg);
+    else setStatus('READY','var(--green)');
+  };
+
+  window.onDemoInput=function(el){
+    const len=el.value.length;
+    document.getElementById('demoCharCount').textContent=len+' char'+(len!==1?'s':'');
+    clearTimeout(_encTimer);
+    _encTimer=setTimeout(()=>encryptNow(el.value),150);
+  };
+
+  function setStatus(txt,col){
+    const s=document.getElementById('demoStatusBadge');
+    if(s){s.textContent=txt;s.style.color=col;}
+  }
+
+  /* ── Wire input events ── */
+  const ta=document.getElementById('demoInput');
+  if(ta){
+    ta.addEventListener('focus',()=>ta.style.borderColor='rgba(0,229,255,0.45)');
+    ta.addEventListener('blur', ()=>ta.style.borderColor='rgba(0,229,255,0.15)');
+    ta.addEventListener('input',()=>window.onDemoInput(ta));
+  }
+
+  /* ── Boot ── */
+  initKey();
+})();
+</script>
 
 <!-- ARCHITECTURE DIAGRAM -->
 <section id="architecture" style="background:var(--bg2);padding:6rem 0;">
@@ -1251,10 +1667,6 @@
   }
 
 
-  function animate() {
-    ctx.clearRect(0, 0, W, H);
-    drawDataBits(t);
-    rings.forEach(ring => drawRing(ring, t));
     drawCore(t);
     t++;
     requestAnimationFrame(animate);
