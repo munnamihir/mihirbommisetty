@@ -33,6 +33,19 @@
   }
 
   /* SCROLLBAR */
+  * { cursor: none !important; }
+  #qm-cursor-dot {
+    position: fixed; top:0; left:0; pointer-events:none; z-index:99999;
+    width:8px; height:8px; border-radius:50%; background:#00e5ff;
+    transform:translate(-50%,-50%);
+    transition:width 0.15s,height 0.15s,background 0.15s;
+    mix-blend-mode: screen;
+  }
+  #qm-cursor-dot.hovering { width:12px; height:12px; background:#fff; }
+  #qm-cursor-canvas {
+    position:fixed; top:0; left:0; pointer-events:none; z-index:99998;
+    width:100vw; height:100vh;
+  }
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--cyan2); border-radius: 2px; }
@@ -55,6 +68,30 @@
     text-decoration: none;
   }
   .nav-logo span { color: var(--gold); }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; border:none; background:transparent; }
+  .hamburger span { display:block; width:22px; height:2px; background:var(--cyan); border-radius:2px; transition:all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display:none; position:fixed; top:56px; left:0; right:0; z-index:99;
+    background:rgba(4,8,18,0.97); border-bottom:1px solid var(--border);
+    backdrop-filter:blur(12px); padding:1rem 0; flex-direction:column;
+  }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { padding:0.75rem 2rem; font-family:'JetBrains Mono',monospace; font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; border-bottom:1px solid rgba(0,229,255,0.05); transition:color 0.2s; }
+  .mobile-menu a:hover { color:var(--cyan); }
+  @media (max-width:768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+    .container { padding: 0 1.5rem; }
+    .about-grid, .qm-grid, .edu-grid { grid-template-columns:1fr; gap:2rem; }
+    .qm-features { grid-template-columns:1fr; }
+    .qm-visual { display:none; }
+    .stats-grid { grid-template-columns:1fr 1fr; }
+    #dtPanel-console, #dtPanel-network, #dtPanel-performance { height:180px; }
+  }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
     color: var(--muted);
@@ -265,6 +302,12 @@
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border);
   }
+  .skill-level {
+    font-size:0.52rem;letter-spacing:1.5px;text-transform:uppercase;
+    padding:2px 7px;border-radius:3px;margin-bottom:0.5rem;display:inline-block;
+  }
+  .skill-level.core { background:rgba(0,229,255,0.08);color:var(--cyan);border:1px solid rgba(0,229,255,0.2); }
+  .skill-level.familiar { background:rgba(106,128,153,0.08);color:var(--muted);border:1px solid rgba(106,128,153,0.2); }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .skill-tag {
     font-size: 0.65rem;
@@ -296,14 +339,23 @@
   .exp-item.visible { opacity: 1; transform: translateX(0); }
   .exp-item::before {
     content: '';
-    position: absolute; left: -5px; top: 6px;
-    width: 10px; height: 10px;
+    position: absolute; left: -7px; top: 8px;
+    width: 14px; height: 14px;
+    border-radius: 50%; background: var(--bg);
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 16px var(--cyan), inset 0 0 6px rgba(0,229,255,0.3);
+  }
+  .exp-item::after {
+    content: '';
+    position: absolute; left: -3px; top: 12px;
+    width: 6px; height: 6px;
     border-radius: 50%; background: var(--cyan);
-    box-shadow: 0 0 12px var(--cyan);
   }
   .exp-period {
-    font-size: 0.65rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 0.4rem;
+    font-size: 0.65rem; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 0.4rem;
+    display:inline-flex; align-items:center; gap:0.5rem;
   }
+  .exp-period::before { content:''; display:inline-block; width:24px; height:1px; background:var(--gold); }
   .exp-role {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -553,6 +605,8 @@
 <body>
 
 <!-- NAV -->
+<div id="qm-cursor-dot"></div>
+<canvas id="qm-cursor-canvas"></canvas>
 <nav>
   <a href="#hero" class="nav-logo">M<span>.</span>B</a>
   <ul class="nav-links">
@@ -560,21 +614,36 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#quantummail">QuantumMail</a></li>
-    <li><a href="#demo">Live Demo</a></li>
-    <li><a href="#architecture">Architecture</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#quantummail" onclick="closeMenu()">QuantumMail</a>
+  <a href="#demo" onclick="closeMenu()">Live Demo</a>
+  <a href="#architecture" onclick="closeMenu()">Architecture</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="grid-bg"></div>
   <canvas id="particles"></canvas>
   <div class="hero-content">
-    <div class="hero-tag">Sr. Full Stack Developer</div>
+    <div style="width:72px;height:72px;border-radius:50%;background:rgba(0,229,255,0.08);border:2px solid rgba(0,229,255,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.3rem;color:var(--cyan);animation:fadeDown 0.8s ease both;">MB</div>
+    <div style="display:flex;gap:0.75rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap;animation:fadeDown 0.8s 0.05s ease both;">
+      <div style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);border:1px solid rgba(57,255,20,0.3);padding:0.35rem 1rem;border-radius:50px;background:rgba(57,255,20,0.05);"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;flex-shrink:0;"></span>Open to Opportunities</div>
+      <div style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);border:1px solid var(--border);padding:0.35rem 1rem;border-radius:50px;">Mechanicsburg PA (Open to Relocate)</div>
+    </div>
     <h1 class="hero-name">MIHIR<br><span class="accent">BOMMISETTY</span></h1>
-    <p class="hero-title">Java · Spring Boot · Angular · React · Next.js</p>
+    <p class="hero-title"><span id="typewriter"></span><span style="color:var(--cyan);animation:blink 1s infinite;">|</span></p>
     <p class="hero-desc">7+ years architecting enterprise-grade systems across government, manufacturing & technology. Creator of <strong style="color:var(--cyan)">QuantumMail</strong> — a client-side encrypted email platform.</p>
     <div class="hero-ctas">
       <a href="#quantummail" class="btn-primary">View QuantumMail</a>
@@ -625,83 +694,27 @@
     <div class="skills-grid reveal">
       <div class="skill-group">
         <div class="skill-group-title">Java Ecosystem</div>
-        <div class="skill-tags">
-          <span class="skill-tag hot">Java 11/17</span>
-          <span class="skill-tag hot">Spring Boot</span>
-          <span class="skill-tag hot">Spring MVC</span>
-          <span class="skill-tag hot">Spring Security</span>
-          <span class="skill-tag">JWT / OAuth2</span>
-          <span class="skill-tag">Hibernate / JPA</span>
-          <span class="skill-tag">Maven / Gradle</span>
-          <span class="skill-tag">Spring Batch</span>
-          <span class="skill-tag">CQRS</span>
-        </div>
+        <div class="skill-tags"><div class="skill-level core">Core</div><br style="margin-bottom:0.4rem;"><span class="skill-tag hot">Java 11/17</span><span class="skill-tag hot">Spring Boot</span><span class="skill-tag hot">Spring MVC</span><span class="skill-tag hot">Spring Security</span><br style="margin:0.4rem 0;display:block;"><div class="skill-level familiar">Familiar</div><br style="margin-bottom:0.4rem;"><span class="skill-tag">JWT / OAuth2</span><span class="skill-tag">Hibernate / JPA</span><span class="skill-tag">Maven / Gradle</span><span class="skill-tag">Spring Batch</span><span class="skill-tag">CQRS</span></div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">Front-End</div>
-        <div class="skill-tags">
-          <span class="skill-tag hot">Angular 15/17</span>
-          <span class="skill-tag hot">React 18</span>
-          <span class="skill-tag hot">Next.js SSR/SSG</span>
-          <span class="skill-tag">Redux Toolkit</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">JavaScript ES6+</span>
-          <span class="skill-tag">HTML5 / CSS3</span>
-          <span class="skill-tag">Material UI</span>
-          <span class="skill-tag">Bootstrap</span>
-        </div>
+        <div class="skill-tags"><div class="skill-level core">Core</div><br style="margin-bottom:0.4rem;"><span class="skill-tag hot">Angular 15/17</span><span class="skill-tag hot">React 18</span><span class="skill-tag hot">Next.js SSR/SSG</span><br style="margin:0.4rem 0;display:block;"><div class="skill-level familiar">Familiar</div><br style="margin-bottom:0.4rem;"><span class="skill-tag">Redux Toolkit</span><span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript ES6+</span><span class="skill-tag">HTML5 / CSS3</span><span class="skill-tag">Material UI</span><span class="skill-tag">Bootstrap</span></div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">Cloud & DevOps</div>
-        <div class="skill-tags">
-          <span class="skill-tag hot">Azure DevOps</span>
-          <span class="skill-tag">Azure App Service</span>
-          <span class="skill-tag">Azure AD / Entra ID</span>
-          <span class="skill-tag">AWS EC2 / S3 / Lambda</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Jenkins</span>
-          <span class="skill-tag">YAML Pipelines</span>
-          <span class="skill-tag">IIS</span>
-        </div>
+        <div class="skill-tags"><div class="skill-level core">Core</div><br style="margin-bottom:0.4rem;"><span class="skill-tag hot">Azure DevOps</span><br style="margin:0.4rem 0;display:block;"><div class="skill-level familiar">Familiar</div><br style="margin-bottom:0.4rem;"><span class="skill-tag">Azure App Service</span><span class="skill-tag">Azure AD / Entra ID</span><span class="skill-tag">AWS EC2 / S3 / Lambda</span><span class="skill-tag">Docker</span><span class="skill-tag">Jenkins</span><span class="skill-tag">YAML Pipelines</span><span class="skill-tag">IIS</span></div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">Back-End & APIs</div>
-        <div class="skill-tags">
-          <span class="skill-tag hot">Node.js</span>
-          <span class="skill-tag hot">Express.js</span>
-          <span class="skill-tag">REST Microservices</span>
-          <span class="skill-tag">GraphQL</span>
-          <span class="skill-tag">ASP.NET Core</span>
-          <span class="skill-tag">WCF SOAP/REST</span>
-          <span class="skill-tag">Entity Framework</span>
-          <span class="skill-tag">Dapper</span>
-        </div>
+        <div class="skill-tags"><div class="skill-level core">Core</div><br style="margin-bottom:0.4rem;"><span class="skill-tag hot">Node.js</span><span class="skill-tag hot">Express.js</span><br style="margin:0.4rem 0;display:block;"><div class="skill-level familiar">Familiar</div><br style="margin-bottom:0.4rem;"><span class="skill-tag">REST Microservices</span><span class="skill-tag">GraphQL</span><span class="skill-tag">ASP.NET Core</span><span class="skill-tag">WCF SOAP/REST</span><span class="skill-tag">Entity Framework</span><span class="skill-tag">Dapper</span></div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">Databases</div>
-        <div class="skill-tags">
-          <span class="skill-tag hot">SQL Server</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">Oracle</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">T-SQL</span>
-          <span class="skill-tag">Stored Procedures</span>
-          <span class="skill-tag">Liquibase</span>
-        </div>
+        <div class="skill-tags"><div class="skill-level core">Core</div><br style="margin-bottom:0.4rem;"><span class="skill-tag hot">SQL Server</span><br style="margin:0.4rem 0;display:block;"><div class="skill-level familiar">Familiar</div><br style="margin-bottom:0.4rem;"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">Oracle</span><span class="skill-tag">MongoDB</span><span class="skill-tag">T-SQL</span><span class="skill-tag">Stored Procedures</span><span class="skill-tag">Liquibase</span></div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">.NET & Testing</div>
-        <div class="skill-tags">
-          <span class="skill-tag">.NET 6/7</span>
-          <span class="skill-tag">C# / VB.NET</span>
-          <span class="skill-tag">JUnit / Mockito</span>
-          <span class="skill-tag">NUnit / xUnit</span>
-          <span class="skill-tag">TDD</span>
-          <span class="skill-tag">Swagger/OpenAPI</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">WCAG / JAWS</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">.NET 6/7</span><span class="skill-tag">C# / VB.NET</span><span class="skill-tag">JUnit / Mockito</span><span class="skill-tag">NUnit / xUnit</span><span class="skill-tag">TDD</span><span class="skill-tag">Swagger/OpenAPI</span><span class="skill-tag">Postman</span><span class="skill-tag">WCAG / JAWS</span></div>
       </div>
     </div>
   </div>
@@ -1503,16 +1516,57 @@
 </section>
 
 <!-- CERTIFICATIONS -->
-<section id="certs">
+<section id="certs" style="background:var(--bg2);">
   <div class="container">
     <p class="section-tag">Credentials</p>
     <h2 class="section-title">Certifications</h2>
-    <div class="certs-flex reveal">
-      <span class="cert-pill">RPA (RE Framework) — UiPath</span>
-      <span class="cert-pill">Certified System Administrator — ServiceNow (CSA)</span>
-      <span class="cert-pill">Wipro Certified Java Professional</span>
-      <span class="cert-pill">Oracle Academy: DBMS &amp; Java</span>
-      <span class="cert-pill">IRJET Research Publication — Disease Detection via CNN</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;" class="reveal">
+
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🤖</div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">RPA — RE Framework</div>
+          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">UiPath</div>
+          <div style="font-size:0.62rem;color:var(--muted);">Robotic Process Automation</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">⚙️</div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Certified System Administrator</div>
+          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">ServiceNow · CSA</div>
+          <div style="font-size:0.62rem;color:var(--muted);">Platform administration &amp; ITSM</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">☕</div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Certified Java Professional</div>
+          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Wipro</div>
+          <div style="font-size:0.62rem;color:var(--muted);">Enterprise Java development</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🗄️</div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Oracle Academy</div>
+          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Oracle · DBMS &amp; Java</div>
+          <div style="font-size:0.62rem;color:var(--muted);">Database management &amp; Java fundamentals</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid rgba(0,229,255,0.2);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;grid-column:span 2;" onmouseover="this.style.borderColor='rgba(0,229,255,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.2)';this.style.transform='none'">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">📄</div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Research Publication</div>
+          <div style="font-size:0.65rem;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">IRJET · Peer-Reviewed</div>
+          <div style="font-size:0.62rem;color:var(--muted);">Disease Detection of Plants using Convolutional Neural Networks — published research applying deep learning to agricultural pathology</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1548,8 +1602,10 @@
   </div>
 </section>
 
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--bg2);border:1px solid var(--cyan);color:var(--cyan);font-size:1.1rem;cursor:pointer;transition:all 0.3s;box-shadow:0 0 20px rgba(0,229,255,0.15);" onmouseover="this.style.background='rgba(0,229,255,0.12)'" onmouseout="this.style.background='var(--bg2)'">↑</button>
+
 <footer>
-  <p>Designed &amp; built by <span>Mihir Bommisetty</span> · 2025 · All rights reserved</p>
+  <p>Designed &amp; built by <span>Mihir Bommisetty</span> · 2026 · All rights reserved</p>
 </footer>
 
 <script>
@@ -1777,13 +1833,104 @@
   animate();
 })();
 
+// TYPEWRITER
+(function(){
+  const roles = [
+    'Sr. Full Stack Developer',
+    'Java · Spring Boot Expert',
+    'Angular · React · Next.js',
+    'Encryption Architect',
+    'QuantumMail Creator',
+    'Cloud · Azure · AWS'
+  ];
+  let ri=0, ci=0, deleting=false;
+  const el = document.getElementById('typewriter');
+  if(!el) return;
+  function type(){
+    const current = roles[ri];
+    if(!deleting){
+      el.textContent = current.slice(0,++ci);
+      if(ci===current.length){ deleting=true; setTimeout(type,1800); return; }
+    } else {
+      el.textContent = current.slice(0,--ci);
+      if(ci===0){ deleting=false; ri=(ri+1)%roles.length; setTimeout(type,300); return; }
+    }
+    setTimeout(type, deleting?45:80);
+  }
+  type();
+})();
+
+// BACK TO TOP
+(function(){
+  const btn = document.getElementById('btt');
+  if(!btn) return;
+  window.addEventListener('scroll', ()=>{
+    btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    btn.style.alignItems = 'center';
+    btn.style.justifyContent = 'center';
+  });
+})();
+
+
+// HAMBURGER MENU
+function toggleMenu(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  if(!h||!m) return  h.classList.toggle('open');
+  m.classList.toggle('open');
+}
+function closeMenu(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  if(h) h.classList.remove('open');
+  if(m) m.classList.remove('open');
+}
+
 // SCROLL REVEAL
+// ENCRYPTION HEX CURSOR
+(function(){
+  var DOT=document.getElementById('qm-cursor-dot');
+  var CANVAS=document.getElementById('qm-cursor-canvas');
+  if(!DOT||!CANVAS) return;
+  var CTX=CANVAS.getContext('2d');
+  var HEX='0123456789ABCDEF';
+  var CHARS=10, CYAN='#00e5ff', GOLD='#f5c518';
+  var mx=-300, my=-300, t=0, hovering=false;
+  var particles=[];
+  for(var i=0;i<CHARS;i++) particles.push({char:HEX[Math.floor(Math.random()*16)],flip:Math.random()*30,alpha:0.4+Math.random()*0.5});
+  function resize(){ CANVAS.width=window.innerWidth; CANVAS.height=window.innerHeight; }
+  resize(); window.addEventListener('resize',resize);
+  window.addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY; DOT.style.left=mx+'px'; DOT.style.top=my+'px'; });
+  document.addEventListener('mouseover',function(e){ var t2=e.target.tagName; if(t2==='A'||t2==='BUTTON'||e.target.onclick){ hovering=true; DOT.classList.add('hovering'); } });
+  document.addEventListener('mouseout',function(){ hovering=false; DOT.classList.remove('hovering'); });
+  document.addEventListener('mouseleave',function(){ DOT.style.opacity='0'; CTX.clearRect(0,0,CANVAS.width,CANVAS.height); });
+  document.addEventListener('mouseenter',function(){ DOT.style.opacity='1'; });
+  function draw(){
+    CTX.clearRect(0,0,CANVAS.width,CANVAS.height);
+    var radius=hovering?30:22, speed=hovering?2.2:1.4, fs=hovering?11:9;
+    CTX.font='bold '+fs+'px JetBrains Mono,monospace';
+    CTX.textAlign='center'; CTX.textBaseline='middle';
+    particles.forEach(function(p,i){
+      p.flip-=1;
+      if(p.flip<=0){ p.char=HEX[Math.floor(Math.random()*16)]; p.flip=8+Math.random()*20; p.alpha=0.35+Math.random()*0.6; }
+      var angle=(i/CHARS)*Math.PI*2+t*speed;
+      var x=mx+Math.cos(angle)*radius, y=my+Math.sin(angle)*radius;
+      var color=i%2===0?CYAN:GOLD;
+      var pulse=p.alpha*(0.6+0.4*Math.sin(t*3+i*1.1));
+      CTX.globalAlpha=pulse; CTX.fillStyle=color; CTX.fillText(p.char,x,y);
+    });
+    CTX.beginPath(); CTX.arc(mx,my,hovering?30:22,0,Math.PI*2);
+    CTX.strokeStyle='rgba(0,229,255,0.08)'; CTX.lineWidth=0.8; CTX.globalAlpha=1; CTX.stroke();
+    t+=0.025; requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) e.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.reveal, .exp-item').forEach(el => observer.observe(el));
 </script>
 </body>
