@@ -275,6 +275,7 @@
       </div>
     </li>
     <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#cipherguard-architecture">CipherGuard Arch</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -494,7 +495,7 @@
         <h2 class="cg-title">Cipher<span class="accent">Guard</span></h2>
         <p class="cg-subtitle">AI-powered post-quantum cryptography vulnerability scanner. Detects RSA, ECDH, ECDSA, MD5, SHA-1 across 6 languages and auto-migrates to NIST FIPS 203/204/205 using Claude AI — with HNDL risk scoring.</p>
         <div class="cg-links">
-          <a href="https://cipherguard-tmir.onrender.com" target="_blank" class="cg-link">🌐 Live App</a>
+          <a href="https://quantumcipherguard.onrender.com" target="_blank" class="cg-link">🌐 Live App</a>
           <a href="https://github.com/munnamihir/cipherguard" target="_blank" class="cg-link">⚙ GitHub</a>
         </div>
         <div class="cg-features">
@@ -800,6 +801,204 @@
   <rect x="380" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(245,197,24,0.18)" stroke-width="0.7"/><text x="392" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Server/KEK</text>
   <rect x="448" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(57,255,20,0.22)" stroke-width="0.7"/><text x="460" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Brevo</text>
   <rect x="498" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(0,229,255,0.18)" stroke-width="0.7"/><text x="510" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Storage</text>
+</svg>
+    </div>
+  </div>
+</section>
+
+<!-- CIPHERGUARD ARCHITECTURE -->
+<section id="cipherguard-architecture" style="background:var(--bg);padding:6rem 0;">
+  <div class="container">
+    <p class="section-tag">System Design</p>
+    <h2 class="section-title">CipherGuard <span class="dim">Architecture</span></h2>
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;max-width:660px;line-height:1.9;">
+      Full stack architecture of <a href="https://github.com/munnamihir/cipherguard" target="_blank" style="color:var(--ai2);text-decoration:none;">github.com/munnamihir/cipherguard</a> — Angular 17 frontend with 3-panel QuantumScan UI, 18+ PQC vuln patterns across 6 languages, Claude AI streaming agent, Supabase auth + DB, and Stripe billing via Express.
+    </p>
+    <p style="font-size:0.62rem;color:var(--muted);margin-bottom:2rem;font-family:'JetBrains Mono',monospace;">
+      Angular 17 · TypeScript · Supabase · Claude AI · ML-KEM-768 · NIST FIPS 203/204/205 · Express · Stripe · Render
+    </p>
+    <div style="border:1px solid rgba(124,92,252,0.2);border-radius:12px;padding:1.25rem;background:var(--bg2);overflow-x:auto;">
+<svg width="100%" viewBox="0 0 780 580" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>CipherGuard Architecture</title>
+  <defs>
+    <marker id="cac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="cag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#39ff14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="cay" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="cac2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+
+  <!-- ══ BROWSER / FRONTEND ══ -->
+  <rect x="6" y="6" width="770" height="220" rx="7" fill="rgba(124,92,252,0.018)" stroke="rgba(124,92,252,0.25)" stroke-width="0.8" stroke-dasharray="6,4"/>
+  <text x="18" y="22" font-family="'Orbitron',sans-serif" font-size="8" font-weight="700" fill="#a78bfa" letter-spacing="2">BROWSER — Angular 17 SPA · Render Static Site · quantumcipherguard.onrender.com</text>
+
+  <!-- Left Pane: Code Editor -->
+  <rect x="12" y="28" width="200" height="190" rx="5" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.25)" stroke-width="0.7"/>
+  <text x="112" y="44" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#a78bfa">Left Pane — Code Input</text>
+  <text x="112" y="56" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">scan.component.ts</text>
+  <text x="112" y="69" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Monaco-style textarea</text>
+  <text x="112" y="80" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Scroll-synced line numbers</text>
+  <text x="112" y="91" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Vuln lines highlighted red</text>
+  <text x="112" y="102" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Language auto-detect</text>
+  <text x="112" y="113" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">JS · TS · Py · Java · Go · C# · Rs</text>
+  <text x="112" y="124" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">File upload (.js .ts .py .java...)</text>
+  <text x="112" y="135" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Drag &amp; drop support</text>
+  <text x="112" y="148" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(124,92,252,0.6)">ScanEngineService</text>
+  <text x="112" y="159" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">scan.service.ts</text>
+  <text x="112" y="170" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">18 VulnPatterns · RegEx engine</text>
+  <text x="112" y="181" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Risk score 0–100</text>
+  <text x="112" y="192" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">HNDL max (years)</text>
+  <text x="112" y="208" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(124,92,252,0.45)">Client-side · no code leaves browser</text>
+
+  <!-- Mid Pane: Findings -->
+  <rect x="220" y="28" width="240" height="190" rx="5" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.25)" stroke-width="0.7"/>
+  <text x="340" y="44" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#a78bfa">Mid Pane — Vulnerability Report</text>
+  <text x="340" y="58" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#f5c518">18 Vulnerability Patterns</text>
+  <text x="340" y="70" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">RSA-OAEP · ECDH · ECDSA · JWT RS256</text>
+  <text x="340" y="81" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Node RSA generateKeyPair · Python RSA/EC</text>
+  <text x="340" y="92" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">hashlib MD5/SHA-1 · Java RSA/EC KeyPairGen</text>
+  <text x="340" y="103" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Go rsa.GenerateKey · elliptic.P256/P384</text>
+  <text x="340" y="114" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">C# RSA.Create · ECDiffieHellman</text>
+  <text x="340" y="125" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">TLS 1.0/1.1 · Hardcoded RSA Key</text>
+  <text x="340" y="140" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Filter: All / CRITICAL / HIGH / MEDIUM / LOW</text>
+  <text x="340" y="151" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Risk ring canvas · Severity pills</text>
+  <text x="340" y="162" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">HNDL stat cards · Q-Day risk</text>
+  <text x="340" y="173" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Code diff view (vuln → fix)</text>
+  <text x="340" y="184" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Copy fix button · Export .md report</text>
+  <text x="340" y="195" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(124,92,252,0.6)">AI banner: Auto-fix all → Migration report</text>
+  <text x="340" y="208" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(245,197,24,0.5)">Saved to Supabase after each scan</text>
+
+  <!-- Right Pane: AI Agent -->
+  <rect x="468" y="28" width="228" height="190" rx="5" fill="rgba(124,92,252,0.06)" stroke="rgba(124,92,252,0.35)" stroke-width="0.7"/>
+  <text x="582" y="44" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#a78bfa">Right Pane — AI Agent</text>
+  <text x="582" y="57" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="rgba(124,92,252,0.8)">Claude claude-sonnet-4-20250514</text>
+  <text x="582" y="69" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Direct browser → Anthropic API</text>
+  <text x="582" y="80" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">anthropic-dangerous-direct-browser-access</text>
+  <text x="582" y="91" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">API key stored in Angular signal only</text>
+  <text x="582" y="102" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Never sent to CipherGuard server</text>
+  <text x="582" y="116" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#39ff14">SSE streaming · real-time tokens</text>
+  <text x="582" y="128" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Quick actions:</text>
+  <text x="582" y="139" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Auto-fix all · Migration report</text>
+  <text x="582" y="150" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Explain HNDL · Y2Q estimate</text>
+  <text x="582" y="161" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Per-finding context-aware fix</text>
+  <text x="582" y="174" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(124,92,252,0.7)">Rewrite View</text>
+  <text x="582" y="185" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Full file rewritten with PQC replacements</text>
+  <text x="582" y="196" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Copy / Download migrated file</text>
+  <text x="582" y="208" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(124,92,252,0.45)">system prompt: NIST FIPS 203/204/205 expert</text>
+
+  <!-- Arrow down to auth/routing -->
+  <line x1="390" y1="228" x2="390" y2="262" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.7" marker-end="url(#cac)"/>
+  <text x="390" y="250" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(124,92,252,0.5)">Angular Router · Guards</text>
+
+  <!-- ══ ANGULAR CORE ══ -->
+  <rect x="6" y="264" width="480" height="80" rx="7" fill="rgba(124,92,252,0.025)" stroke="rgba(124,92,252,0.2)" stroke-width="0.7" stroke-dasharray="5,3"/>
+  <text x="18" y="280" font-family="'Orbitron',sans-serif" font-size="7.5" font-weight="700" fill="#a78bfa" letter-spacing="1">ANGULAR CORE SERVICES</text>
+  <!-- Auth Service -->
+  <rect x="12" y="285" width="140" height="52" rx="4" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.2)" stroke-width="0.6"/>
+  <text x="82" y="299" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#00e5ff">AuthService</text>
+  <text x="82" y="310" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Signals: session · dbUser</text>
+  <text x="82" y="321" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">isLoggedIn · plan</text>
+  <text x="82" y="332" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.4)">GitHub OAuth · Magic Link</text>
+  <!-- Scan Engine Service -->
+  <rect x="160" y="285" width="155" height="52" rx="4" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.2)" stroke-width="0.6"/>
+  <text x="237" y="299" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#a78bfa">ScanEngineService</text>
+  <text x="237" y="310" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">scan() · riskScore() · hndlMax()</text>
+  <text x="237" y="321" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">detectLang() · saveToDb()</text>
+  <text x="237" y="332" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(124,92,252,0.4)">18 VULN_DB patterns · examples</text>
+  <!-- Guards -->
+  <rect x="323" y="285" width="156" height="52" rx="4" fill="rgba(57,255,20,0.03)" stroke="rgba(57,255,20,0.2)" stroke-width="0.6"/>
+  <text x="401" y="299" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#39ff14">Route Guards</text>
+  <text x="401" y="310" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">authGuard → /dashboard /scan</text>
+  <text x="401" y="321" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">guestGuard → /login</text>
+  <text x="401" y="332" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(57,255,20,0.4)">toObservable · loading signal</text>
+
+  <!-- Anthropic API (outside browser) -->
+  <rect x="494" y="264" width="188" height="80" rx="7" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.3)" stroke-width="0.7"/>
+  <text x="588" y="280" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="7.5" font-weight="700" fill="#a78bfa">Anthropic API</text>
+  <text x="588" y="293" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">api.anthropic.com/v1/messages</text>
+  <text x="588" y="304" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">claude-sonnet-4-20250514</text>
+  <text x="588" y="315" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">max_tokens: 4096 · stream: true</text>
+  <text x="588" y="326" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(124,92,252,0.5)">User API key · browser direct</text>
+  <text x="588" y="337" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(57,255,20,0.5)">SSE chunks → streaming UI</text>
+  <!-- arrow from right pane to anthropic -->
+  <line x1="582" y1="218" x2="582" y2="262" stroke="#a78bfa" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#cac)"/>
+
+  <!-- HTTPS arrows down -->
+  <line x1="200" y1="344" x2="200" y2="384" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#cac)"/>
+  <line x1="390" y1="344" x2="390" y2="384" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#cac2)"/>
+  <rect x="88" y="354" width="420" height="16" rx="3" fill="rgba(7,13,26,0.96)"/>
+  <text x="298" y="366" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="rgba(124,92,252,0.6)" letter-spacing="0.3">HTTPS · Supabase JS client · JWT auth headers</text>
+
+  <!-- ══ SUPABASE ══ -->
+  <rect x="6" y="386" width="380" height="120" rx="7" fill="rgba(0,229,255,0.018)" stroke="rgba(0,229,255,0.2)" stroke-width="0.8" stroke-dasharray="6,4"/>
+  <text x="18" y="402" font-family="'Orbitron',sans-serif" font-size="7.5" font-weight="700" fill="#00e5ff" letter-spacing="2">SUPABASE — Auth + Postgres</text>
+  <!-- Auth -->
+  <rect x="12" y="407" width="170" height="92" rx="5" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.18)" stroke-width="0.6"/>
+  <text x="97" y="421" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="500" fill="#00e5ff">Auth</text>
+  <text x="97" y="433" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">GitHub OAuth provider</text>
+  <text x="97" y="444" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Magic link (email OTP)</text>
+  <text x="97" y="455" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">JWT session tokens</text>
+  <text x="97" y="466" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">handle_new_user() trigger</text>
+  <text x="97" y="477" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">onAuthStateChange listener</text>
+  <text x="97" y="490" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">Redirect: /dashboard post-login</text>
+  <!-- Database -->
+  <rect x="190" y="407" width="190" height="92" rx="5" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.18)" stroke-width="0.6"/>
+  <text x="285" y="421" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="500" fill="#00e5ff">Postgres + RLS</text>
+  <text x="285" y="435" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#f5c518">users</text>
+  <text x="285" y="446" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">plan · scans_this_month · stripe_*</text>
+  <text x="285" y="458" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#f5c518">scans</text>
+  <text x="285" y="469" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">risk_score · hndl_max · counts</text>
+  <text x="285" y="481" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#f5c518">findings</text>
+  <text x="285" y="492" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">severity · algorithm · diff_vuln/fix</text>
+  <text x="285" y="503" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">increment_scan_count() RPC</text>
+
+  <!-- ══ EXPRESS SERVER ══ -->
+  <rect x="394" y="386" width="192" height="120" rx="7" fill="rgba(245,197,24,0.018)" stroke="rgba(245,197,24,0.18)" stroke-width="0.8" stroke-dasharray="6,4"/>
+  <text x="406" y="402" font-family="'Orbitron',sans-serif" font-size="7" font-weight="700" fill="#f5c518" letter-spacing="1">EXPRESS SERVER</text>
+  <text x="406" y="413" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">server/ · Railway</text>
+  <rect x="400" y="417" width="180" height="82" rx="4" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.15)" stroke-width="0.6"/>
+  <text x="490" y="431" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" font-weight="500" fill="#f5c518">Stripe Billing Routes</text>
+  <text x="490" y="443" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">POST /api/stripe/checkout</text>
+  <text x="490" y="454" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">GET  /api/stripe/portal</text>
+  <text x="490" y="465" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">POST /api/stripe/webhook</text>
+  <text x="490" y="476" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Supabase JWT middleware</text>
+  <text x="490" y="487" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">CORS → onrender.com</text>
+  <text x="490" y="499" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(245,197,24,0.4)">Updates users.plan after payment</text>
+
+  <!-- ══ STRIPE ══ -->
+  <rect x="594" y="386" width="180" height="120" rx="7" fill="rgba(57,255,20,0.018)" stroke="rgba(57,255,20,0.18)" stroke-width="0.7"/>
+  <text x="684" y="402" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="8" font-weight="700" fill="#39ff14">Stripe</text>
+  <text x="684" y="416" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Checkout Sessions</text>
+  <text x="684" y="427" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Customer Portal</text>
+  <text x="684" y="438" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Subscription webhooks</text>
+  <text x="684" y="452" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#f5c518">Plans:</text>
+  <text x="684" y="463" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Free · 5 scans/mo</text>
+  <text x="684" y="474" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Pro $49/mo · unlimited</text>
+  <text x="684" y="485" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Enterprise · custom</text>
+  <text x="684" y="499" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(57,255,20,0.4)">checkout.session.completed</text>
+  <!-- arrow express to stripe -->
+  <line x1="586" y1="444" x2="592" y2="444" stroke="#f5c518" stroke-width="0.7" stroke-opacity="0.5" stroke-dasharray="3,2" marker-end="url(#cay)"/>
+
+  <!-- ══ PQC MIGRATION TARGETS ══ -->
+  <rect x="6" y="514" width="770" height="58" rx="7" fill="rgba(0,229,255,0.018)" stroke="rgba(0,229,255,0.15)" stroke-width="0.7" stroke-dasharray="5,3"/>
+  <text x="18" y="530" font-family="'Orbitron',sans-serif" font-size="7.5" font-weight="700" fill="#00e5ff" letter-spacing="2">NIST PQC MIGRATION TARGETS — AI auto-generates replacements to these standards</text>
+  <rect x="12"  y="534" width="115" height="32" rx="4" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.2)" stroke-width="0.6"/>
+  <text x="69"  y="547" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" font-weight="500" fill="#00e5ff">ML-KEM-768</text>
+  <text x="69"  y="558" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">FIPS 203 · replaces ECDH/RSA</text>
+  <rect x="133" y="534" width="115" height="32" rx="4" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.2)" stroke-width="0.6"/>
+  <text x="190" y="547" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" font-weight="500" fill="#a78bfa">ML-DSA-65</text>
+  <text x="190" y="558" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">FIPS 204 · replaces ECDSA/RSA sign</text>
+  <rect x="254" y="534" width="115" height="32" rx="4" fill="rgba(57,255,20,0.04)" stroke="rgba(57,255,20,0.2)" stroke-width="0.6"/>
+  <text x="311" y="547" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" font-weight="500" fill="#39ff14">SLH-DSA</text>
+  <text x="311" y="558" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">FIPS 205 · hash-based signatures</text>
+  <rect x="375" y="534" width="130" height="32" rx="4" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.2)" stroke-width="0.6"/>
+  <text x="440" y="547" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" font-weight="500" fill="#f5c518">@noble/post-quantum</text>
+  <text x="440" y="558" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">JS: ml_kem768 · ml_dsa65</text>
+  <rect x="511" y="534" width="120" height="32" rx="4" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
+  <text x="571" y="547" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" font-weight="500" fill="#00e5ff">liboqs-python</text>
+  <text x="571" y="558" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Python: ML-KEM-768 KEM</text>
+  <rect x="637" y="534" width="137" height="32" rx="4" fill="rgba(204,136,255,0.04)" stroke="rgba(204,136,255,0.2)" stroke-width="0.6"/>
+  <text x="705" y="547" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" font-weight="500" fill="#cc88ff">BouncyCastle 1.78+</text>
+  <text x="705" y="558" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Java/C#: MLKEMKeyPairGenerator</text>
 </svg>
     </div>
   </div>
