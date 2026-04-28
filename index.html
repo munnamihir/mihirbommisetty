@@ -600,6 +600,40 @@
     .qm-visual { display: none; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
   }
+
+  /* DROPDOWN */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a { display: flex; align-items: center; gap: 0.35rem; }
+  .nav-dropdown > a::after { content: '▾'; font-size: 0.6rem; transition: transform 0.2s; }
+  .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+  .dropdown-menu {
+    position: absolute; top: calc(100% + 0.75rem); left: 50%;
+    transform: translateX(-50%);
+    background: rgba(7,13,26,0.97); border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 8px; padding: 0.5rem 0; min-width: 210px;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s;
+    transform: translateX(-50%) translateY(-6px);
+    backdrop-filter: blur(12px); z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1; visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .dropdown-menu a {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.6rem 1.1rem; font-size: 0.65rem; color: var(--muted);
+    text-decoration: none; transition: all 0.15s;
+    border-bottom: 1px solid rgba(0,229,255,0.05);
+    letter-spacing: 0; text-transform: none;
+  }
+  .dropdown-menu a:last-child { border-bottom: none; }
+  .dropdown-menu a:hover { color: var(--cyan); background: rgba(0,229,255,0.04); }
+  .dd-icon { font-size: 0.9rem; flex-shrink: 0; }
+  .dd-label { display: flex; flex-direction: column; }
+  .dd-name { color: var(--text); font-weight: 500; font-size: 0.72rem; }
+  .dd-sub { font-size: 0.58rem; color: var(--muted); margin-top: 1px; }
+  .nav-dropdown:hover .dd-name { color: var(--cyan); }
 </style>
 </head>
 <body>
@@ -651,11 +685,11 @@
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#skills" onclick="closeMenu()">Skills</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
-  <a href="#quantummail" onclick="closeMenu()">🔒 QuantumMail v2</a>
-  <a href="#cipherguard" onclick="closeMenu()">⬡ CipherGuard</a>
-  <a href="#qcareer" onclick="closeMenu()">🎯 QCareer</a>
-  <a href="#demo" onclick="closeMenu()">Live Demo</a>
-  <a href="#architecture" onclick="closeMenu()">Architecture</a>
+  <a href="#quantummail" onclick="closeMenu()" style="color:var(--muted);font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;pointer-events:none;opacity:0.6;">── Projects</a>
+  <a href="#quantummail" onclick="closeMenu()" style="padding-left:1rem;border-left:2px solid rgba(0,229,255,0.2);margin-left:0.5rem;">🔒 QuantumMail v2</a>
+  <a href="#cipherguard" onclick="closeMenu()" style="padding-left:1rem;border-left:2px solid rgba(124,92,252,0.2);margin-left:0.5rem;">⬡ CipherGuard</a>
+  <a href="#qcareer" onclick="closeMenu()" style="padding-left:1rem;border-left:2px solid rgba(245,197,24,0.2);margin-left:0.5rem;">🎯 QCareer</a>
+  <a href="#research" onclick="closeMenu()">🔬 Research</a>
   <a href="#education" onclick="closeMenu()">Education</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
@@ -706,7 +740,7 @@
         <div class="info-item"><div class="info-icon">📍</div><div><div class="info-label">Location</div><div class="info-value">Mechanicsburg, PA</div></div></div>
         <div class="info-item"><div class="info-icon">📧</div><div><div class="info-label">Email</div><div class="info-value"><a href="mailto:mihirbommisettys@gmail.com">mihirbommisettys@gmail.com</a></div></div></div>
         <div class="info-item"><div class="info-icon">📞</div><div><div class="info-label">Phone</div><div class="info-value">(551) 349-4114</div></div></div>
-        <div class="info-item"><div class="info-icon">🔗</div><div><div class="info-label">LinkedIn</div><div class="info-value"><a href="https://linkedin.com/in/mihirbommisetty" target="_blank">linkedin.com/in/mihirbommisetty</a></div></div></div>
+        <div class="info-item"><div class="info-icon">🔗</div><div><div class="info-label">LinkedIn</div><div class="info-value"><a href="https://www.linkedin.com/in/mihirbommisetty/" target="_blank">www.linkedin.com/in/mihirbommisetty/</a></div></div></div>
         <div class="info-item"><div class="info-icon">🎓</div><div><div class="info-label">Education</div><div class="info-value">MSc Computer Science — Stevens Institute of Technology</div></div></div>
         <div class="info-item"><div class="info-icon">🏛️</div><div><div class="info-label">Current Role</div><div class="info-value">Application Developer III — PA Fish & Boat Commission</div></div></div>
       </div>
@@ -1967,7 +2001,7 @@
           </div>
           <!-- Links -->
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-            <a href="https://zenodo.org/records/your-doi" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:1px;color:var(--ai2);text-decoration:none;padding:0.55rem 1.1rem;border:1px solid rgba(124,92,252,0.3);border-radius:4px;transition:all 0.3s;background:rgba(124,92,252,0.06);" onmouseover="this.style.borderColor='rgba(167,139,250,0.6)';this.style.background='rgba(124,92,252,0.12)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.3)';this.style.background='rgba(124,92,252,0.06)'">
+            <a href="https://zenodo.org/records/19609633" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:1px;color:var(--ai2);text-decoration:none;padding:0.55rem 1.1rem;border:1px solid rgba(124,92,252,0.3);border-radius:4px;transition:all 0.3s;background:rgba(124,92,252,0.06);" onmouseover="this.style.borderColor='rgba(167,139,250,0.6)';this.style.background='rgba(124,92,252,0.12)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.3)';this.style.background='rgba(124,92,252,0.06)'">
               📄 Paper (Zenodo DOI)
             </a>
             <a href="https://github.com/munnamihir/lwe-cc-research" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:1px;color:var(--cyan);text-decoration:none;padding:0.55rem 1.1rem;border:1px solid var(--border);border-radius:4px;transition:all 0.3s;background:var(--bg2);" onmouseover="this.style.borderColor='rgba(0,229,255,0.5)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)'">
@@ -2113,7 +2147,7 @@
           <div style="font-size:0.62rem;color:var(--muted);line-height:1.7;">"Communication Complexity of the LWE Function: First Exact Bounds and the Hard Distribution Structure" — First CC analysis of any deployed NIST PQC protocol. 4 proved theorems. rank(M_f) in {31, 53, 126} — first in literature.</div>
           <div style="display:flex;gap:0.5rem;margin-top:0.6rem;flex-wrap:wrap;">
             <a href="https://github.com/munnamihir/lwe-cc-research" target="_blank" style="font-size:0.58rem;color:#a78bfa;text-decoration:none;border:1px solid rgba(124,92,252,0.3);padding:2px 9px;border-radius:3px;">GitHub</a>
-            <a href="https://zenodo.org" target="_blank" style="font-size:0.58rem;color:var(--cyan);text-decoration:none;border:1px solid rgba(0,229,255,0.2);padding:2px 9px;border-radius:3px;">Zenodo</a>
+            <a href="https://zenodo.org/records/19609633" target="_blank" style="font-size:0.58rem;color:var(--cyan);text-decoration:none;border:1px solid rgba(0,229,255,0.2);padding:2px 9px;border-radius:3px;">Zenodo</a>
           </div>
         </div>
       </div>
@@ -2133,7 +2167,7 @@
         <div class="contact-card-label">Email</div>
         <div class="contact-card-value">mihirbommisettys@gmail.com</div>
       </a>
-      <a href="https://linkedin.com/in/mihirbommisetty" target="_blank" class="contact-card">
+      <a href="https://www.linkedin.com/in/mihirbommisetty/" target="_blank" class="contact-card">
         <div class="contact-card-icon">🔗</div>
         <div class="contact-card-label">LinkedIn</div>
         <div class="contact-card-value">mihirbommisetty</div>
@@ -2485,5 +2519,405 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal, .exp-item').forEach(el => observer.observe(el));
 </script>
+
+<!-- ══ AI AGENT CHAT WIDGET ══ -->
+<style>
+  /* ── CHAT BUTTON ── */
+  #mb-chat-btn {
+    position:fixed;bottom:5.5rem;right:2rem;z-index:9998;
+    width:54px;height:54px;border-radius:50%;
+    background:linear-gradient(135deg,#a78bfa,#00e5ff);
+    border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 24px rgba(167,139,250,0.45);
+    transition:all 0.3s;font-size:1.4rem;
+    animation:mbPulse 3s ease-in-out infinite;
+  }
+  #mb-chat-btn:hover{transform:scale(1.1);box-shadow:0 6px 36px rgba(167,139,250,0.7);}
+  @keyframes mbPulse{
+    0%,100%{box-shadow:0 4px 24px rgba(167,139,250,0.45);}
+    50%{box-shadow:0 4px 32px rgba(167,139,250,0.75),0 0 0 10px rgba(167,139,250,0.08);}
+  }
+  #mb-chat-badge{
+    position:absolute;top:-3px;right:-3px;
+    width:20px;height:20px;border-radius:50%;
+    background:#39ff14;font-size:0.48rem;font-weight:700;
+    color:#000;display:none;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;border:2px solid #040812;
+    animation:blink 2s infinite;
+  }
+  /* ── CHAT PANEL ── */
+  #mb-chat-panel{
+    position:fixed;bottom:10rem;right:2rem;z-index:9997;
+    width:370px;height:530px;
+    background:rgba(7,13,26,0.98);
+    border:1px solid rgba(167,139,250,0.3);
+    border-radius:18px;overflow:hidden;
+    display:none;flex-direction:column;
+    box-shadow:0 24px 64px rgba(0,0,0,0.6),0 0 0 1px rgba(167,139,250,0.08);
+    backdrop-filter:blur(24px);
+  }
+  #mb-chat-panel.open{display:flex;}
+  /* ── HEADER ── */
+  .mb-head{
+    display:flex;align-items:center;gap:10px;
+    padding:14px 16px;border-bottom:1px solid rgba(167,139,250,0.12);
+    background:rgba(124,92,252,0.07);flex-shrink:0;
+  }
+  .mb-head-av{
+    width:36px;height:36px;border-radius:50%;
+    background:linear-gradient(135deg,#a78bfa,#00e5ff);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Orbitron',sans-serif;font-weight:900;font-size:0.75rem;
+    color:#000;flex-shrink:0;position:relative;
+  }
+  .mb-head-av::after{
+    content:'';position:absolute;bottom:1px;right:1px;
+    width:8px;height:8px;border-radius:50%;
+    background:#39ff14;border:2px solid #070d1a;
+  }
+  .mb-head-info{flex:1;}
+  .mb-head-name{font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:600;color:#fff;}
+  .mb-head-sub{font-size:0.58rem;color:rgba(106,128,153,0.8);margin-top:1px;}
+  .mb-head-close{
+    background:none;border:none;color:rgba(255,255,255,0.35);
+    font-size:1rem;cursor:pointer;padding:6px;border-radius:6px;
+    transition:all 0.2s;line-height:1;
+  }
+  .mb-head-close:hover{color:#fff;background:rgba(255,255,255,0.08);}
+  /* ── MESSAGES ── */
+  .mb-msgs{
+    flex:1;overflow-y:auto;padding:14px 14px 6px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .mb-msgs::-webkit-scrollbar{width:3px;}
+  .mb-msgs::-webkit-scrollbar-thumb{background:rgba(167,139,250,0.25);border-radius:2px;}
+  .mb-row{display:flex;gap:8px;align-items:flex-end;}
+  .mb-row.user{flex-direction:row-reverse;}
+  .mb-av{
+    width:28px;height:28px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.62rem;font-family:'Orbitron',sans-serif;font-weight:700;
+  }
+  .mb-av.ai{background:linear-gradient(135deg,#a78bfa,#00e5ff);color:#000;}
+  .mb-av.you{background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.25);color:#00e5ff;}
+  .mb-bubble{
+    max-width:84%;padding:10px 13px;
+    font-family:'JetBrains Mono',monospace;font-size:0.67rem;
+    line-height:1.75;word-break:break-word;
+  }
+  .mb-row.ai .mb-bubble{
+    background:rgba(124,92,252,0.09);border:1px solid rgba(124,92,252,0.18);
+    color:#c8d8e8;border-radius:4px 14px 14px 14px;
+  }
+  .mb-row.user .mb-bubble{
+    background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.18);
+    color:#c8d8e8;border-radius:14px 4px 14px 14px;
+  }
+  .mb-bubble a{color:#a78bfa;text-decoration:underline;}
+  .mb-time{font-size:0.5rem;color:rgba(106,128,153,0.45);margin-top:3px;padding:0 2px;}
+  .mb-row.user .mb-time{text-align:right;}
+  /* ── TYPING ── */
+  .mb-typing{display:flex;gap:5px;padding:10px 13px;}
+  .mb-dot{width:6px;height:6px;border-radius:50%;background:rgba(167,139,250,0.5);animation:mbDot 1.2s ease infinite;}
+  .mb-dot:nth-child(2){animation-delay:.2s;}
+  .mb-dot:nth-child(3){animation-delay:.4s;}
+  @keyframes mbDot{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-5px);opacity:1;}}
+  /* ── SUGGESTIONS ── */
+  .mb-suggs{
+    padding:6px 12px 8px;display:flex;flex-wrap:wrap;gap:6px;
+    flex-shrink:0;border-top:1px solid rgba(167,139,250,0.06);
+  }
+  .mb-sugg{
+    font-family:'JetBrains Mono',monospace;font-size:0.57rem;
+    padding:4px 9px;background:rgba(0,229,255,0.04);
+    border:1px solid rgba(0,229,255,0.18);border-radius:20px;
+    color:rgba(0,229,255,0.75);cursor:pointer;transition:all 0.2s;
+    white-space:nowrap;
+  }
+  .mb-sugg:hover{background:rgba(0,229,255,0.1);border-color:rgba(0,229,255,0.45);color:#00e5ff;}
+  /* ── INPUT ── */
+  .mb-input-row{
+    display:flex;gap:8px;padding:10px 12px 13px;
+    border-top:1px solid rgba(167,139,250,0.1);flex-shrink:0;
+    align-items:flex-end;
+  }
+  .mb-input{
+    flex:1;background:rgba(255,255,255,0.04);
+    border:1px solid rgba(167,139,250,0.18);
+    border-radius:10px;padding:9px 12px;color:#e0e0e0;
+    font-family:'JetBrains Mono',monospace;font-size:0.67rem;
+    outline:none;resize:none;line-height:1.5;max-height:80px;
+    transition:border-color 0.2s;
+  }
+  .mb-input:focus{border-color:rgba(167,139,250,0.45);}
+  .mb-input::placeholder{color:rgba(106,128,153,0.45);}
+  .mb-send{
+    width:36px;height:36px;border-radius:10px;flex-shrink:0;
+    background:linear-gradient(135deg,#a78bfa,#00e5ff);
+    border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1rem;color:#000;font-weight:700;
+    transition:all 0.2s;
+  }
+  .mb-send:hover{transform:scale(1.07);}
+  .mb-send:disabled{opacity:0.35;cursor:not-allowed;transform:none;}
+  /* ── POWERED BY ── */
+  .mb-powered{
+    text-align:center;padding:4px 0 8px;
+    font-family:'JetBrains Mono',monospace;font-size:0.5rem;
+    color:rgba(106,128,153,0.35);
+  }
+  .mb-powered a{color:rgba(167,139,250,0.4);text-decoration:none;}
+  @media(max-width:480px){
+    #mb-chat-panel{width:calc(100vw - 2rem);right:1rem;bottom:8rem;}
+  }
+</style>
+
+<!-- BUTTON -->
+<button id="mb-chat-btn" onclick="mbToggle()" title="Chat with Mihir's AI">
+  ⬡
+  <div id="mb-chat-badge">AI</div>
+</button>
+
+<!-- PANEL -->
+<div id="mb-chat-panel">
+  <div class="mb-head">
+    <div class="mb-head-av">MB</div>
+    <div class="mb-head-info">
+      <div class="mb-head-name">Mihir's AI Assistant</div>
+      <div class="mb-head-sub">Ask me anything about Mihir</div>
+    </div>
+    <button class="mb-head-close" onclick="mbToggle()">✕</button>
+  </div>
+  <div class="mb-msgs" id="mb-msgs">
+    <div class="mb-row ai">
+      <div class="mb-av ai">M</div>
+      <div>
+        <div class="mb-bubble">Hey! 👋 I know everything about Mihir — his projects, research, skills, and experience. What would you like to know?</div>
+        <div class="mb-time">Just now</div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-suggs" id="mb-suggs">
+    <button class="mb-sugg" onclick="mbAsk(this.textContent)">What projects has he built?</button>
+    <button class="mb-sugg" onclick="mbAsk(this.textContent)">Tell me about his research</button>
+    <button class="mb-sugg" onclick="mbAsk(this.textContent)">Is he open to work?</button>
+    <button class="mb-sugg" onclick="mbAsk(this.textContent)">What's his tech stack?</button>
+    <button class="mb-sugg" onclick="mbAsk(this.textContent)">How to contact him?</button>
+  </div>
+  <div class="mb-input-row">
+    <textarea class="mb-input" id="mb-input" rows="1"
+      placeholder="Ask about Mihir..."
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();mbSend();}"></textarea>
+    <button class="mb-send" id="mb-send" onclick="mbSend()">↑</button>
+  </div>
+  <div class="mb-powered">Powered by <a href="https://anthropic.com" target="_blank">Claude AI</a></div>
+</div>
+
+<script>
+(function(){
+  /* ── REPLACE THIS WITH YOUR ANTHROPIC API KEY ── */
+  var KEY = 'YOUR_ANTHROPIC_API_KEY_HERE';
+  /* ─────────────────────────────────────────────── */
+
+  var SYS = `You are an AI assistant on Mihir Bommisetty's portfolio website. You speak warmly and professionally on his behalf. Keep answers concise — 2-4 sentences. Use first-person-adjacent language ("Mihir has..." or "He built...").
+
+PROFILE:
+Name: Mihir Bommisetty
+Role: Sr. Full Stack Developer — 7+ years
+Location: Mechanicsburg, Pennsylvania, USA
+Status: Actively looking for Sr. Full Stack Developer roles
+H-1B visa holder — open to sponsorship
+Email: mihirbommisettys@gmail.com
+Phone: (551) 349-4114
+LinkedIn: https://www.linkedin.com/in/mihirbommisetty/
+GitHub: github.com/munnamihir
+
+EXPERIENCE:
+1. Application Developer III — Fish & Boat Commission of PA (Apr 2024–Present)
+   Spring Boot + Angular 17, microservices replacing legacy RFP, Spring Security + JWT/OAuth2, React/Redux dashboards, CQRS, Liquibase, Azure DevOps CI/CD, WCAG accessibility
+
+2. Full Stack Developer — PACSES Pennsylvania (Jan 2023–Dec 2023)
+   Spring Boot microservices, Angular 15, ASP.NET C#, React/Redux, Next.js SSR, Node.js/Express middleware, Azure AD + Entra ID SSO
+
+3. Software Engineer → Development Engineer — Made2Manage (Jan 2017–Aug 2022)
+   Java Spring Boot ERP (inventory, orders, HCM), React replacing ASP.NET Web Forms, AWS EC2/ELB, JUnit/Mockito 80%+ coverage, Angular 8/9 migration
+
+EDUCATION:
+- MSc Computer Science — Stevens Institute of Technology
+- BTech Computer Science — KL University
+
+TECH STACK:
+Java 11/17, Spring Boot, Spring MVC, Spring Security, JWT/OAuth2, Hibernate/JPA, Maven/Gradle, CQRS, Spring Batch
+Angular 15/17, React 18, Next.js, Redux Toolkit, TypeScript, JavaScript ES6+, Material UI, Bootstrap
+Azure DevOps, Azure AD, AWS EC2/S3/Lambda, Docker, Jenkins, Render, Vercel
+SQL Server, PostgreSQL, MySQL, Oracle, MongoDB, Supabase, Liquibase
+Web Crypto API, AES-256-GCM, RSA-OAEP, ML-KEM-768, NIST FIPS 203/204/205, PBKDF2, Claude AI
+
+PROJECTS:
+1. QuantumMail v2 — quantummail-v2.onrender.com | github.com/munnamihir/QuantumMail-v2
+   Full-stack client-side encrypted email. AES-256-GCM + RSA-OAEP envelope encryption, keys never leave browser. ML-KEM-768 post-quantum mode. Multi-tier RBAC, OTP via Brevo, Chrome MV3 extension, Outlook Add-in, quorum vault recovery (2-of-N Shamir).
+
+2. CipherGuard — quantumcipherguard.onrender.com | github.com/munnamihir/cipherguard
+   AI-powered PQC vulnerability scanner. Detects 18+ patterns across 7 languages. Claude AI streaming auto-fix to NIST FIPS 203/204/205. HNDL risk scoring 0-100. Stripe billing (Free/Pro $49/mo/Enterprise).
+
+3. QCareer — github.com/munnamihir/qcareer (in development)
+   AI job search platform for H-1B candidates. Claude AI resume tailoring, ATS keyword injection, H-1B sponsorship filter, cover letter gen, application tracker kanban. Next.js 14, Supabase, Stripe.
+
+RESEARCH:
+Paper: "Communication Complexity of the LWE Function: First Exact Bounds and the Hard Distribution Structure"
+Published: Zenodo, April 2026 — https://zenodo.org/records/19609633
+GitHub: github.com/munnamihir/lwe-cc-research
+arXiv pending: cs.CC / cs.CR
+First CC analysis of any deployed NIST PQC protocol. 4 proved theorems.
+Key results: rank(M_f) in {31,53,126}, fooling sets >= {104,114,173} — never published before.
+Main conjecture: quantum-classical exponential separation for LWE communication.
+
+CERTIFICATIONS: UiPath RPA, ServiceNow CSA, Wipro Java, Oracle Academy, IRJET published research (CNN plant disease detection)
+
+CONTACT: Email mihirbommisettys@gmail.com or call (551) 349-4114. LinkedIn: https://www.linkedin.com/in/mihirbommisetty/
+
+If asked about salary: say he's open to discussing based on role and company.
+If asked about availability: yes, actively looking, open to interview immediately.
+If you don't know something, suggest contacting Mihir directly.`;
+
+  var msgs = [];
+  var open = false;
+  var busy = false;
+
+  window.mbToggle = function(){
+    var p = document.getElementById('mb-chat-panel');
+    open = !open;
+    if(open){
+      p.style.display='flex';
+      setTimeout(function(){p.classList.add('open');},10);
+      document.getElementById('mb-input').focus();
+      document.getElementById('mb-chat-badge').style.display='none';
+    } else {
+      p.classList.remove('open');
+      setTimeout(function(){p.style.display='none';},200);
+    }
+  };
+
+  window.mbAsk = function(t){
+    document.getElementById('mb-suggs').style.display='none';
+    document.getElementById('mb-input').value=t;
+    mbSend();
+  };
+
+  function ts(){return new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+
+  function addMsg(role,text){
+    var c=document.getElementById('mb-msgs');
+    var d=document.createElement('div');
+    d.className='mb-row '+role;
+    var isAI=role==='ai';
+    d.innerHTML='<div class="mb-av '+(isAI?'ai':'you')+'">'+(isAI?'M':'You')+'</div>'+
+      '<div><div class="mb-bubble"></div><div class="mb-time">'+ts()+'</div></div>';
+    c.appendChild(d);
+    var b=d.querySelector('.mb-bubble');
+    b.textContent=text;
+    c.scrollTop=999999;
+    return b;
+  }
+
+  function showTyping(){
+    var c=document.getElementById('mb-msgs');
+    var d=document.createElement('div');
+    d.className='mb-row ai';d.id='mb-typing';
+    d.innerHTML='<div class="mb-av ai">M</div>'+
+      '<div class="mb-typing"><div class="mb-dot"></div><div class="mb-dot"></div><div class="mb-dot"></div></div>';
+    c.appendChild(d);c.scrollTop=999999;
+  }
+
+  function hideTyping(){var t=document.getElementById('mb-typing');if(t)t.remove();}
+
+  window.mbSend = async function(){
+    if(busy)return;
+    var inp=document.getElementById('mb-input');
+    var text=inp.value.trim();
+    if(!text)return;
+    if(KEY==='YOUR_ANTHROPIC_API_KEY_HERE'){
+      addMsg('ai','The AI chat is not configured yet. Please contact Mihir directly at mihirbommisettys@gmail.com or call (551) 349-4114.');
+      return;
+    }
+    document.getElementById('mb-suggs').style.display='none';
+    inp.value='';inp.style.height='auto';
+    addMsg('user',text);
+    msgs.push({role:'user',content:text});
+    busy=true;
+    document.getElementById('mb-send').disabled=true;
+    showTyping();
+    try{
+      var res=await fetch('https://api.anthropic.com/v1/messages',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          'x-api-key':KEY,
+          'anthropic-version':'2023-06-01',
+          'anthropic-dangerous-direct-browser-access':'true'
+        },
+        body:JSON.stringify({
+          model:'claude-haiku-4-5-20251001',
+          max_tokens:400,
+          system:SYS,
+          messages:msgs,
+          stream:true
+        })
+      });
+      if(!res.ok){var e=await res.json();throw new Error(e.error?.message||'API error '+res.status);}
+      hideTyping();
+      var bubble=addMsg('ai','');
+      var full='';
+      var reader=res.body.getReader();
+      var dec=new TextDecoder();
+      while(true){
+        var _r=await reader.read();
+        if(_r.done)break;
+        var lines=dec.decode(_r.value).split('\n');
+        for(var l of lines){
+          if(!l.startsWith('data: '))continue;
+          var d=l.slice(6);if(d==='[DONE]')continue;
+          try{
+            var p=JSON.parse(d);
+            if(p.type==='content_block_delta'&&p.delta?.text){
+              full+=p.delta.text;
+              bubble.textContent=full;
+              document.getElementById('mb-msgs').scrollTop=999999;
+            }
+          }catch(e){}
+        }
+      }
+      msgs.push({role:'assistant',content:full});
+    }catch(e){
+      hideTyping();
+      addMsg('ai','Sorry, something went wrong. Please email Mihir at mihirbommisettys@gmail.com');
+      msgs.pop();
+    }
+    busy=false;
+    document.getElementById('mb-send').disabled=false;
+    document.getElementById('mb-input').focus();
+  };
+
+  // Auto-resize textarea
+  document.addEventListener('DOMContentLoaded',function(){
+    var inp=document.getElementById('mb-input');
+    if(inp)inp.addEventListener('input',function(){
+      this.style.height='auto';
+      this.style.height=Math.min(this.scrollHeight,80)+'px';
+    });
+  });
+
+  // Show badge after 4s
+  setTimeout(function(){
+    if(!open){
+      var b=document.getElementById('mb-chat-badge');
+      if(b){b.style.display='flex';}
+    }
+  },4000);
+})();
+</script>
+<!-- ══ END AI AGENT ══ -->
 </body>
 </html>
