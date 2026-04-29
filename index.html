@@ -890,9 +890,6 @@
   </div>
 </section>
 
-
-<!-- LIVE ENCRYPTION DEMO -->
-
 <!-- ══ CIPHERGUARD PROJECT ══ -->
 <section id="cipherguard" style="background:var(--bg2);position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(124,92,252,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(124,92,252,0.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
@@ -900,7 +897,6 @@
   <div class="container" style="position:relative;z-index:1;padding:6rem 3rem;">
     <p class="section-tag" style="color:#a78bfa;">Project 2 of 3</p>
     <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:center;">
-      <!-- Left: Terminal mockup -->
       <div class="reveal" style="border:1px solid rgba(124,92,252,0.25);border-radius:12px;overflow:hidden;background:#030810;box-shadow:0 0 60px rgba(124,92,252,0.08);">
         <div style="background:#070e1c;border-bottom:1px solid rgba(124,92,252,0.15);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
           <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,95,95,0.7);"></div>
@@ -913,37 +909,17 @@
           <div><span style="color:#a78bfa;">$</span> <span style="color:#c8d8e8;">cipherguard scan ./src --deep</span></div>
           <div style="color:rgba(106,128,153,0.7);">Scanning 247 files · 7 languages · 18 patterns...</div>
           <div style="color:rgba(106,128,153,0.7);">Detecting: RSA · ECDH · ECDSA · MD5 · SHA-1 · TLS</div>
-          <div style="margin-top:0.3rem;">
-            <span style="color:#ff5f5f;font-weight:600;">CRITICAL</span>
-            <span style="color:#c8d8e8;margin-left:8px;">RSA-OAEP Key Generation</span>
-            <span style="color:rgba(106,128,153,0.6);margin-left:8px;">auth/crypto.js:42</span>
-          </div>
-          <div>
-            <span style="color:#ff5f5f;font-weight:600;">CRITICAL</span>
-            <span style="color:#c8d8e8;margin-left:8px;">ECDH Key Agreement</span>
-            <span style="color:rgba(106,128,153,0.6);margin-left:8px;">lib/session.ts:118</span>
-          </div>
-          <div>
-            <span style="color:#ff8c42;font-weight:600;">HIGH&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="color:#c8d8e8;margin-left:8px;">JWT RS256 algorithm</span>
-            <span style="color:rgba(106,128,153,0.6);margin-left:8px;">middleware/auth.py:31</span>
-          </div>
-          <div>
-            <span style="color:#f5c518;font-weight:600;">MEDIUM&nbsp;&nbsp;</span>
-            <span style="color:#c8d8e8;margin-left:8px;">SHA-1 hash function</span>
-            <span style="color:rgba(106,128,153,0.6);margin-left:8px;">utils/hash.go:77</span>
-          </div>
+          <div style="margin-top:0.3rem;"><span style="color:#ff5f5f;font-weight:600;">CRITICAL</span><span style="color:#c8d8e8;margin-left:8px;">RSA-OAEP Key Generation</span><span style="color:rgba(106,128,153,0.6);margin-left:8px;">auth/crypto.js:42</span></div>
+          <div><span style="color:#ff5f5f;font-weight:600;">CRITICAL</span><span style="color:#c8d8e8;margin-left:8px;">ECDH Key Agreement</span><span style="color:rgba(106,128,153,0.6);margin-left:8px;">lib/session.ts:118</span></div>
+          <div><span style="color:#ff8c42;font-weight:600;">HIGH&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#c8d8e8;margin-left:8px;">JWT RS256 algorithm</span><span style="color:rgba(106,128,153,0.6);margin-left:8px;">middleware/auth.py:31</span></div>
+          <div><span style="color:#f5c518;font-weight:600;">MEDIUM&nbsp;&nbsp;</span><span style="color:#c8d8e8;margin-left:8px;">SHA-1 hash function</span><span style="color:rgba(106,128,153,0.6);margin-left:8px;">utils/hash.go:77</span></div>
           <div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid rgba(124,92,252,0.15);">
             <span style="font-family:'Orbitron',sans-serif;font-weight:700;color:#ff5f5f;">Risk: 87/100</span>
             <span style="color:rgba(106,128,153,0.6);"> · HNDL: 15yr · 14 findings</span>
           </div>
-          <div style="margin-top:0.3rem;">
-            <span style="color:#a78bfa;">⬡ AI Agent:</span>
-            <span style="color:rgba(106,128,153,0.7);"> Auto-fix ready → ML-KEM-768, ML-DSA-65</span>
-          </div>
+          <div style="margin-top:0.3rem;"><span style="color:#a78bfa;">⬡ AI Agent:</span><span style="color:rgba(106,128,153,0.7);"> Auto-fix ready → ML-KEM-768, ML-DSA-65</span></div>
         </div>
       </div>
-      <!-- Right: Content -->
       <div class="reveal">
         <div style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;border:1px solid rgba(124,92,252,0.3);padding:0.3rem 0.9rem;border-radius:50px;margin-bottom:1.5rem;background:rgba(124,92,252,0.06);">
           <span style="width:6px;height:6px;border-radius:50%;background:#a78bfa;animation:blink 1.5s infinite;flex-shrink:0;"></span>
@@ -956,22 +932,10 @@
           <a href="https://github.com/munnamihir/cipherguard" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;color:var(--cyan);text-decoration:none;padding:0.5rem 1rem;border:1px solid var(--border);border-radius:4px;transition:all 0.3s;background:var(--bg2);" onmouseover="this.style.borderColor='rgba(0,229,255,0.5)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)'">⚙ GitHub</a>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.5rem;">
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">⬡</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">18+ Vuln Patterns</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">JS · TS · Python · Java · Go · C# · Rust</div></div>
-          </div>
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">🤖</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Claude AI Auto-fix</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Full file rewrite to ML-KEM-768, ML-DSA-65, SLH-DSA</div></div>
-          </div>
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">⚠️</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">HNDL Risk Scoring</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Harvest Now Decrypt Later · 0-100 risk score</div></div>
-          </div>
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">💳</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Stripe Billing</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Free · Pro $49/mo · Enterprise plans</div></div>
-          </div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'"><div style="font-size:1rem;flex-shrink:0;">⬡</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">18+ Vuln Patterns</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">JS · TS · Python · Java · Go · C# · Rust</div></div></div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'"><div style="font-size:1rem;flex-shrink:0;">🤖</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Claude AI Auto-fix</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Full file rewrite to ML-KEM-768, ML-DSA-65, SLH-DSA</div></div></div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'"><div style="font-size:1rem;flex-shrink:0;">⚠️</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">HNDL Risk Scoring</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Harvest Now Decrypt Later · 0-100 risk score</div></div></div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(124,92,252,0.15);border-radius:8px;background:var(--bg3);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.15)'"><div style="font-size:1rem;flex-shrink:0;">💳</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Stripe Billing</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Free · Pro $49/mo · Enterprise plans</div></div></div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
           <span style="font-size:0.6rem;padding:0.2rem 0.7rem;border:1px solid rgba(124,92,252,0.3);color:#a78bfa;border-radius:3px;background:rgba(124,92,252,0.06);">Angular 17</span>
@@ -988,8 +952,6 @@
   </div>
 </section>
 
-
-
 <!-- ══ QCAREER PROJECT ══ -->
 <section id="qcareer" style="background:var(--bg);position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(245,197,24,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,24,0.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
@@ -997,7 +959,6 @@
   <div class="container" style="position:relative;z-index:1;padding:6rem 3rem;">
     <p class="section-tag">Project 3 of 3</p>
     <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;">
-      <!-- Left: Content -->
       <div class="reveal">
         <div style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,197,24,0.3);padding:0.3rem 0.9rem;border-radius:50px;margin-bottom:1.5rem;background:rgba(245,197,24,0.06);">
           <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 1.5s infinite;flex-shrink:0;"></span>
@@ -1010,22 +971,10 @@
           <span style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;color:var(--muted);padding:0.5rem 1rem;border:1px solid var(--border);border-radius:4px;background:var(--bg2);">🚧 Demo coming soon</span>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.5rem;">
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">🤖</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">AI Resume Tailoring</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Claude AI rewrites resume per job description for ATS optimization</div></div>
-          </div>
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">🎯</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">H-1B Job Matching</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Filters 50k+ listings for visa sponsorship · salary · location fit</div></div>
-          </div>
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">✉️</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Cover Letter Gen</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Auto-generates personalized cover letters from job JD + resume</div></div>
-          </div>
-          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'">
-            <div style="font-size:1rem;flex-shrink:0;">📊</div>
-            <div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Application Tracker</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Track status · follow-ups · interview prep per company</div></div>
-          </div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'"><div style="font-size:1rem;flex-shrink:0;">🤖</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">AI Resume Tailoring</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Claude AI rewrites resume per job description for ATS optimization</div></div></div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'"><div style="font-size:1rem;flex-shrink:0;">🎯</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">H-1B Job Matching</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Filters 50k+ listings for visa sponsorship · salary · location fit</div></div></div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'"><div style="font-size:1rem;flex-shrink:0;">✉️</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Cover Letter Gen</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Auto-generates personalized cover letters from job JD + resume</div></div></div>
+          <div style="display:flex;gap:0.75rem;padding:0.9rem;border:1px solid rgba(245,197,24,0.15);border-radius:8px;background:var(--bg2);transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)'" onmouseout="this.style.borderColor='rgba(245,197,24,0.15)'"><div style="font-size:1rem;flex-shrink:0;">📊</div><div><div style="font-size:0.7rem;font-weight:500;color:#fff;margin-bottom:0.2rem;">Application Tracker</div><div style="font-size:0.65rem;color:var(--muted);line-height:1.6;">Track status · follow-ups · interview prep per company</div></div></div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
           <span style="font-size:0.6rem;padding:0.2rem 0.7rem;border:1px solid rgba(245,197,24,0.25);color:var(--gold);border-radius:3px;background:rgba(245,197,24,0.05);">Next.js 14</span>
@@ -1038,7 +987,6 @@
           <span style="font-size:0.6rem;padding:0.2rem 0.7rem;border:1px solid rgba(245,197,24,0.25);color:var(--gold);border-radius:3px;background:rgba(245,197,24,0.05);">Vercel</span>
         </div>
       </div>
-      <!-- Right: Dashboard mockup -->
       <div class="reveal" style="border:1px solid rgba(245,197,24,0.2);border-radius:12px;overflow:hidden;background:#030810;box-shadow:0 0 40px rgba(245,197,24,0.06);">
         <div style="background:#070e1c;border-bottom:1px solid rgba(245,197,24,0.12);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
           <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,95,95,0.7);"></div>
@@ -1047,69 +995,34 @@
           <span style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(245,197,24,0.5);margin-left:8px;">qcareer · dashboard</span>
         </div>
         <div style="padding:1rem 1.2rem;font-family:'JetBrains Mono',monospace;font-size:0.62rem;line-height:1.9;">
-          <div style="display:flex;justify-content:space-between;margin-bottom:0.75rem;">
-            <span style="color:var(--gold);font-weight:600;">QCareer Dashboard</span>
-            <span style="color:rgba(57,255,20,0.7);font-size:0.55rem;">● H-1B mode</span>
-          </div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:0.75rem;"><span style="color:var(--gold);font-weight:600;">QCareer Dashboard</span><span style="color:rgba(57,255,20,0.7);font-size:0.55rem;">● H-1B mode</span></div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
-            <div style="background:rgba(0,229,255,0.05);border:1px solid rgba(0,229,255,0.15);border-radius:6px;padding:0.5rem;text-align:center;">
-              <div style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--cyan);">23</div>
-              <div style="font-size:0.52rem;color:rgba(106,128,153,0.8);">Applied</div>
-            </div>
-            <div style="background:rgba(245,197,24,0.05);border:1px solid rgba(245,197,24,0.15);border-radius:6px;padding:0.5rem;text-align:center;">
-              <div style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--gold);">8</div>
-              <div style="font-size:0.52rem;color:rgba(106,128,153,0.8);">Interviews</div>
-            </div>
-            <div style="background:rgba(57,255,20,0.05);border:1px solid rgba(57,255,20,0.15);border-radius:6px;padding:0.5rem;text-align:center;">
-              <div style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--green);">94%</div>
-              <div style="font-size:0.52rem;color:rgba(106,128,153,0.8);">ATS Score</div>
-            </div>
+            <div style="background:rgba(0,229,255,0.05);border:1px solid rgba(0,229,255,0.15);border-radius:6px;padding:0.5rem;text-align:center;"><div style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--cyan);">23</div><div style="font-size:0.52rem;color:rgba(106,128,153,0.8);">Applied</div></div>
+            <div style="background:rgba(245,197,24,0.05);border:1px solid rgba(245,197,24,0.15);border-radius:6px;padding:0.5rem;text-align:center;"><div style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--gold);">8</div><div style="font-size:0.52rem;color:rgba(106,128,153,0.8);">Interviews</div></div>
+            <div style="background:rgba(57,255,20,0.05);border:1px solid rgba(57,255,20,0.15);border-radius:6px;padding:0.5rem;text-align:center;"><div style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--green);">94%</div><div style="font-size:0.52rem;color:rgba(106,128,153,0.8);">ATS Score</div></div>
           </div>
           <div style="color:rgba(106,128,153,0.7);font-size:0.58rem;margin-bottom:0.4rem;">Recent matches (H-1B sponsor ✓)</div>
-          <div style="background:rgba(0,229,255,0.04);border:1px solid rgba(0,229,255,0.1);border-radius:5px;padding:0.5rem;margin-bottom:0.35rem;">
-            <div style="display:flex;justify-content:space-between;">
-              <span style="color:#c8d8e8;">Sr. Full Stack Engineer</span>
-              <span style="color:rgba(57,255,20,0.8);font-size:0.55rem;">98% match</span>
-            </div>
-            <span style="color:rgba(106,128,153,0.6);font-size:0.55rem;">Google · Mountain View · $180k-$240k · H-1B ✓</span>
-          </div>
-          <div style="background:rgba(124,92,252,0.04);border:1px solid rgba(124,92,252,0.1);border-radius:5px;padding:0.5rem;margin-bottom:0.35rem;">
-            <div style="display:flex;justify-content:space-between;">
-              <span style="color:#c8d8e8;">Java Backend Developer</span>
-              <span style="color:rgba(57,255,20,0.8);font-size:0.55rem;">95% match</span>
-            </div>
-            <span style="color:rgba(106,128,153,0.6);font-size:0.55rem;">Amazon · Seattle · $160k-$210k · H-1B ✓</span>
-          </div>
-          <div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid rgba(245,197,24,0.1);">
-            <span style="color:#a78bfa;font-size:0.58rem;">⬡ AI:</span>
-            <span style="color:rgba(106,128,153,0.7);font-size:0.55rem;"> Resume tailored for Google JD · Cover letter ready</span>
-          </div>
+          <div style="background:rgba(0,229,255,0.04);border:1px solid rgba(0,229,255,0.1);border-radius:5px;padding:0.5rem;margin-bottom:0.35rem;"><div style="display:flex;justify-content:space-between;"><span style="color:#c8d8e8;">Sr. Full Stack Engineer</span><span style="color:rgba(57,255,20,0.8);font-size:0.55rem;">98% match</span></div><span style="color:rgba(106,128,153,0.6);font-size:0.55rem;">Google · Mountain View · $180k-$240k · H-1B ✓</span></div>
+          <div style="background:rgba(124,92,252,0.04);border:1px solid rgba(124,92,252,0.1);border-radius:5px;padding:0.5rem;margin-bottom:0.35rem;"><div style="display:flex;justify-content:space-between;"><span style="color:#c8d8e8;">Java Backend Developer</span><span style="color:rgba(57,255,20,0.8);font-size:0.55rem;">95% match</span></div><span style="color:rgba(106,128,153,0.6);font-size:0.55rem;">Amazon · Seattle · $160k-$210k · H-1B ✓</span></div>
+          <div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid rgba(245,197,24,0.1);"><span style="color:#a78bfa;font-size:0.58rem;">⬡ AI:</span><span style="color:rgba(106,128,153,0.7);font-size:0.55rem;"> Resume tailored for Google JD · Cover letter ready</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- LIVE ENCRYPTION DEMO -->
 <section id="demo" style="background:var(--bg);padding:5rem 0;position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
   <div class="container" style="position:relative;z-index:1;">
     <p class="section-tag">Live Demo</p>
     <h2 class="section-title">End-to-End <span class="dim">Encryption</span></h2>
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:2rem;max-width:620px;line-height:1.9;">
-      Real AES-256-GCM + RSA-OAEP envelope encryption, running entirely in your browser.
-      Device A encrypts and transmits — Device B decrypts using its private key.
-      Plaintext <em style="color:var(--cyan)">never leaves the client</em>.
-    </p>
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:2rem;max-width:620px;line-height:1.9;">Real AES-256-GCM + RSA-OAEP envelope encryption, running entirely in your browser. Device A encrypts and transmits — Device B decrypts using its private key. Plaintext <em style="color:var(--cyan)">never leaves the client</em>.</p>
 
-    <!-- TWO MONITORS ROW -->
     <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:start;margin-bottom:1.25rem;">
-
-      <!-- ══ DEVICE A ══ -->
+      <!-- DEVICE A -->
       <div style="display:flex;flex-direction:column;">
-        <!-- Monitor frame -->
         <div style="background:#0a111e;border:1px solid rgba(0,229,255,0.3);border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 0 30px rgba(0,229,255,0.06);">
-          <!-- Title bar -->
           <div style="background:#060d18;padding:8px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(0,229,255,0.12);">
             <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
             <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
@@ -1117,49 +1030,35 @@
             <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(0,229,255,0.5);margin-left:8px;">Device A — Sender</span>
             <span id="aStatus" style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:var(--green);">● Ready</span>
           </div>
-          <!-- Screen content -->
           <div style="padding:1rem;min-height:340px;display:flex;flex-direction:column;gap:0.75rem;">
-            <!-- Keys section -->
             <div style="border:1px solid rgba(245,197,24,0.18);border-radius:6px;padding:0.75rem;background:rgba(245,197,24,0.03);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">AES-256 Data Encryption Key (DEK)</div>
               <div id="aKey" style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:var(--gold);word-break:break-all;line-height:1.7;opacity:0.6;">Initialising...</div>
             </div>
-            <!-- Message input -->
             <div style="border:1px solid rgba(0,229,255,0.18);border-radius:6px;padding:0.75rem;background:rgba(0,229,255,0.03);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.4rem;">Message</div>
               <textarea id="aMsg" placeholder="Type your secret message..." style="width:100%;height:72px;background:transparent;border:none;outline:none;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:0.72rem;resize:none;line-height:1.7;"></textarea>
             </div>
-            <!-- IV -->
             <div style="border:1px solid rgba(57,255,20,0.15);border-radius:6px;padding:0.75rem;background:rgba(57,255,20,0.02);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:0.4rem;">IV / Nonce (96-bit)</div>
               <div id="aIv" style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:var(--green);word-break:break-all;line-height:1.7;opacity:0.4;">—</div>
             </div>
-            <!-- Ciphertext -->
             <div style="border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:0.75rem;background:rgba(255,255,255,0.02);flex:1;">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;">Ciphertext (AES-256-GCM)</div>
               <div id="aCipher" style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:var(--text);word-break:break-all;line-height:1.7;max-height:72px;overflow-y:auto;opacity:0.35;">—</div>
             </div>
-            <!-- Wrapped DEK -->
             <div style="border:1px solid rgba(204,136,255,0.18);border-radius:6px;padding:0.75rem;background:rgba(204,136,255,0.02);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:#cc88ff;margin-bottom:0.4rem;">Wrapped DEK (RSA-OAEP · B's pubkey)</div>
               <div id="aWrapped" style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:#cc88ff;word-break:break-all;line-height:1.7;max-height:54px;overflow-y:auto;opacity:0.35;">—</div>
             </div>
-            <!-- Encrypt button -->
-            <button id="encryptBtn" onclick="doEncrypt()" style="background:rgba(0,229,255,0.08);border:1px solid var(--cyan);border-radius:6px;padding:0.65rem;color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;">
-              🔒 Encrypt &amp; Transmit →
-            </button>
+            <button id="encryptBtn" onclick="doEncrypt()" style="background:rgba(0,229,255,0.08);border:1px solid var(--cyan);border-radius:6px;padding:0.65rem;color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;">🔒 Encrypt &amp; Transmit →</button>
           </div>
         </div>
-        <!-- Monitor stand -->
-        <div style="display:flex;justify-content:center;">
-          <div style="width:60px;height:12px;background:#060d18;border:1px solid rgba(0,229,255,0.1);border-top:none;border-radius:0 0 4px 4px;"></div>
-        </div>
-        <div style="display:flex;justify-content:center;">
-          <div style="width:100px;height:6px;background:#060d18;border:1px solid rgba(0,229,255,0.1);border-radius:3px;"></div>
-        </div>
+        <div style="display:flex;justify-content:center;"><div style="width:60px;height:12px;background:#060d18;border:1px solid rgba(0,229,255,0.1);border-top:none;border-radius:0 0 4px 4px;"></div></div>
+        <div style="display:flex;justify-content:center;"><div style="width:100px;height:6px;background:#060d18;border:1px solid rgba(0,229,255,0.1);border-radius:3px;"></div></div>
       </div>
 
-      <!-- ══ TRANSMISSION CHANNEL ══ -->
+      <!-- TRANSMISSION CHANNEL -->
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 1rem;min-width:90px;margin-top:40px;">
         <div style="width:1px;height:80px;background:linear-gradient(to bottom,transparent,rgba(0,229,255,0.3),transparent);"></div>
         <div id="txPacket" style="width:44px;height:44px;border-radius:50%;background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.3);display:flex;align-items:center;justify-content:center;margin:0.5rem 0;position:relative;">
@@ -1169,10 +1068,9 @@
         <div style="width:1px;height:80px;background:linear-gradient(to bottom,transparent,rgba(0,229,255,0.3),transparent);"></div>
       </div>
 
-      <!-- ══ DEVICE B ══ -->
+      <!-- DEVICE B -->
       <div style="display:flex;flex-direction:column;">
         <div style="background:#0a111e;border:1px solid rgba(204,136,255,0.3);border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 0 30px rgba(204,136,255,0.06);">
-          <!-- Title bar -->
           <div style="background:#060d18;padding:8px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(204,136,255,0.12);">
             <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
             <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
@@ -1180,50 +1078,36 @@
             <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(204,136,255,0.6);margin-left:8px;">Device B — Recipient</span>
             <span id="bStatus" style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:var(--green);">● Ready</span>
           </div>
-          <!-- Screen content -->
           <div style="padding:1rem;min-height:340px;display:flex;flex-direction:column;gap:0.75rem;">
-            <!-- B's RSA public key -->
             <div style="border:1px solid rgba(204,136,255,0.18);border-radius:6px;padding:0.75rem;background:rgba(204,136,255,0.03);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:#cc88ff;margin-bottom:0.4rem;">RSA-2048 Public Key (shared with A)</div>
               <div id="bPubKey" style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:#cc88ff;word-break:break-all;line-height:1.7;max-height:54px;overflow-y:auto;opacity:0.6;">Generating keypair...</div>
             </div>
-            <!-- Private key note -->
             <div style="border:1px solid rgba(255,80,80,0.15);border-radius:6px;padding:0.75rem;background:rgba(255,80,80,0.03);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:#ff6b6b;margin-bottom:0.4rem;">RSA Private Key — Device-Bound</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#ff6b6b;opacity:0.7;">████████████████████████████<br><span style="font-size:0.52rem;opacity:0.5;">Never transmitted · lives in this device only</span></div>
             </div>
-            <!-- Received payload -->
             <div style="border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:0.75rem;background:rgba(255,255,255,0.02);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;">Received Encrypted Payload</div>
               <div id="bReceived" style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:var(--muted);word-break:break-all;line-height:1.7;max-height:54px;overflow-y:auto;opacity:0.35;">Awaiting transmission...</div>
             </div>
-            <!-- Unwrapped DEK -->
             <div style="border:1px solid rgba(57,255,20,0.15);border-radius:6px;padding:0.75rem;background:rgba(57,255,20,0.02);">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:0.4rem;">Unwrapped DEK (via private key)</div>
               <div id="bDek" style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:var(--green);word-break:break-all;line-height:1.7;opacity:0.35;">—</div>
             </div>
-            <!-- Decrypted message -->
             <div style="border:1px solid rgba(0,229,255,0.18);border-radius:6px;padding:0.75rem;background:rgba(0,229,255,0.03);flex:1;">
               <div style="font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.4rem;">Decrypted Message</div>
               <div id="bPlaintext" style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text);line-height:1.8;min-height:44px;opacity:0.35;">—</div>
             </div>
-            <!-- Decrypt button -->
-            <button id="decryptBtn" onclick="doDecrypt()" disabled style="background:rgba(204,136,255,0.06);border:1px solid rgba(204,136,255,0.3);border-radius:6px;padding:0.65rem;color:#cc88ff;font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;cursor:not-allowed;opacity:0.4;transition:all 0.2s;">
-              🔓 Decrypt with Private Key
-            </button>
+            <button id="decryptBtn" onclick="doDecrypt()" disabled style="background:rgba(204,136,255,0.06);border:1px solid rgba(204,136,255,0.3);border-radius:6px;padding:0.65rem;color:#cc88ff;font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;cursor:not-allowed;opacity:0.4;transition:all 0.2s;">🔓 Decrypt with Private Key</button>
           </div>
         </div>
-        <!-- Monitor stand -->
-        <div style="display:flex;justify-content:center;">
-          <div style="width:60px;height:12px;background:#060d18;border:1px solid rgba(204,136,255,0.1);border-top:none;border-radius:0 0 4px 4px;"></div>
-        </div>
-        <div style="display:flex;justify-content:center;">
-          <div style="width:100px;height:6px;background:#060d18;border:1px solid rgba(204,136,255,0.1);border-radius:3px;"></div>
-        </div>
+        <div style="display:flex;justify-content:center;"><div style="width:60px;height:12px;background:#060d18;border:1px solid rgba(204,136,255,0.1);border-top:none;border-radius:0 0 4px 4px;"></div></div>
+        <div style="display:flex;justify-content:center;"><div style="width:100px;height:6px;background:#060d18;border:1px solid rgba(204,136,255,0.1);border-radius:3px;"></div></div>
       </div>
-    </div><!-- end monitors row -->
+    </div>
 
-    <!-- ══ DEVTOOLS PANEL ══ -->
+    <!-- DEVTOOLS PANEL -->
     <div style="border:1px solid rgba(0,229,255,0.16);border-radius:12px;overflow:hidden;">
       <div style="background:#0d1520;padding:6px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,0.06);">
         <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
@@ -1235,7 +1119,6 @@
       </div>
       <div id="e2eConsole" style="height:200px;overflow-y:auto;background:#080e18;padding:2px 0;"></div>
     </div>
-
   </div>
 </section>
 
@@ -1243,11 +1126,9 @@
 (function(){
   var bKeyPair=null, aAesKey=null, aIv=null, aCipher=null, aWrappedDek=null;
   var logN=0;
-
   function h2b(h){ return new Uint8Array(h.match(/../g).map(function(x){return parseInt(x,16);})); }
   function b2h(b){ return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join(''); }
   function b2b64(b){ var s='',u=new Uint8Array(b); for(var i=0;i<u.length;i++) s+=String.fromCharCode(u[i]); return btoa(s); }
-
   function log(device,type,msg){
     logN++;
     var el=document.getElementById('e2eConsole');
@@ -1257,156 +1138,64 @@
     var colors={A:'#00e5ff',B:'#cc88ff',sys:'rgba(255,255,255,0.3)',ok:'#39ff14',err:'#ff6b6b'};
     var row=document.createElement('div');
     row.style.cssText='display:grid;grid-template-columns:60px 60px 1fr;padding:2px 10px;border-bottom:1px solid rgba(255,255,255,0.03);font-family:"JetBrains Mono",monospace;font-size:0.6rem;line-height:1.7;';
-    var ts=document.createElement('span');
-    ts.style.color='rgba(255,255,255,0.2)';
-    ts.textContent=new Date().toISOString().slice(11,23);
-    var dev=document.createElement('span');
-    dev.style.color=colors[device]||colors.sys;
-    dev.style.fontWeight='500';
-    dev.textContent='['+device+']';
-    var m=document.createElement('span');
-    m.style.color='rgba(220,235,245,0.85)';
-    m.innerHTML=msg;
+    var ts=document.createElement('span'); ts.style.color='rgba(255,255,255,0.2)'; ts.textContent=new Date().toISOString().slice(11,23);
+    var dev=document.createElement('span'); dev.style.color=colors[device]||colors.sys; dev.style.fontWeight='500'; dev.textContent='['+device+']';
+    var m=document.createElement('span'); m.style.color='rgba(220,235,245,0.85)'; m.innerHTML=msg;
     row.appendChild(ts); row.appendChild(dev); row.appendChild(m);
-    el.appendChild(row);
-    el.scrollTop=el.scrollHeight;
+    el.appendChild(row); el.scrollTop=el.scrollHeight;
   }
-
-  window.e2eClear=function(){
-    var el=document.getElementById('e2eConsole');
-    if(el) el.innerHTML='';
-    logN=0;
-    var cnt=document.getElementById('e2eCount');
-    if(cnt) cnt.textContent='0 entries';
-  };
-
+  window.e2eClear=function(){ var el=document.getElementById('e2eConsole'); if(el) el.innerHTML=''; logN=0; var cnt=document.getElementById('e2eCount'); if(cnt) cnt.textContent='0 entries'; };
   function setStatus(id,txt,col){ var el=document.getElementById(id); if(el){el.textContent='● '+txt;el.style.color=col;} }
-
-  // Init: generate B's RSA keypair
   async function init(){
     log('sys','init','Initialising QuantumMail two-device demo...');
-    log('B','keygen','Generating RSA-OAEP-2048 keypair...');
-    setStatus('bStatus','Generating keys...','#f5c518');
+    log('B','keygen','Generating RSA-OAEP-2048 keypair...'); setStatus('bStatus','Generating keys...','#f5c518');
     bKeyPair=await crypto.subtle.generateKey({name:'RSA-OAEP',modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:'SHA-256'},true,['encrypt','decrypt']);
-    var pubRaw=await crypto.subtle.exportKey('spki',bKeyPair.publicKey);
-    var pubB64=b2b64(pubRaw);
+    var pubRaw=await crypto.subtle.exportKey('spki',bKeyPair.publicKey); var pubB64=b2b64(pubRaw);
     document.getElementById('bPubKey').textContent=pubB64.slice(0,80)+'...';
-    log('B','keygen','✓ RSA-2048 keypair generated — private key device-bound, never transmitted');
-    log('B','keygen','Public key shared with Device A: '+pubB64.slice(0,40)+'...');
-
-    // Init A's AES key
-    log('A','keygen','Generating AES-256-GCM Data Encryption Key (DEK)...');
-    setStatus('aStatus','Generating DEK...','#f5c518');
+    log('B','keygen','✓ RSA-2048 keypair generated'); log('B','keygen','Public key shared with A: '+pubB64.slice(0,40)+'...');
+    log('A','keygen','Generating AES-256-GCM DEK...'); setStatus('aStatus','Generating DEK...','#f5c518');
     aAesKey=await crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt','decrypt']);
     var rawAes=await crypto.subtle.exportKey('raw',aAesKey);
-    document.getElementById('aKey').textContent=b2h(rawAes);
-    document.getElementById('aKey').style.opacity='0.85';
+    document.getElementById('aKey').textContent=b2h(rawAes); document.getElementById('aKey').style.opacity='0.85';
     log('A','keygen','✓ AES-256 DEK generated: '+b2h(rawAes).slice(0,32)+'...');
-    setStatus('aStatus','Ready','#39ff14');
-    setStatus('bStatus','Awaiting message...','#39ff14');
+    setStatus('aStatus','Ready','#39ff14'); setStatus('bStatus','Awaiting message...','#39ff14');
     log('sys','init','✓ Both devices ready — type a message on Device A and click Encrypt');
   }
-
   window.doEncrypt=async function(){
-    var msg=document.getElementById('aMsg').value;
-    if(!msg.trim()){ log('A','err','No message to encrypt'); return; }
-    var btn=document.getElementById('encryptBtn');
-    btn.disabled=true; btn.textContent='Encrypting...';
-    setStatus('aStatus','Encrypting...','#f5c518');
-
+    var msg=document.getElementById('aMsg').value; if(!msg.trim()){ log('A','err','No message to encrypt'); return; }
+    var btn=document.getElementById('encryptBtn'); btn.disabled=true; btn.textContent='Encrypting...'; setStatus('aStatus','Encrypting...','#f5c518');
     log('A','encrypt','Input: "'+msg.slice(0,50)+(msg.length>50?'...':'')+'" ('+new TextEncoder().encode(msg).length+' bytes)');
-
-    // Generate fresh IV
-    aIv=crypto.getRandomValues(new Uint8Array(12));
-    document.getElementById('aIv').textContent=b2h(aIv);
-    document.getElementById('aIv').style.opacity='0.9';
+    aIv=crypto.getRandomValues(new Uint8Array(12)); document.getElementById('aIv').textContent=b2h(aIv); document.getElementById('aIv').style.opacity='0.9';
     log('A','encrypt','Generated 96-bit IV: '+b2h(aIv));
-
-    // AES-256-GCM encrypt
-    var t0=performance.now();
-    aCipher=await crypto.subtle.encrypt({name:'AES-GCM',iv:aIv},aAesKey,new TextEncoder().encode(msg));
-    var encMs=(performance.now()-t0).toFixed(2);
-    var cipherB64=b2b64(aCipher);
-    document.getElementById('aCipher').textContent=cipherB64;
-    document.getElementById('aCipher').style.opacity='0.9';
+    var t0=performance.now(); aCipher=await crypto.subtle.encrypt({name:'AES-GCM',iv:aIv},aAesKey,new TextEncoder().encode(msg)); var encMs=(performance.now()-t0).toFixed(2);
+    var cipherB64=b2b64(aCipher); document.getElementById('aCipher').textContent=cipherB64; document.getElementById('aCipher').style.opacity='0.9';
     log('A','encrypt','✓ AES-256-GCM complete ('+encMs+'ms) — '+new Uint8Array(aCipher).length+' bytes (+16-byte auth tag)');
-    log('A','encrypt','Ciphertext: '+cipherB64.slice(0,48)+'...');
-
-    // Wrap DEK with B's public key
-    var rawDek=await crypto.subtle.exportKey('raw',aAesKey);
-    var t1=performance.now();
-    aWrappedDek=await crypto.subtle.encrypt({name:'RSA-OAEP'},bKeyPair.publicKey,rawDek);
-    var wrapMs=(performance.now()-t1).toFixed(2);
-    var wrappedB64=b2b64(aWrappedDek);
-    document.getElementById('aWrapped').textContent=wrappedB64;
-    document.getElementById('aWrapped').style.opacity='0.9';
+    var rawDek=await crypto.subtle.exportKey('raw',aAesKey); var t1=performance.now(); aWrappedDek=await crypto.subtle.encrypt({name:'RSA-OAEP'},bKeyPair.publicKey,rawDek); var wrapMs=(performance.now()-t1).toFixed(2);
+    var wrappedB64=b2b64(aWrappedDek); document.getElementById('aWrapped').textContent=wrappedB64; document.getElementById('aWrapped').style.opacity='0.9';
     log('A','wrap','✓ DEK wrapped with B\'s RSA-2048 public key ('+wrapMs+'ms)');
-    log('A','wrap','Wrapped DEK: '+wrappedB64.slice(0,48)+'...');
-
-    // Simulate transmission
-    setStatus('aStatus','Transmitting...','#39ff14');
-    var txLabel=document.getElementById('txLabel');
-    txLabel.style.color='#00e5ff';
-    txLabel.innerHTML='Sending<br>payload...';
+    setStatus('aStatus','Transmitting...','#39ff14'); var txLabel=document.getElementById('txLabel'); txLabel.style.color='#00e5ff'; txLabel.innerHTML='Sending<br>payload...';
     log('sys','tx','→ Transmitting over HTTPS: { ciphertext, wrappedDEK, IV } — no plaintext');
-
     await new Promise(function(r){setTimeout(r,800);});
-
-    // Deliver to B
-    document.getElementById('bReceived').textContent='ciphertext: '+cipherB64.slice(0,32)+'...\nwrappedDEK: '+wrappedB64.slice(0,32)+'...\nIV: '+b2h(aIv);
-    document.getElementById('bReceived').style.opacity='0.9';
-    log('B','rx','✓ Encrypted payload received');
-    log('B','rx','Server stored: ciphertext only — no plaintext, no private keys');
-
-    txLabel.innerHTML='Payload<br>delivered';
-    setStatus('aStatus','Sent ✓','#39ff14');
-    setStatus('bStatus','Payload received','#f5c518');
-
-    // Enable decrypt
-    var dBtn=document.getElementById('decryptBtn');
-    dBtn.disabled=false; dBtn.style.opacity='1'; dBtn.style.cursor='pointer';
-    dBtn.textContent='🔓 Decrypt with Private Key';
-
-    btn.disabled=false; btn.textContent='🔒 Encrypt & Transmit →';
-    log('sys','ok','Device B can now decrypt using its private key');
+    document.getElementById('bReceived').textContent='ciphertext: '+cipherB64.slice(0,32)+'...\nwrappedDEK: '+wrappedB64.slice(0,32)+'...\nIV: '+b2h(aIv); document.getElementById('bReceived').style.opacity='0.9';
+    log('B','rx','✓ Encrypted payload received'); txLabel.innerHTML='Payload<br>delivered'; setStatus('aStatus','Sent ✓','#39ff14'); setStatus('bStatus','Payload received','#f5c518');
+    var dBtn=document.getElementById('decryptBtn'); dBtn.disabled=false; dBtn.style.opacity='1'; dBtn.style.cursor='pointer'; dBtn.textContent='🔓 Decrypt with Private Key';
+    btn.disabled=false; btn.textContent='🔒 Encrypt & Transmit →'; log('sys','ok','Device B can now decrypt using its private key');
   };
-
   window.doDecrypt=async function(){
     if(!aCipher||!aWrappedDek||!aIv){ log('B','err','No payload to decrypt'); return; }
-    var btn=document.getElementById('decryptBtn');
-    btn.disabled=true; btn.textContent='Decrypting...';
-    setStatus('bStatus','Decrypting...','#f5c518');
+    var btn=document.getElementById('decryptBtn'); btn.disabled=true; btn.textContent='Decrypting...'; setStatus('bStatus','Decrypting...','#f5c518');
     log('B','decrypt','Unwrapping DEK using RSA private key...');
-
-    // Unwrap DEK
-    var t0=performance.now();
-    var rawDek=await crypto.subtle.decrypt({name:'RSA-OAEP'},bKeyPair.privateKey,aWrappedDek);
-    var unwrapMs=(performance.now()-t0).toFixed(2);
+    var t0=performance.now(); var rawDek=await crypto.subtle.decrypt({name:'RSA-OAEP'},bKeyPair.privateKey,aWrappedDek); var unwrapMs=(performance.now()-t0).toFixed(2);
     var rekeyedAes=await crypto.subtle.importKey('raw',rawDek,{name:'AES-GCM'},false,['decrypt']);
-    document.getElementById('bDek').textContent=b2h(rawDek);
-    document.getElementById('bDek').style.opacity='0.9';
-    log('B','decrypt','✓ DEK unwrapped via RSA private key ('+unwrapMs+'ms): '+b2h(rawDek).slice(0,32)+'...');
-
-    // AES-GCM decrypt
-    var t1=performance.now();
-    var plainBuf=await crypto.subtle.decrypt({name:'AES-GCM',iv:aIv},rekeyedAes,aCipher);
-    var decMs=(performance.now()-t1).toFixed(2);
+    document.getElementById('bDek').textContent=b2h(rawDek); document.getElementById('bDek').style.opacity='0.9';
+    log('B','decrypt','✓ DEK unwrapped ('+unwrapMs+'ms)');
+    var t1=performance.now(); var plainBuf=await crypto.subtle.decrypt({name:'AES-GCM',iv:aIv},rekeyedAes,aCipher); var decMs=(performance.now()-t1).toFixed(2);
     var plaintext=new TextDecoder().decode(plainBuf);
-    document.getElementById('bPlaintext').textContent='"'+plaintext+'"';
-    document.getElementById('bPlaintext').style.opacity='1';
-    document.getElementById('bPlaintext').style.color='#39ff14';
-    log('B','decrypt','✓ GCM authentication tag verified — data untampered');
-    log('B','ok','✓ Plaintext recovered ('+decMs+'ms): "'+plaintext.slice(0,60)+'"');
-    log('sys','ok','Full envelope: A encrypted with AES-256, wrapped DEK with B\'s RSA pubkey — only B\'s private key could decrypt');
-
-    setStatus('bStatus','Decrypted ✓','#39ff14');
-    var txLabel=document.getElementById('txLabel');
-    txLabel.innerHTML='E2E verified<br>✓';
-    txLabel.style.color='#39ff14';
-
+    document.getElementById('bPlaintext').textContent='"'+plaintext+'"'; document.getElementById('bPlaintext').style.opacity='1'; document.getElementById('bPlaintext').style.color='#39ff14';
+    log('B','decrypt','✓ GCM authentication tag verified — data untampered'); log('B','ok','✓ Plaintext recovered ('+decMs+'ms): "'+plaintext.slice(0,60)+'"');
+    setStatus('bStatus','Decrypted ✓','#39ff14'); var txLabel=document.getElementById('txLabel'); txLabel.innerHTML='E2E verified<br>✓'; txLabel.style.color='#39ff14';
     btn.disabled=false; btn.textContent='🔓 Decrypt with Private Key'; btn.style.opacity='1'; btn.style.cursor='pointer';
   };
-
   init();
 })();
 </script>
@@ -1416,85 +1205,60 @@
   <div class="container">
     <p class="section-tag">System Design</p>
     <h2 class="section-title">QuantumMail <span class="dim">Architecture</span></h2>
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;max-width:660px;line-height:1.9;">
-      Full system architecture from <a href="https://github.com/munnamihir/QuantumMail-v2" target="_blank" style="color:var(--cyan);text-decoration:none;">github.com/munnamihir/QuantumMail-v2</a> — dual encryption modes (PQC &amp; Passphrase/PBKDF2), quorum-based vault recovery, KEK keyrings, Chrome MV3 extension, Outlook Add-in, and 4-bucket storage.
-    </p>
-    <p style="font-size:0.62rem;color:var(--muted);margin-bottom:2rem;font-family:'JetBrains Mono',monospace;">
-      /portal &nbsp;·&nbsp; /extension &nbsp;·&nbsp; /outlook-addin &nbsp;·&nbsp; /server &nbsp;·&nbsp; /scripts &nbsp;·&nbsp; /docs &nbsp;·&nbsp; /pitch &nbsp;&nbsp;|&nbsp;&nbsp; JS 76.7% · HTML 21.2% · CSS 2.1% · 438 commits · MIT
-    </p>
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;max-width:660px;line-height:1.9;">Full system architecture from <a href="https://github.com/munnamihir/QuantumMail-v2" target="_blank" style="color:var(--cyan);text-decoration:none;">github.com/munnamihir/QuantumMail-v2</a> — dual encryption modes (PQC &amp; Passphrase/PBKDF2), quorum-based vault recovery, KEK keyrings, Chrome MV3 extension, Outlook Add-in, and 4-bucket storage.</p>
+    <p style="font-size:0.62rem;color:var(--muted);margin-bottom:2rem;font-family:'JetBrains Mono',monospace;">/portal &nbsp;·&nbsp; /extension &nbsp;·&nbsp; /outlook-addin &nbsp;·&nbsp; /server &nbsp;·&nbsp; /scripts &nbsp;·&nbsp; /docs &nbsp;·&nbsp; /pitch &nbsp;&nbsp;|&nbsp;&nbsp; JS 76.7% · HTML 21.2% · CSS 2.1% · 438 commits · MIT</p>
     <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem;background:var(--bg3);overflow-x:auto;">
 <svg width="100%" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg" role="img">
   <title>QuantumMail-v2 Full Architecture</title>
-  <desc>Client layer with dual encryption modes, quorum vault recovery, HTTPS transport, server with RBAC and KEK keyrings, Brevo external, and 4-bucket storage.</desc>
   <defs>
     <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
     <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#39ff14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
     <marker id="ay" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
     <marker id="ap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#cc88ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
   </defs>
-
-  <!-- ══ CLIENT BOUNDARY ══ -->
   <rect x="6" y="6" width="668" height="330" rx="7" fill="rgba(0,229,255,0.018)" stroke="rgba(0,229,255,0.2)" stroke-width="0.8" stroke-dasharray="6,4"/>
   <text x="18" y="22" font-family="'Orbitron',sans-serif" font-size="8" font-weight="700" fill="#00e5ff" letter-spacing="2">CLIENT LAYER</text>
   <text x="115" y="22" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(57,255,20,0.55)">● Plaintext &amp; private keys never leave this boundary</text>
-
-  <!-- Portal -->
   <rect x="12" y="28" width="218" height="72" rx="5" fill="rgba(0,229,255,0.05)" stroke="rgba(0,229,255,0.3)" stroke-width="0.7"/>
   <text x="121" y="44" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" font-weight="500" fill="#00e5ff">React Portal  /portal</text>
   <text x="121" y="57" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Inbox · Compose · Decrypt · Keygen</text>
   <text x="121" y="68" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Vault · Analytics · Admin · .qm/super</text>
   <text x="121" y="79" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Alerts · Org management · Invites</text>
   <text x="121" y="90" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">438 commits · MIT License</text>
-
-  <!-- Chrome Ext -->
   <rect x="238" y="28" width="206" height="72" rx="5" fill="rgba(0,229,255,0.05)" stroke="rgba(0,229,255,0.3)" stroke-width="0.7"/>
   <text x="341" y="44" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" font-weight="500" fill="#00e5ff">Chrome Extension  /extension</text>
   <text x="341" y="57" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Manifest V3 (MV3)</text>
   <text x="341" y="68" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">popup.js · background.js · content.js</text>
   <text x="341" y="79" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Compose &amp; decrypt inside Gmail</text>
   <text x="341" y="90" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">extension.zip · packaged for Chrome Web Store</text>
-
-  <!-- Outlook Add-in -->
   <rect x="452" y="28" width="220" height="72" rx="5" fill="rgba(0,229,255,0.05)" stroke="rgba(0,229,255,0.3)" stroke-width="0.7"/>
   <text x="562" y="44" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" font-weight="500" fill="#00e5ff">Outlook Add-in  /outlook-addin</text>
   <text x="562" y="57" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">src/taskpane.js · src/commands.js</text>
   <text x="562" y="68" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">manifest.xml · Office.js integration</text>
   <text x="562" y="79" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Compose &amp; decrypt inside Outlook</text>
   <text x="562" y="90" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">Requires extension detected for decrypt</text>
-
-  <!-- arrows → Web Crypto -->
   <line x1="121" y1="100" x2="200" y2="120" stroke="#00e5ff" stroke-width="0.6" stroke-opacity="0.4" stroke-dasharray="3,3" marker-end="url(#ac)"/>
   <line x1="341" y1="100" x2="310" y2="120" stroke="#00e5ff" stroke-width="0.6" stroke-opacity="0.4" stroke-dasharray="3,3" marker-end="url(#ac)"/>
   <line x1="562" y1="100" x2="420" y2="120" stroke="#00e5ff" stroke-width="0.6" stroke-opacity="0.4" stroke-dasharray="3,3" marker-end="url(#ac)"/>
-
-  <!-- Web Crypto API bar -->
   <rect x="12" y="104" width="660" height="34" rx="5" fill="rgba(57,255,20,0.04)" stroke="rgba(57,255,20,0.32)" stroke-width="0.7"/>
   <text x="342" y="119" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="500" fill="#39ff14">Web Crypto API  (browser built-in)</text>
   <text x="342" y="131" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">RSA keypair generation · device-bound · private key lives in client runtime only · never transmitted</text>
-
-  <!-- arrows → enc primitives -->
-  <line x1="100" y1="138" x2="62"  y2="150" stroke="#f5c518" stroke-width="0.6" stroke-opacity="0.5" marker-end="url(#ay)"/>
+  <line x1="100" y1="138" x2="62" y2="150" stroke="#f5c518" stroke-width="0.6" stroke-opacity="0.5" marker-end="url(#ay)"/>
   <line x1="220" y1="138" x2="240" y2="150" stroke="#f5c518" stroke-width="0.6" stroke-opacity="0.5" marker-end="url(#ay)"/>
   <line x1="400" y1="138" x2="420" y2="150" stroke="#00e5ff" stroke-width="0.6" stroke-opacity="0.5" marker-end="url(#ac)"/>
   <line x1="550" y1="138" x2="578" y2="150" stroke="#00e5ff" stroke-width="0.6" stroke-opacity="0.5" marker-end="url(#ac)"/>
-
-  <!-- Enc primitive 1: AES-256-GCM -->
-  <rect x="12"  y="144" width="152" height="64" rx="5" fill="rgba(245,197,24,0.05)" stroke="rgba(245,197,24,0.3)" stroke-width="0.7"/>
-  <text x="88"  y="159" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#f5c518">AES-256-GCM</text>
-  <text x="88"  y="171" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Msg + attachment encrypt</text>
-  <text x="88"  y="181" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Unique DEK per message</text>
-  <text x="88"  y="191" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Symmetric · fast</text>
-  <text x="88"  y="202" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(245,197,24,0.45)">+16-byte auth tag (GCM)</text>
-
-  <!-- Enc primitive 2: RSA-OAEP -->
+  <rect x="12" y="144" width="152" height="64" rx="5" fill="rgba(245,197,24,0.05)" stroke="rgba(245,197,24,0.3)" stroke-width="0.7"/>
+  <text x="88" y="159" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#f5c518">AES-256-GCM</text>
+  <text x="88" y="171" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Msg + attachment encrypt</text>
+  <text x="88" y="181" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Unique DEK per message</text>
+  <text x="88" y="191" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Symmetric · fast</text>
+  <text x="88" y="202" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(245,197,24,0.45)">+16-byte auth tag (GCM)</text>
   <rect x="170" y="144" width="164" height="64" rx="5" fill="rgba(245,197,24,0.05)" stroke="rgba(245,197,24,0.3)" stroke-width="0.7"/>
   <text x="252" y="159" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#f5c518">RSA-OAEP-SHA256</text>
   <text x="252" y="171" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">DEK wrapping per recipient</text>
   <text x="252" y="181" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Uses recipient RSA pubkey</text>
   <text x="252" y="191" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Asymmetric · envelope model</text>
   <text x="252" y="202" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(245,197,24,0.45)">Useless without private key</text>
-
-  <!-- Enc primitive 3: ML-KEM-768 PQC -->
   <rect x="340" y="144" width="160" height="64" rx="5" fill="rgba(0,229,255,0.05)" stroke="rgba(0,229,255,0.28)" stroke-width="0.7"/>
   <text x="420" y="157" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#00e5ff">ML-KEM-768</text>
   <text x="420" y="169" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(0,229,255,0.7)">Post-Quantum Crypto Mode</text>
@@ -1502,8 +1266,6 @@
   <text x="420" y="189" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Encrypt to ML-KEM pubkey</text>
   <text x="420" y="199" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Quantum-resistant KEM</text>
   <text x="420" y="209" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.4)">NIST PQC standard</text>
-
-  <!-- Enc primitive 4: PBKDF2 Passphrase -->
   <rect x="506" y="144" width="166" height="64" rx="5" fill="rgba(0,229,255,0.05)" stroke="rgba(0,229,255,0.28)" stroke-width="0.7"/>
   <text x="589" y="157" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#00e5ff">PBKDF2</text>
   <text x="589" y="169" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(0,229,255,0.7)">Passphrase Mode</text>
@@ -1511,22 +1273,14 @@
   <text x="589" y="189" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Key derived from passphrase</text>
   <text x="589" y="199" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">No pubkey needed</text>
   <text x="589" y="209" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.4)">Salt + iterations client-side</text>
-
-  <!-- ══ QUORUM VAULT RECOVERY (inside client) ══ -->
   <rect x="12" y="216" width="660" height="116" rx="6" fill="rgba(204,136,255,0.025)" stroke="rgba(204,136,255,0.3)" stroke-width="0.7" stroke-dasharray="5,3"/>
   <text x="24" y="231" font-family="'Orbitron',sans-serif" font-size="7.5" font-weight="700" fill="#cc88ff" letter-spacing="1.5">QUORUM-BASED VAULT RECOVERY  /portal/vault</text>
-
-  <!-- Step boxes -->
-  <!-- Step 1: Trusted Devices -->
   <rect x="18" y="236" width="185" height="90" rx="5" fill="rgba(204,136,255,0.04)" stroke="rgba(204,136,255,0.2)" stroke-width="0.7"/>
   <text x="110" y="251" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="500" fill="#cc88ff">1 · Trusted Device Registry</text>
   <text x="110" y="263" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Register Desktop / Mobile / Tablet</text>
   <text x="110" y="274" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Label + type stored client-side</text>
   <text x="110" y="285" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Must manually trust each device</text>
-  <text x="110" y="296" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Refresh devices · view list</text>
   <text x="110" y="318" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(204,136,255,0.45)">N trusted devices registered</text>
-
-  <!-- Step 2: Recovery Token -->
   <rect x="210" y="236" width="160" height="90" rx="5" fill="rgba(204,136,255,0.04)" stroke="rgba(204,136,255,0.2)" stroke-width="0.7"/>
   <text x="290" y="251" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="500" fill="#cc88ff">2 · Recovery Token</text>
   <text x="290" y="263" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Generate once · save offline</text>
@@ -1534,19 +1288,11 @@
   <text x="290" y="285" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">PBKDF2-derived secret</text>
   <text x="290" y="296" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Never transmitted to server</text>
   <text x="290" y="318" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(204,136,255,0.45)">1-of-1 factor (required)</text>
-
-  <!-- Quorum label -->
   <text x="395" y="283" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="9" font-weight="700" fill="#cc88ff">QUORUM</text>
   <text x="395" y="296" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#cc88ff">Token + 1 Device</text>
   <text x="395" y="308" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(204,136,255,0.5)">threshold = 2-of-N</text>
-  <!-- quorum symbol -->
   <circle cx="395" cy="260" r="12" fill="none" stroke="rgba(204,136,255,0.35)" stroke-width="0.8"/>
   <text x="395" y="264" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="10" font-weight="700" fill="#cc88ff">Q</text>
-  <!-- lines from boxes to quorum -->
-  <line x1="378" y1="282" x2="370" y2="280" stroke="rgba(204,136,255,0.3)" stroke-width="0.6" stroke-dasharray="2,2"/>
-  <line x1="370" y1="282" x2="374" y2="270" stroke="rgba(204,136,255,0.3)" stroke-width="0.6" stroke-dasharray="2,2"/>
-
-  <!-- Step 3: Recovery Flow -->
   <rect x="432" y="236" width="238" height="90" rx="5" fill="rgba(204,136,255,0.04)" stroke="rgba(204,136,255,0.2)" stroke-width="0.7"/>
   <text x="551" y="251" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="500" fill="#cc88ff">3 · Recovery Flow</text>
   <text x="551" y="263" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Start Recovery on new device</text>
@@ -1555,27 +1301,18 @@
   <text x="551" y="296" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Finish Recovery: token + approval</text>
   <text x="551" y="307" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Private key re-encrypted to new device</text>
   <text x="551" y="318" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(204,136,255,0.45)">Load pending requests · approve</text>
-
-  <!-- HTTPS arrow -->
   <line x1="342" y1="336" x2="342" y2="372" stroke="#00e5ff" stroke-width="1.8" stroke-opacity="0.85" marker-end="url(#ac)"/>
   <rect x="138" y="344" width="408" height="16" rx="3" fill="rgba(7,13,26,0.96)"/>
   <text x="342" y="356" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="rgba(0,229,255,0.7)" letter-spacing="0.3">HTTPS · encrypted payload only · no plaintext · no private keys ever transmitted</text>
-
-  <!-- ══ SERVER LAYER ══ -->
   <rect x="6" y="378" width="580" height="120" rx="7" fill="rgba(245,197,24,0.018)" stroke="rgba(245,197,24,0.18)" stroke-width="0.8" stroke-dasharray="6,4"/>
   <text x="18" y="394" font-family="'Orbitron',sans-serif" font-size="8" font-weight="700" fill="#f5c518" letter-spacing="2">SERVER  —  Render  ·  Node.js / Express  /server</text>
-
-  <!-- Node/Express -->
   <rect x="12" y="400" width="183" height="92" rx="5" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.22)" stroke-width="0.7"/>
   <text x="103" y="415" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#00e5ff">REST API</text>
   <text x="103" y="427" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">JWT authentication</text>
   <text x="103" y="438" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Setup token generation</text>
   <text x="103" y="449" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Org approval workflow</text>
   <text x="103" y="460" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Encrypted access links</text>
-  <text x="103" y="471" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Timing-safe comparisons</text>
   <text x="103" y="484" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">Vault recovery request broker</text>
-
-  <!-- RBAC -->
   <rect x="202" y="400" width="193" height="92" rx="5" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.22)" stroke-width="0.7"/>
   <text x="298" y="415" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#00e5ff">RBAC Engine</text>
   <rect x="210" y="420" width="68" height="18" rx="3" fill="rgba(245,197,24,0.08)" stroke="rgba(245,197,24,0.25)" stroke-width="0.5"/>
@@ -1584,22 +1321,12 @@
   <text x="311" y="432" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#f5c518">Admin</text>
   <rect x="344" y="420" width="46" height="18" rx="3" fill="rgba(245,197,24,0.08)" stroke="rgba(245,197,24,0.25)" stroke-width="0.5"/>
   <text x="367" y="432" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#f5c518">Member</text>
-  <text x="298" y="450" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Org identity + pubkey registry</text>
-  <text x="298" y="461" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Policy-based authentication</text>
-  <text x="298" y="472" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Wrapped key ownership checks</text>
   <text x="298" y="484" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">Zero Trust · Least privilege</text>
-
-  <!-- KEK Keyrings -->
   <rect x="402" y="400" width="178" height="92" rx="5" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.22)" stroke-width="0.7"/>
   <text x="491" y="415" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="500" fill="#00e5ff">KEK Keyrings</text>
   <text x="491" y="427" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(0,229,255,0.6)">Key Encryption Keys</text>
   <text x="491" y="438" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Org-specific KEK per org</text>
-  <text x="491" y="449" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Encrypts payloads at rest</text>
-  <text x="491" y="460" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Separate from client DEKs</text>
-  <text x="491" y="471" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Policy configurations</text>
   <text x="491" y="484" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,229,255,0.35)">Server-side only · not client DEK</text>
-
-  <!-- ══ BREVO ══ -->
   <rect x="594" y="378" width="80" height="120" rx="7" fill="rgba(57,255,20,0.025)" stroke="rgba(57,255,20,0.22)" stroke-width="0.7"/>
   <text x="634" y="395" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="8" font-weight="700" fill="#39ff14">Brevo</text>
   <text x="634" y="408" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">OTP verify</text>
@@ -1607,465 +1334,72 @@
   <text x="634" y="432" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Pwd reset</text>
   <text x="634" y="445" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Org approval</text>
   <text x="634" y="458" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Invite email</text>
-  <text x="634" y="471" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(57,255,20,0.4)">Transact.</text>
-  <text x="634" y="482" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(57,255,20,0.4)">SMTP</text>
   <line x1="580" y1="444" x2="592" y2="444" stroke="#39ff14" stroke-width="0.7" stroke-opacity="0.4" stroke-dasharray="3,2" marker-end="url(#ag)"/>
-
-  <!-- ══ STORAGE ══ -->
   <text x="342" y="512" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="7.5" fill="rgba(0,229,255,0.22)" letter-spacing="2">DATABASE  STORAGE</text>
-  <!-- down arrows -->
-  <line x1="103" y1="492" x2="74"  y2="518" stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,2" marker-end="url(#ac)"/>
+  <line x1="103" y1="492" x2="74" y2="518" stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,2" marker-end="url(#ac)"/>
   <line x1="298" y1="492" x2="242" y2="518" stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,2" marker-end="url(#ac)"/>
   <line x1="491" y1="492" x2="432" y2="518" stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,2" marker-end="url(#ac)"/>
   <line x1="560" y1="492" x2="616" y2="518" stroke="#00e5ff" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,2" marker-end="url(#ac)"/>
-
-  <!-- Bucket 1 -->
-  <rect x="6"   y="518" width="148" height="56" rx="5" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.18)" stroke-width="0.7"/>
-  <text x="80"  y="533" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#c8d8e8">Encrypted Payloads</text>
-  <text x="80"  y="544" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Msgs + attachments</text>
-  <text x="80"  y="554" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">AES-256-GCM ciphertext</text>
-  <text x="80"  y="565" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6" fill="rgba(0,229,255,0.3)">KEK-wrapped at rest</text>
-
-  <!-- Bucket 2 -->
+  <rect x="6" y="518" width="148" height="56" rx="5" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.18)" stroke-width="0.7"/>
+  <text x="80" y="533" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#c8d8e8">Encrypted Payloads</text>
+  <text x="80" y="544" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Msgs + attachments</text>
+  <text x="80" y="565" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6" fill="rgba(0,229,255,0.3)">KEK-wrapped at rest</text>
   <rect x="160" y="518" width="156" height="56" rx="5" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.18)" stroke-width="0.7"/>
   <text x="238" y="533" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#c8d8e8">Wrapped DEKs</text>
   <text x="238" y="544" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Per-recipient RSA-OAEP blobs</text>
-  <text x="238" y="554" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">ML-KEM wrapped variants</text>
   <text x="238" y="565" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6" fill="rgba(0,229,255,0.3)">Useless without private key</text>
-
-  <!-- Bucket 3 -->
   <rect x="322" y="518" width="166" height="56" rx="5" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.18)" stroke-width="0.7"/>
   <text x="405" y="533" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#c8d8e8">Public Key Registry</text>
   <text x="405" y="544" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">RSA pubkeys per member</text>
-  <text x="405" y="554" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">ML-KEM-768 pubkeys</text>
   <text x="405" y="565" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6" fill="rgba(0,229,255,0.3)">Safe to store · public only</text>
-
-  <!-- Bucket 4 -->
   <rect x="494" y="518" width="180" height="56" rx="5" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.18)" stroke-width="0.7"/>
   <text x="584" y="533" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#c8d8e8">Audit + Policy</text>
   <text x="584" y="544" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Access attempts + key ops</text>
-  <text x="584" y="554" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#6a8099">Recovery request logs</text>
   <text x="584" y="565" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6" fill="rgba(0,229,255,0.3)">Encryption policy configs</text>
-
-  <!-- Legend -->
-  <rect x="6"   y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(0,229,255,0.3)" stroke-width="0.7"/><text x="18"  y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Client</text>
-  <rect x="60"  y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(57,255,20,0.32)" stroke-width="0.7"/><text x="72"  y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Web Crypto</text>
-  <rect x="140" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(245,197,24,0.3)" stroke-width="0.7"/><text x="152" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">AES/RSA</text>
-  <rect x="200" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(0,229,255,0.28)" stroke-width="0.7"/><text x="212" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">PQC/PBKDF2</text>
-  <rect x="286" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(204,136,255,0.3)" stroke-width="0.7"/><text x="298" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#cc88ff">Quorum Vault</text>
-  <rect x="380" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(245,197,24,0.18)" stroke-width="0.7"/><text x="392" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Server/KEK</text>
-  <rect x="448" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(57,255,20,0.22)" stroke-width="0.7"/><text x="460" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Brevo</text>
-  <rect x="498" y="583" width="8" height="8" rx="2" fill="none" stroke="rgba(0,229,255,0.18)" stroke-width="0.7"/><text x="510" y="591" font-family="'JetBrains Mono',monospace" font-size="7" fill="#6a8099">Storage</text>
 </svg>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-
-
-<!-- ══ CIPHERGUARD ARCHITECTURE ══ -->
-<section id="cipherguard-architecture" style="background:var(--bg);padding:6rem 0;">
-  <div class="container">
-    <p class="section-tag" style="color:#a78bfa;">System Design</p>
-    <h2 class="section-title">CipherGuard <span class="dim">Architecture</span></h2>
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;max-width:660px;line-height:1.9;">Full stack architecture of <a href="https://github.com/munnamihir/cipherguard" target="_blank" style="color:#a78bfa;text-decoration:none;">github.com/munnamihir/cipherguard</a> — Angular 17 frontend with 3-panel QuantumScan UI, 18+ PQC vuln patterns across 7 languages, Claude AI streaming agent, Supabase auth + Postgres, and Stripe billing.</p>
-    <p style="font-size:0.62rem;color:var(--muted);margin-bottom:2rem;font-family:'JetBrains Mono',monospace;">Angular 17 · TypeScript · Supabase · Claude AI · ML-KEM-768 · NIST FIPS 203/204/205 · Express · Stripe · Render</p>
-    <div style="border:1px solid rgba(124,92,252,0.2);border-radius:12px;padding:1.25rem;background:var(--bg2);overflow-x:auto;">
-<svg width="100%" viewBox="0 0 780 500" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>CipherGuard Architecture</title>
-  <defs>
-    <marker id="cac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-    <marker id="cag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#39ff14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-    <marker id="cay" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-    <marker id="cac2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-  </defs>
-  <!-- BROWSER LAYER -->
-  <rect x="6" y="6" width="770" height="200" rx="7" fill="rgba(124,92,252,0.018)" stroke="rgba(124,92,252,0.25)" stroke-width="0.8" stroke-dasharray="6,4"/>
-  <text x="18" y="22" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#a78bfa" letter-spacing="2">BROWSER — Angular 17 SPA · Render · quantumcipherguard.onrender.com</text>
-  <!-- Left Pane -->
-  <rect x="12" y="28" width="200" height="165" rx="5" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.25)" stroke-width="0.7"/>
-  <text x="112" y="44" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500" fill="#a78bfa">Left Pane — Code Input</text>
-  <text x="112" y="57" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Monaco-style textarea · Line numbers</text>
-  <text x="112" y="68" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Vuln lines highlighted red</text>
-  <text x="112" y="79" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">JS · TS · Python · Java · Go · C# · Rust</text>
-  <text x="112" y="90" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">File upload · Drag &amp; drop</text>
-  <text x="112" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#f5c518">ScanEngineService (client-side)</text>
-  <text x="112" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">18 VulnPatterns · RegEx engine</text>
-  <text x="112" y="127" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Risk score 0–100 · HNDL scoring</text>
-  <text x="112" y="138" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Language auto-detection</text>
-  <text x="112" y="182" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(124,92,252,0.45)">No code leaves browser</text>
-  <!-- Mid Pane -->
-  <rect x="220" y="28" width="232" height="165" rx="5" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.25)" stroke-width="0.7"/>
-  <text x="336" y="44" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500" fill="#a78bfa">Mid Pane — Findings Report</text>
-  <text x="336" y="58" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#f5c518">18 Vulnerability Patterns Detected</text>
-  <text x="336" y="70" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">RSA-OAEP · ECDH · ECDSA · JWT RS256</text>
-  <text x="336" y="81" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">MD5 · SHA-1 · TLS 1.0/1.1 · Hardcoded keys</text>
-  <text x="336" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Python / Java / Go / C# / Rust variants</text>
-  <text x="336" y="107" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Filter: All / CRITICAL / HIGH / MEDIUM</text>
-  <text x="336" y="118" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Risk ring canvas · Severity pills</text>
-  <text x="336" y="129" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">HNDL stat cards · Code diff view</text>
-  <text x="336" y="140" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Copy fix · Export .md report</text>
-  <text x="336" y="182" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(245,197,24,0.5)">Saved to Supabase after each scan</text>
-  <!-- Right Pane -->
-  <rect x="460" y="28" width="234" height="165" rx="5" fill="rgba(124,92,252,0.06)" stroke="rgba(124,92,252,0.35)" stroke-width="0.7"/>
-  <text x="577" y="44" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500" fill="#a78bfa">Right Pane — Claude AI Agent</text>
-  <text x="577" y="58" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(124,92,252,0.8)">claude-sonnet-4-20250514</text>
-  <text x="577" y="70" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Browser → Anthropic API (direct SSE)</text>
-  <text x="577" y="81" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">User API key · never sent to server</text>
-  <text x="577" y="96" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#39ff14">SSE streaming · real-time tokens</text>
-  <text x="577" y="108" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Auto-fix all · Migration report</text>
-  <text x="577" y="119" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Per-finding context-aware fix</text>
-  <text x="577" y="130" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Full file rewrite view</text>
-  <text x="577" y="141" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">System: NIST FIPS 203/204/205 expert</text>
-  <text x="577" y="182" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(124,92,252,0.45)">Copy · Download migrated file</text>
-  <!-- Arrows down -->
-  <line x1="336" y1="193" x2="336" y2="228" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.7" marker-end="url(#cac)"/>
-  <line x1="577" y1="193" x2="577" y2="228" stroke="#a78bfa" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#cac)"/>
-  <!-- SERVICES LAYER -->
-  <rect x="6" y="232" width="390" height="75" rx="6" fill="rgba(0,229,255,0.018)" stroke="rgba(0,229,255,0.2)" stroke-width="0.7" stroke-dasharray="5,3"/>
-  <text x="16" y="247" font-family="Orbitron,sans-serif" font-size="7" font-weight="700" fill="#00e5ff" letter-spacing="1.5">SUPABASE — Auth + Postgres</text>
-  <rect x="12" y="252" width="175" height="48" rx="4" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.18)" stroke-width="0.6"/>
-  <text x="99" y="266" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500" fill="#00e5ff">Auth</text>
-  <text x="99" y="278" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">GitHub OAuth · Magic Link · JWT</text>
-  <text x="99" y="289" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">handle_new_user() trigger</text>
-  <rect x="196" y="252" width="193" height="48" rx="4" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.18)" stroke-width="0.6"/>
-  <text x="292" y="266" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500" fill="#00e5ff">Postgres + RLS</text>
-  <text x="292" y="278" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#f5c518">users · scans · findings</text>
-  <text x="292" y="289" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">plan · risk_score · hndl_max · diffs</text>
-  <!-- Express -->
-  <rect x="404" y="232" width="188" height="75" rx="6" fill="rgba(245,197,24,0.018)" stroke="rgba(245,197,24,0.18)" stroke-width="0.7" stroke-dasharray="5,3"/>
-  <text x="414" y="247" font-family="Orbitron,sans-serif" font-size="7" font-weight="700" fill="#f5c518" letter-spacing="1">EXPRESS SERVER — Railway</text>
-  <rect x="410" y="252" width="176" height="48" rx="4" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.15)" stroke-width="0.6"/>
-  <text x="498" y="266" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500" fill="#f5c518">Stripe Billing Routes</text>
-  <text x="498" y="278" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">POST /checkout · GET /portal</text>
-  <text x="498" y="289" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">POST /webhook · JWT middleware</text>
-  <!-- Stripe -->
-  <rect x="600" y="232" width="174" height="75" rx="6" fill="rgba(57,255,20,0.018)" stroke="rgba(57,255,20,0.18)" stroke-width="0.7"/>
-  <text x="687" y="247" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#39ff14">Stripe</text>
-  <text x="687" y="261" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Checkout Sessions</text>
-  <text x="687" y="272" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Customer Portal</text>
-  <text x="687" y="283" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#f5c518">Free · Pro $49/mo · Enterprise</text>
-  <text x="687" y="294" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Webhook → update users.plan</text>
-  <line x1="590" y1="268" x2="598" y2="268" stroke="#f5c518" stroke-width="0.7" stroke-opacity="0.5" stroke-dasharray="3,2" marker-end="url(#cay)"/>
-  <!-- Anthropic -->
-  <rect x="404" y="315" width="370" height="55" rx="6" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.3)" stroke-width="0.7"/>
-  <text x="589" y="331" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="7.5" font-weight="700" fill="#a78bfa">Anthropic API — api.anthropic.com</text>
-  <text x="589" y="344" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">claude-sonnet-4-20250514 · max_tokens:4096 · stream:true</text>
-  <text x="589" y="355" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(124,92,252,0.5)">SSE chunks → streaming UI · User API key · browser direct</text>
-  <line x1="577" y1="307" x2="577" y2="313" stroke="#a78bfa" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#cac)"/>
-  <!-- PQC Targets -->
-  <rect x="6" y="315" width="392" height="55" rx="6" fill="rgba(0,229,255,0.018)" stroke="rgba(0,229,255,0.15)" stroke-width="0.7" stroke-dasharray="4,3"/>
-  <text x="14" y="330" font-family="Orbitron,sans-serif" font-size="7" font-weight="700" fill="#00e5ff" letter-spacing="1.5">NIST PQC MIGRATION TARGETS</text>
-  <rect x="12" y="334" width="88" height="28" rx="3" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.2)" stroke-width="0.5"/>
-  <text x="56" y="345" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#00e5ff">ML-KEM-768</text>
-  <text x="56" y="355" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#6a8099">FIPS 203</text>
-  <rect x="106" y="334" width="88" height="28" rx="3" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.2)" stroke-width="0.5"/>
-  <text x="150" y="345" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#a78bfa">ML-DSA-65</text>
-  <text x="150" y="355" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#6a8099">FIPS 204</text>
-  <rect x="200" y="334" width="88" height="28" rx="3" fill="rgba(57,255,20,0.04)" stroke="rgba(57,255,20,0.2)" stroke-width="0.5"/>
-  <text x="244" y="345" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#39ff14">SLH-DSA</text>
-  <text x="244" y="355" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#6a8099">FIPS 205</text>
-  <rect x="294" y="334" width="100" height="28" rx="3" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.2)" stroke-width="0.5"/>
-  <text x="344" y="345" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#f5c518">@noble/post-quantum</text>
-  <text x="344" y="355" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#6a8099">JS/TS library</text>
-  <!-- HTTPS label -->
-  <line x1="200" y1="307" x2="200" y2="313" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.5" marker-end="url(#cac2)"/>
-  <rect x="50" y="375" width="700" height="16" rx="3" fill="rgba(7,13,26,0.9)"/>
-  <text x="400" y="387" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="rgba(124,92,252,0.5)">HTTPS · Supabase JS client · JWT auth headers · All vuln scanning is 100% client-side · no code uploaded to server</text>
-  <!-- Plans -->
-  <rect x="6" y="400" width="770" height="90" rx="6" fill="rgba(245,197,24,0.015)" stroke="rgba(245,197,24,0.12)" stroke-width="0.6" stroke-dasharray="4,3"/>
-  <text x="16" y="416" font-family="Orbitron,sans-serif" font-size="7" font-weight="700" fill="#f5c518" letter-spacing="1.5">PRICING TIERS</text>
-  <rect x="12" y="420" width="220" height="64" rx="4" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
-  <text x="122" y="435" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" fill="#00e5ff">FREE</text>
-  <text x="122" y="449" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">5 scans/month</text>
-  <text x="122" y="460" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">18 pattern detection</text>
-  <text x="122" y="471" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Basic AI suggestions</text>
-  <text x="122" y="480" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(0,229,255,0.4)">No credit card</text>
-  <rect x="240" y="420" width="250" height="64" rx="4" fill="rgba(124,92,252,0.05)" stroke="rgba(124,92,252,0.3)" stroke-width="1"/>
-  <text x="365" y="435" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" fill="#a78bfa">PRO — $49/mo</text>
-  <text x="365" y="449" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Unlimited scans</text>
-  <text x="365" y="460" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Full AI auto-fix · Migration reports</text>
-  <text x="365" y="471" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Export · Priority support</text>
-  <text x="365" y="480" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(124,92,252,0.5)">Stripe Checkout</text>
-  <rect x="498" y="420" width="278" height="64" rx="4" fill="rgba(245,197,24,0.03)" stroke="rgba(245,197,24,0.15)" stroke-width="0.6"/>
-  <text x="637" y="435" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" fill="#f5c518">ENTERPRISE</text>
-  <text x="637" y="449" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Custom pricing</text>
-  <text x="637" y="460" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Team seats · SSO · Custom patterns</text>
-  <text x="637" y="471" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">On-prem option · SLA</text>
-  <text x="637" y="480" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(245,197,24,0.4)">Contact sales</text>
-</svg>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ══ QCAREER ARCHITECTURE ══ -->
-<section id="qcareer-architecture" style="background:var(--bg2);padding:6rem 0;">
-  <div class="container">
-    <p class="section-tag">System Design</p>
-    <h2 class="section-title">QCareer <span class="dim">Architecture</span></h2>
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;max-width:660px;line-height:1.9;">Full stack architecture of <a href="https://github.com/munnamihir/qcareer" target="_blank" style="color:var(--gold);text-decoration:none;">github.com/munnamihir/qcareer</a> — Next.js 14 App Router with AI resume tailoring, real-time job matching engine, H-1B sponsorship filters, cover letter generation, and application tracker.</p>
-    <p style="font-size:0.62rem;color:var(--muted);margin-bottom:2rem;font-family:'JetBrains Mono',monospace;">Next.js 14 · TypeScript · Claude AI · Supabase · Tailwind CSS · Node.js · Stripe · Vercel · RapidAPI Jobs</p>
-    <div style="border:1px solid rgba(245,197,24,0.18);border-radius:12px;padding:1.25rem;background:var(--bg3);overflow-x:auto;">
-<svg width="100%" viewBox="0 0 780 480" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>QCareer Architecture</title>
-  <defs>
-    <marker id="qay" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-    <marker id="qac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-    <marker id="qap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-    <marker id="qag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#39ff14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-  </defs>
-  <!-- FRONTEND -->
-  <rect x="6" y="6" width="770" height="170" rx="7" fill="rgba(245,197,24,0.018)" stroke="rgba(245,197,24,0.22)" stroke-width="0.8" stroke-dasharray="6,4"/>
-  <text x="18" y="22" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#f5c518" letter-spacing="2">NEXT.JS 14 APP ROUTER — Vercel · qcareer.vercel.app</text>
-  <!-- Dashboard -->
-  <rect x="12" y="28" width="175" height="135" rx="5" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.22)" stroke-width="0.7"/>
-  <text x="99" y="43" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500" fill="#f5c518">Dashboard</text>
-  <text x="99" y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Application stats</text>
-  <text x="99" y="67" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Interview pipeline</text>
-  <text x="99" y="78" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">ATS score tracker</text>
-  <text x="99" y="89" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Follow-up reminders</text>
-  <text x="99" y="100" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Visa status tracker</text>
-  <text x="99" y="111" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Salary benchmarks</text>
-  <text x="99" y="152" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(245,197,24,0.45)">RSC + Client hydration</text>
-  <!-- Job Search -->
-  <rect x="195" y="28" width="180" height="135" rx="5" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.22)" stroke-width="0.7"/>
-  <text x="285" y="43" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500" fill="#f5c518">Job Search Engine</text>
-  <text x="285" y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">50k+ live listings</text>
-  <text x="285" y="67" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">H-1B sponsorship filter</text>
-  <text x="285" y="78" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Salary range filter</text>
-  <text x="285" y="89" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Remote / Hybrid / Onsite</text>
-  <text x="285" y="100" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">AI match scoring (0–100)</text>
-  <text x="285" y="111" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">ATS keyword analysis</text>
-  <text x="285" y="122" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Company size filter</text>
-  <text x="285" y="152" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(245,197,24,0.45)">RapidAPI JSearch + AI ranking</text>
-  <!-- AI Tools -->
-  <rect x="383" y="28" width="200" height="135" rx="5" fill="rgba(124,92,252,0.05)" stroke="rgba(124,92,252,0.3)" stroke-width="0.7"/>
-  <text x="483" y="43" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500" fill="#a78bfa">AI Tools — Claude</text>
-  <text x="483" y="57" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(124,92,252,0.8)">claude-sonnet-4-20250514</text>
-  <text x="483" y="70" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Resume tailoring per JD</text>
-  <text x="483" y="81" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">ATS keyword injection</text>
-  <text x="483" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Cover letter generation</text>
-  <text x="483" y="103" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Interview Q prep</text>
-  <text x="483" y="114" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Salary negotiation tips</text>
-  <text x="483" y="125" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Company research brief</text>
-  <text x="483" y="152" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(124,92,252,0.45)">SSE streaming · via API route</text>
-  <!-- Tracker -->
-  <rect x="591" y="28" width="183" height="135" rx="5" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.22)" stroke-width="0.7"/>
-  <text x="682" y="43" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500" fill="#f5c518">App Tracker</text>
-  <text x="682" y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Kanban board</text>
-  <text x="682" y="67" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Applied → Interview → Offer</text>
-  <text x="682" y="78" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Follow-up date alerts</text>
-  <text x="682" y="89" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Notes per company</text>
-  <text x="682" y="100" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Contact names</text>
-  <text x="682" y="111" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6a8099">Rejection analytics</text>
-  <text x="682" y="152" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(245,197,24,0.45)">Persisted to Supabase</text>
-  <!-- HTTPS arrow -->
-  <line x1="390" y1="176" x2="390" y2="208" stroke="#f5c518" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#qay)"/>
-  <rect x="130" y="184" width="520" height="16" rx="3" fill="rgba(7,13,26,0.95)"/>
-  <text x="390" y="196" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(245,197,24,0.55)">HTTPS · Next.js API Routes · Supabase JS Client · JWT auth</text>
-  <!-- BACKEND SERVICES -->
-  <rect x="6" y="212" width="580" height="100" rx="7" fill="rgba(0,229,255,0.018)" stroke="rgba(0,229,255,0.18)" stroke-width="0.8" stroke-dasharray="6,4"/>
-  <text x="18" y="228" font-family="Orbitron,sans-serif" font-size="7.5" font-weight="700" fill="#00e5ff" letter-spacing="1.5">NEXT.JS API ROUTES + SUPABASE</text>
-  <rect x="12" y="233" width="138" height="72" rx="4" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.18)" stroke-width="0.6"/>
-  <text x="81" y="247" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500" fill="#00e5ff">Auth (Supabase)</text>
-  <text x="81" y="259" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">GitHub OAuth</text>
-  <text x="81" y="270" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Google OAuth</text>
-  <text x="81" y="281" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Magic Link</text>
-  <text x="81" y="296" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(0,229,255,0.35)">JWT session</text>
-  <rect x="158" y="233" width="138" height="72" rx="4" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.18)" stroke-width="0.6"/>
-  <text x="227" y="247" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500" fill="#00e5ff">Postgres DB</text>
-  <text x="227" y="259" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#f5c518">users · resumes</text>
-  <text x="227" y="270" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#f5c518">applications · jobs</text>
-  <text x="227" y="281" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#f5c518">cover_letters</text>
-  <text x="227" y="296" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(0,229,255,0.35)">RLS policies</text>
-  <rect x="304" y="233" width="138" height="72" rx="4" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.18)" stroke-width="0.6"/>
-  <text x="373" y="247" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500" fill="#a78bfa">AI Route</text>
-  <text x="373" y="259" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">POST /api/ai/tailor</text>
-  <text x="373" y="270" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">POST /api/ai/cover</text>
-  <text x="373" y="281" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">POST /api/ai/prep</text>
-  <text x="373" y="296" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(124,92,252,0.4)">Streams to client</text>
-  <rect x="450" y="233" width="130" height="72" rx="4" fill="rgba(245,197,24,0.04)" stroke="rgba(245,197,24,0.18)" stroke-width="0.6"/>
-  <text x="515" y="247" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500" fill="#f5c518">Jobs API</text>
-  <text x="515" y="259" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">RapidAPI JSearch</text>
-  <text x="515" y="270" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">GET /api/jobs/search</text>
-  <text x="515" y="281" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">H-1B filter logic</text>
-  <text x="515" y="296" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(245,197,24,0.4)">Cached 15min</text>
-  <!-- External Services -->
-  <rect x="594" y="212" width="180" height="100" rx="7" fill="rgba(57,255,20,0.015)" stroke="rgba(57,255,20,0.18)" stroke-width="0.7" stroke-dasharray="5,3"/>
-  <text x="684" y="228" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="7.5" font-weight="700" fill="#39ff14">External APIs</text>
-  <rect x="600" y="233" width="168" height="72" rx="4" fill="rgba(57,255,20,0.03)" stroke="rgba(57,255,20,0.15)" stroke-width="0.5"/>
-  <text x="684" y="248" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#39ff14">RapidAPI JSearch</text>
-  <text x="684" y="260" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">50k+ real job listings</text>
-  <text x="684" y="272" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#39ff14">Anthropic API</text>
-  <text x="684" y="284" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">claude-sonnet-4</text>
-  <text x="684" y="296" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#39ff14">Stripe</text>
-  <text x="684" y="308" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Billing / Pro plan</text>
-  <!-- User flow -->
-  <rect x="6" y="320" width="770" height="150" rx="6" fill="rgba(245,197,24,0.012)" stroke="rgba(245,197,24,0.1)" stroke-width="0.6" stroke-dasharray="4,3"/>
-  <text x="18" y="336" font-family="Orbitron,sans-serif" font-size="7.5" font-weight="700" fill="#f5c518" letter-spacing="1.5">USER FLOW — H-1B JOB SEEKER</text>
-  <rect x="12" y="342" width="112" height="120" rx="4" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.15)" stroke-width="0.5"/>
-  <text x="68" y="356" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500" fill="#00e5ff">1. Upload Resume</text>
-  <text x="68" y="369" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">PDF / DOCX</text>
-  <text x="68" y="380" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">AI parses skills</text>
-  <text x="68" y="391" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">experience · titles</text>
-  <text x="68" y="402" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Keywords extracted</text>
-  <text x="68" y="452" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(0,229,255,0.35)">Stored in Supabase</text>
-  <line x1="124" y1="400" x2="130" y2="400" stroke="#f5c518" stroke-width="1" stroke-opacity="0.5" marker-end="url(#qay)"/>
-  <rect x="132" y="342" width="120" height="120" rx="4" fill="rgba(245,197,24,0.03)" stroke="rgba(245,197,24,0.15)" stroke-width="0.5"/>
-  <text x="192" y="356" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500" fill="#f5c518">2. Job Matching</text>
-  <text x="192" y="369" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">AI scores each JD</text>
-  <text x="192" y="380" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">H-1B filter applied</text>
-  <text x="192" y="391" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Salary match check</text>
-  <text x="192" y="402" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">ATS gap analysis</text>
-  <text x="192" y="413" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Ranked by fit score</text>
-  <text x="192" y="452" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(245,197,24,0.35)">50k+ jobs ranked</text>
-  <line x1="252" y1="400" x2="258" y2="400" stroke="#f5c518" stroke-width="1" stroke-opacity="0.5" marker-end="url(#qay)"/>
-  <rect x="260" y="342" width="130" height="120" rx="4" fill="rgba(124,92,252,0.04)" stroke="rgba(124,92,252,0.2)" stroke-width="0.5"/>
-  <text x="325" y="356" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500" fill="#a78bfa">3. AI Tailor</text>
-  <text x="325" y="369" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Click job → tailor</text>
-  <text x="325" y="380" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Claude rewrites resume</text>
-  <text x="325" y="391" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Injects JD keywords</text>
-  <text x="325" y="402" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">ATS score preview</text>
-  <text x="325" y="413" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Cover letter gen</text>
-  <text x="325" y="452" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(124,92,252,0.4)">Streaming response</text>
-  <line x1="390" y1="400" x2="396" y2="400" stroke="#f5c518" stroke-width="1" stroke-opacity="0.5" marker-end="url(#qay)"/>
-  <rect x="398" y="342" width="120" height="120" rx="4" fill="rgba(57,255,20,0.03)" stroke="rgba(57,255,20,0.15)" stroke-width="0.5"/>
-  <text x="458" y="356" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500" fill="#39ff14">4. Apply</text>
-  <text x="458" y="369" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">One-click apply</text>
-  <text x="458" y="380" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Download tailored PDF</text>
-  <text x="458" y="391" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Tracked in kanban</text>
-  <text x="458" y="402" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Follow-up reminder set</text>
-  <text x="458" y="452" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(57,255,20,0.35)">Saved to tracker</text>
-  <line x1="518" y1="400" x2="524" y2="400" stroke="#f5c518" stroke-width="1" stroke-opacity="0.5" marker-end="url(#qay)"/>
-  <rect x="526" y="342" width="136" height="120" rx="4" fill="rgba(245,197,24,0.03)" stroke="rgba(245,197,24,0.15)" stroke-width="0.5"/>
-  <text x="594" y="356" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500" fill="#f5c518">5. Interview Prep</text>
-  <text x="594" y="369" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Claude generates Q&amp;A</text>
-  <text x="594" y="380" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Company research</text>
-  <text x="594" y="391" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">STAR method answers</text>
-  <text x="594" y="402" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Salary negotiation</text>
-  <text x="594" y="413" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">H-1B process guide</text>
-  <text x="594" y="452" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(245,197,24,0.35)">AI-powered coaching</text>
-  <rect x="670" y="342" width="104" height="120" rx="4" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.15)" stroke-width="0.5"/>
-  <text x="722" y="356" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500" fill="#00e5ff">6. Offer</text>
-  <text x="722" y="369" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Mark offer received</text>
-  <text x="722" y="380" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Salary comparison</text>
-  <text x="722" y="391" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">Negotiate with AI</text>
-  <text x="722" y="402" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#6a8099">H-1B transfer help</text>
-  <text x="722" y="452" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="rgba(0,229,255,0.35)">Full cycle tracked</text>
-</svg>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ RESEARCH SECTION ═══ -->
-<!-- ══ RESEARCH SECTION ══ -->
+<!-- RESEARCH SECTION -->
 <section id="research" style="background:var(--bg2);position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(124,92,252,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(124,92,252,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
   <div class="container" style="position:relative;z-index:1;padding:6rem 3rem;">
     <p class="section-tag">Independent Research</p>
     <h2 class="section-title">Quantum <span class="dim">Research</span></h2>
-
-    <!-- Paper Card -->
     <div class="reveal" style="border:1px solid rgba(124,92,252,0.3);border-radius:16px;padding:2.5rem;background:var(--bg3);margin-bottom:2rem;position:relative;overflow:hidden;">
       <div style="position:absolute;top:0;right:0;width:300px;height:300px;background:radial-gradient(circle,rgba(124,92,252,0.06) 0%,transparent 70%);pointer-events:none;"></div>
       <div style="display:flex;align-items:flex-start;gap:2rem;flex-wrap:wrap;">
         <div style="flex:1;min-width:280px;">
-          <div style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--ai2);border:1px solid rgba(124,92,252,0.3);padding:0.3rem 0.9rem;border-radius:50px;margin-bottom:1.2rem;background:rgba(124,92,252,0.06);">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--ai2);animation:blink 1.5s infinite;flex-shrink:0;"></span>
+          <div style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;border:1px solid rgba(124,92,252,0.3);padding:0.3rem 0.9rem;border-radius:50px;margin-bottom:1.2rem;background:rgba(124,92,252,0.06);">
+            <span style="width:6px;height:6px;border-radius:50%;background:#a78bfa;animation:blink 1.5s infinite;flex-shrink:0;"></span>
             Published · April 2026 · Zenodo
           </div>
-          <h3 style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:clamp(1rem,2.5vw,1.4rem);color:#fff;line-height:1.3;margin-bottom:1rem;">
-            Communication Complexity of the LWE Function:<br>
-            <span style="color:var(--ai2);">First Exact Bounds and the Hard Distribution Structure</span>
-          </h3>
-          <p style="font-size:0.8rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;max-width:600px;">
-            First formal study of the communication complexity of the
-            <span style="color:var(--cyan);">Learning With Errors (LWE)</span> function — the mathematical core of
-            NIST post-quantum standards ML-KEM (FIPS 203) and ML-DSA (FIPS 204).
-            Defines the LWE Communication Problem (LWE-CC<sub>n</sub>), proves lower bounds,
-            computes the first exact values of rank, fooling sets, and discrepancy for small parameters,
-            and identifies the hard distribution structure via coordinate-descent LP.
-            Also defines QV-CC<sub>N,k</sub> — a new multiparty CC problem from QuantumMail-v2's
-            quorum vault recovery — and proves its classical complexity exactly.
-          </p>
-          <!-- Key findings pills -->
+          <h3 style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:clamp(1rem,2.5vw,1.4rem);color:#fff;line-height:1.3;margin-bottom:1rem;">Communication Complexity of the LWE Function:<br><span style="color:#a78bfa;">First Exact Bounds and the Hard Distribution Structure</span></h3>
+          <p style="font-size:0.8rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;max-width:600px;">First formal study of the communication complexity of the <span style="color:var(--cyan);">Learning With Errors (LWE)</span> function — the mathematical core of NIST post-quantum standards ML-KEM (FIPS 203) and ML-DSA (FIPS 204). Defines the LWE Communication Problem (LWE-CC<sub>n</sub>), proves lower bounds, computes the first exact values of rank, fooling sets, and discrepancy for small parameters, and identifies the hard distribution structure via coordinate-descent LP.</p>
           <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
-            <div style="font-size:0.62rem;padding:0.3rem 0.8rem;border:1px solid rgba(124,92,252,0.3);border-radius:4px;color:var(--ai2);background:rgba(124,92,252,0.06);">First CC analysis of any NIST PQC protocol</div>
+            <div style="font-size:0.62rem;padding:0.3rem 0.8rem;border:1px solid rgba(124,92,252,0.3);border-radius:4px;color:#a78bfa;background:rgba(124,92,252,0.06);">First CC analysis of any NIST PQC protocol</div>
             <div style="font-size:0.62rem;padding:0.3rem 0.8rem;border:1px solid rgba(0,229,255,0.25);border-radius:4px;color:var(--cyan);background:rgba(0,229,255,0.05);">4 proved theorems</div>
-            <div style="font-size:0.62rem;padding:0.3rem 0.8rem;border:1px solid rgba(245,197,24,0.25);border-radius:4px;color:var(--gold);background:rgba(245,197,24,0.05);">rank ∈ {31, 53, 126} — never published before</div>
+            <div style="font-size:0.62rem;padding:0.3rem 0.8rem;border:1px solid rgba(245,197,24,0.25);border-radius:4px;color:var(--gold);background:rgba(245,197,24,0.05);">rank ∈ {31, 53, 126}</div>
             <div style="font-size:0.62rem;padding:0.3rem 0.8rem;border:1px solid rgba(57,255,20,0.25);border-radius:4px;color:var(--green);background:rgba(57,255,20,0.04);">Fooling sets ≥ {104, 114, 173}</div>
           </div>
-          <!-- Links -->
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-            <a href="https://zenodo.org/records/19609633" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:1px;color:var(--ai2);text-decoration:none;padding:0.55rem 1.1rem;border:1px solid rgba(124,92,252,0.3);border-radius:4px;transition:all 0.3s;background:rgba(124,92,252,0.06);" onmouseover="this.style.borderColor='rgba(167,139,250,0.6)';this.style.background='rgba(124,92,252,0.12)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.3)';this.style.background='rgba(124,92,252,0.06)'">
-              📄 Paper (Zenodo DOI)
-            </a>
-            <a href="https://github.com/munnamihir/lwe-cc-research" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:1px;color:var(--cyan);text-decoration:none;padding:0.55rem 1.1rem;border:1px solid var(--border);border-radius:4px;transition:all 0.3s;background:var(--bg2);" onmouseover="this.style.borderColor='rgba(0,229,255,0.5)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)'">
-              ⚙ GitHub · lwe-cc-research
-            </a>
+            <a href="https://zenodo.org/records/19609633" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:1px;color:#a78bfa;text-decoration:none;padding:0.55rem 1.1rem;border:1px solid rgba(124,92,252,0.3);border-radius:4px;transition:all 0.3s;background:rgba(124,92,252,0.06);">📄 Paper (Zenodo DOI)</a>
+            <a href="https://github.com/munnamihir/lwe-cc-research" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:1px;color:var(--cyan);text-decoration:none;padding:0.55rem 1.1rem;border:1px solid var(--border);border-radius:4px;transition:all 0.3s;background:var(--bg2);">⚙ GitHub · lwe-cc-research</a>
           </div>
         </div>
-
-        <!-- Results sidebar -->
         <div style="display:flex;flex-direction:column;gap:0.75rem;min-width:200px;">
           <div style="font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;">Key Results</div>
-          <div style="border:1px solid rgba(124,92,252,0.2);border-radius:8px;padding:0.9rem;background:var(--bg2);">
-            <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--ai2);">4</div>
-            <div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Proved Theorems</div>
-          </div>
-          <div style="border:1px solid rgba(0,229,255,0.2);border-radius:8px;padding:0.9rem;background:var(--bg2);">
-            <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--cyan);">7</div>
-            <div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Open Problems</div>
-          </div>
-          <div style="border:1px solid rgba(245,197,24,0.2);border-radius:8px;padding:0.9rem;background:var(--bg2);">
-            <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--gold);">∞</div>
-            <div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Nights of Work</div>
-          </div>
+          <div style="border:1px solid rgba(124,92,252,0.2);border-radius:8px;padding:0.9rem;background:var(--bg2);"><div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:#a78bfa;">4</div><div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Proved Theorems</div></div>
+          <div style="border:1px solid rgba(0,229,255,0.2);border-radius:8px;padding:0.9rem;background:var(--bg2);"><div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--cyan);">7</div><div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Open Problems</div></div>
+          <div style="border:1px solid rgba(245,197,24,0.2);border-radius:8px;padding:0.9rem;background:var(--bg2);"><div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--gold);">∞</div><div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:0.2rem;">Nights of Work</div></div>
         </div>
-      </div>
-    </div>
-
-    <!-- Three findings cards -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;" class="reveal">
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.4rem;background:var(--bg3);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,229,255,0.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)';this.style.transform='none'">
-        <div style="font-size:1.4rem;margin-bottom:0.75rem;">📐</div>
-        <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.5rem;">Theorem 1 — Proved</div>
-        <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;">CC¹(LWE-CC<sub>n</sub>) ≥ n log₂ q bits. First rigorous lower bound for the communication complexity of any LWE-based protocol.</div>
-      </div>
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.4rem;background:var(--bg3);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(124,92,252,0.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)';this.style.transform='none'">
-        <div style="font-size:1.4rem;margin-bottom:0.75rem;">🔬</div>
-        <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.5rem;">Theorem 2 — Computed Exactly</div>
-        <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;">First exact CC bounds for LWE. rank(M<sub>f</sub>) ∈ {31, 53, 126} and fooling sets ≥ {104, 114, 173} — values that do not appear in any prior publication.</div>
-      </div>
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.4rem;background:var(--bg3);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)';this.style.transform='none'">
-        <div style="font-size:1.4rem;margin-bottom:0.75rem;">⚡</div>
-        <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.5rem;">Theorem 3 — Key Structural Finding</div>
-        <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;">Hard distribution μ* concentrates on s=0 (reduces to INDEX, no quantum advantage). This localises the quantum-classical separation to s≠0 inputs — where VSP geometry is active.</div>
-      </div>
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.4rem;background:var(--bg3);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(57,255,20,0.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)';this.style.transform='none'">
-        <div style="font-size:1.4rem;margin-bottom:0.75rem;">🔗</div>
-        <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.5rem;">Connection to ML-KEM</div>
-        <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;">ML-KEM-768 key encapsulation (n=256, q=3329) is an instance of LWE-CC<sub>256</sub>. If Q¹ = O(log n) holds, quantum channels could reduce 1088-byte ciphertexts to ~8 qubits.</div>
-      </div>
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.4rem;background:var(--bg3);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(204,136,255,0.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)';this.style.transform='none'">
-        <div style="font-size:1.4rem;margin-bottom:0.75rem;">🏛️</div>
-        <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.5rem;">QV-CC — New Problem Defined</div>
-        <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;">QV-CC<sub>N,k</sub>: first multiparty CC problem from a deployed PQC protocol. Derived from QuantumMail-v2's quorum vault recovery. Classical complexity proved: D = Θ(k log p).</div>
-      </div>
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.4rem;background:var(--bg3);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,229,255,0.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.15)';this.style.transform='none'">
-        <div style="font-size:1.4rem;margin-bottom:0.75rem;">🎯</div>
-        <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.5rem;">Main Conjecture — Open</div>
-        <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;">Q¹(LWE-CC<sub>n</sub>) = O(log n) and R¹(LWE-CC<sub>n</sub>) = Ω(n<sup>1/3</sup>). This would be the first exponential quantum-classical CC separation for an LWE-based protocol. Working on it.</div>
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- EDUCATION -->
 <section id="education">
   <div class="container">
     <p class="section-tag">Academics</p>
@@ -2093,65 +1427,11 @@
     <p class="section-tag">Credentials</p>
     <h2 class="section-title">Certifications</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;" class="reveal">
-
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🤖</div>
-        <div>
-          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">RPA — RE Framework</div>
-          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">UiPath</div>
-          <div style="font-size:0.62rem;color:var(--muted);">Robotic Process Automation</div>
-        </div>
-      </div>
-
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">⚙️</div>
-        <div>
-          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Certified System Administrator</div>
-          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">ServiceNow · CSA</div>
-          <div style="font-size:0.62rem;color:var(--muted);">Platform administration &amp; ITSM</div>
-        </div>
-      </div>
-
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">☕</div>
-        <div>
-          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Certified Java Professional</div>
-          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Wipro</div>
-          <div style="font-size:0.62rem;color:var(--muted);">Enterprise Java development</div>
-        </div>
-      </div>
-
-      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🗄️</div>
-        <div>
-          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Oracle Academy</div>
-          <div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Oracle · DBMS &amp; Java</div>
-          <div style="font-size:0.62rem;color:var(--muted);">Database management &amp; Java fundamentals</div>
-        </div>
-      </div>
-
-      <div style="border:1px solid rgba(0,229,255,0.2);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;grid-column:span 2;" onmouseover="this.style.borderColor='rgba(0,229,255,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,229,255,0.2)';this.style.transform='none'">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">📄</div>
-        <div>
-          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Research Publication</div>
-          <div style="font-size:0.65rem;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">IRJET · Peer-Reviewed</div>
-          <div style="font-size:0.62rem;color:var(--muted);">Disease Detection of Plants using Convolutional Neural Networks — published research applying deep learning to agricultural pathology</div>
-        </div>
-      </div>
-
-      <div style="border:1px solid rgba(124,92,252,0.3);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;grid-column:span 2;" onmouseover="this.style.borderColor='rgba(167,139,250,0.6)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.3)';this.style.transform='none'">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(124,92,252,0.1);border:1px solid rgba(124,92,252,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">⬡</div>
-        <div>
-          <div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Research Paper — Published</div>
-          <div style="font-size:0.65rem;color:#a78bfa;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Zenodo · April 2026 · arXiv Pending (cs.CC)</div>
-          <div style="font-size:0.62rem;color:var(--muted);line-height:1.7;">"Communication Complexity of the LWE Function: First Exact Bounds and the Hard Distribution Structure" — First CC analysis of any deployed NIST PQC protocol. 4 proved theorems. rank(M_f) in {31, 53, 126} — first in literature.</div>
-          <div style="display:flex;gap:0.5rem;margin-top:0.6rem;flex-wrap:wrap;">
-            <a href="https://github.com/munnamihir/lwe-cc-research" target="_blank" style="font-size:0.58rem;color:#a78bfa;text-decoration:none;border:1px solid rgba(124,92,252,0.3);padding:2px 9px;border-radius:3px;">GitHub</a>
-            <a href="https://zenodo.org/records/19609633" target="_blank" style="font-size:0.58rem;color:var(--cyan);text-decoration:none;border:1px solid rgba(0,229,255,0.2);padding:2px 9px;border-radius:3px;">Zenodo</a>
-          </div>
-        </div>
-      </div>
-
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🤖</div><div><div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">RPA — RE Framework</div><div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">UiPath</div><div style="font-size:0.62rem;color:var(--muted);">Robotic Process Automation</div></div></div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">⚙️</div><div><div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Certified System Administrator</div><div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">ServiceNow · CSA</div><div style="font-size:0.62rem;color:var(--muted);">Platform administration &amp; ITSM</div></div></div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">☕</div><div><div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Certified Java Professional</div><div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Wipro</div><div style="font-size:0.62rem;color:var(--muted);">Enterprise Java development</div></div></div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(245,197,24,0.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><div style="width:42px;height:42px;border-radius:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🗄️</div><div><div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Oracle Academy</div><div style="font-size:0.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Oracle · DBMS &amp; Java</div><div style="font-size:0.62rem;color:var(--muted);">Database management &amp; Java fundamentals</div></div></div>
+      <div style="border:1px solid rgba(124,92,252,0.3);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg3);display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;grid-column:span 2;" onmouseover="this.style.borderColor='rgba(167,139,250,0.6)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(124,92,252,0.3)';this.style.transform='none'"><div style="width:42px;height:42px;border-radius:8px;background:rgba(124,92,252,0.1);border:1px solid rgba(124,92,252,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">⬡</div><div><div style="font-size:0.75rem;font-weight:500;color:#fff;margin-bottom:0.25rem;">Research Paper — Published</div><div style="font-size:0.65rem;color:#a78bfa;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Zenodo · April 2026 · arXiv Pending (cs.CC)</div><div style="font-size:0.62rem;color:var(--muted);line-height:1.7;">"Communication Complexity of the LWE Function: First Exact Bounds and the Hard Distribution Structure" — First CC analysis of any deployed NIST PQC protocol. 4 proved theorems.</div><div style="display:flex;gap:0.5rem;margin-top:0.6rem;flex-wrap:wrap;"><a href="https://github.com/munnamihir/lwe-cc-research" target="_blank" style="font-size:0.58rem;color:#a78bfa;text-decoration:none;border:1px solid rgba(124,92,252,0.3);padding:2px 9px;border-radius:3px;">GitHub</a><a href="https://zenodo.org/records/19609633" target="_blank" style="font-size:0.58rem;color:var(--cyan);text-decoration:none;border:1px solid rgba(0,229,255,0.2);padding:2px 9px;border-radius:3px;">Zenodo</a></div></div></div>
     </div>
   </div>
 </section>
@@ -2162,26 +1442,10 @@
     <h2 class="contact-title">Let's Build<br><span style="color:var(--cyan)">Something.</span></h2>
     <p class="contact-sub">Open to senior full stack roles, interesting projects, and conversations about encrypted systems. Based in Mechanicsburg, PA.</p>
     <div class="contact-cards">
-      <a href="mailto:mihirbommisettys@gmail.com" class="contact-card">
-        <div class="contact-card-icon">📧</div>
-        <div class="contact-card-label">Email</div>
-        <div class="contact-card-value">mihirbommisettys@gmail.com</div>
-      </a>
-      <a href="https://www.linkedin.com/in/mihirbommisetty/" target="_blank" class="contact-card">
-        <div class="contact-card-icon">🔗</div>
-        <div class="contact-card-label">LinkedIn</div>
-        <div class="contact-card-value">mihirbommisetty</div>
-      </a>
-      <a href="https://github.com/munnamihir/QuantumMail-v2" target="_blank" class="contact-card">
-        <div class="contact-card-icon">⚙</div>
-        <div class="contact-card-label">GitHub</div>
-        <div class="contact-card-value">QuantumMail-v2</div>
-      </a>
-      <a href="tel:5513494114" class="contact-card">
-        <div class="contact-card-icon">📞</div>
-        <div class="contact-card-label">Phone</div>
-        <div class="contact-card-value">(551) 349-4114</div>
-      </a>
+      <a href="mailto:mihirbommisettys@gmail.com" class="contact-card"><div class="contact-card-icon">📧</div><div class="contact-card-label">Email</div><div class="contact-card-value">mihirbommisettys@gmail.com</div></a>
+      <a href="https://www.linkedin.com/in/mihirbommisetty/" target="_blank" class="contact-card"><div class="contact-card-icon">🔗</div><div class="contact-card-label">LinkedIn</div><div class="contact-card-value">mihirbommisetty</div></a>
+      <a href="https://github.com/munnamihir/QuantumMail-v2" target="_blank" class="contact-card"><div class="contact-card-icon">⚙</div><div class="contact-card-label">GitHub</div><div class="contact-card-value">QuantumMail-v2</div></a>
+      <a href="tel:5513494114" class="contact-card"><div class="contact-card-icon">📞</div><div class="contact-card-label">Phone</div><div class="contact-card-value">(551) 349-4114</div></a>
     </div>
     <a href="mailto:mihirbommisettys@gmail.com" class="btn-primary">Say Hello →</a>
   </div>
@@ -2189,8 +1453,12 @@
 
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--bg2);border:1px solid var(--cyan);color:var(--cyan);font-size:1.1rem;cursor:pointer;transition:all 0.3s;box-shadow:0 0 20px rgba(0,229,255,0.15);" onmouseover="this.style.background='rgba(0,229,255,0.12)'" onmouseout="this.style.background='var(--bg2)'">↑</button>
 
+<!-- ═══ FOOTER WITH VISIT COUNTER ═══ -->
 <footer>
   <p>Designed &amp; built by <span>Mihir Bommisetty</span> · 2026 · All rights reserved</p>
+  <p style="margin-top:0.5rem;font-size:0.6rem;letter-spacing:1px;">
+    👁 <span id="visit-count" style="color:var(--cyan);">...</span> visits
+  </p>
 </footer>
 
 <script>
@@ -2199,505 +1467,155 @@
   const canvas = document.getElementById('particles');
   const ctx = canvas.getContext('2d');
   let W, H, particles = [];
-  const CYAN = '#00e5ff';
-  const GOLD = '#f5c518';
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  function Particle() {
-    this.reset();
-  }
-  Particle.prototype.reset = function() {
-    this.x = Math.random() * W;
-    this.y = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 0.4;
-    this.vy = (Math.random() - 0.5) * 0.4;
-    this.r = Math.random() * 1.5 + 0.5;
-    this.alpha = Math.random() * 0.5 + 0.1;
-    this.color = Math.random() > 0.85 ? GOLD : CYAN;
-  };
-  Particle.prototype.update = function() {
-    this.x += this.vx; this.y += this.vy;
-    if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-  };
-  Particle.prototype.draw = function() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = this.color;
-    ctx.globalAlpha = this.alpha;
-    ctx.fill();
-    ctx.globalAlpha = 1;
-  };
-
-  function init() {
-    resize();
-    particles = Array.from({length: 120}, () => new Particle());
-  }
-
-  function drawConnections() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 100) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = CYAN;
-          ctx.globalAlpha = (1 - dist/100) * 0.08;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-          ctx.globalAlpha = 1;
-        }
-      }
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, W, H);
-    drawConnections();
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animate);
-  }
-
-  window.addEventListener('resize', resize);
-  init(); animate();
+  const CYAN = '#00e5ff'; const GOLD = '#f5c518';
+  function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+  function Particle() { this.reset(); }
+  Particle.prototype.reset = function() { this.x=Math.random()*W; this.y=Math.random()*H; this.vx=(Math.random()-0.5)*0.4; this.vy=(Math.random()-0.5)*0.4; this.r=Math.random()*1.5+0.5; this.alpha=Math.random()*0.5+0.1; this.color=Math.random()>0.85?GOLD:CYAN; };
+  Particle.prototype.update = function() { this.x+=this.vx; this.y+=this.vy; if(this.x<0||this.x>W||this.y<0||this.y>H) this.reset(); };
+  Particle.prototype.draw = function() { ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fillStyle=this.color; ctx.globalAlpha=this.alpha; ctx.fill(); ctx.globalAlpha=1; };
+  function init() { resize(); particles=Array.from({length:120},()=>new Particle()); }
+  function drawConnections() { for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<100){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=CYAN;ctx.globalAlpha=(1-dist/100)*0.08;ctx.lineWidth=0.5;ctx.stroke();ctx.globalAlpha=1;}}} }
+  function animate() { ctx.clearRect(0,0,W,H); drawConnections(); particles.forEach(p=>{p.update();p.draw();}); requestAnimationFrame(animate); }
+  window.addEventListener('resize',resize); init(); animate();
 })();
 
 // ENCRYPTION CANVAS VISUAL
 (function() {
   const canvas = document.getElementById('encCanvas');
-  if (!canvas) return;
+  if(!canvas) return;
   const ctx = canvas.getContext('2d');
   let W, H, t = 0;
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  const rings = [
-    { r: 0.38, speed: 0.008, chars: 24, color: '#00e5ff', alpha: 0.6 },
-    { r: 0.28, speed: -0.012, chars: 16, color: '#f5c518', alpha: 0.5 },
-    { r: 0.18, speed: 0.02, chars: 10, color: '#39ff14', alpha: 0.7 },
-  ];
-
-  const hexChars = '0123456789ABCDEF';
-  function rndHex() { return hexChars[Math.floor(Math.random() * 16)]; }
-
-  function drawRing(ring, t) {
-    const cx = W/2, cy = H/2;
-    const r = Math.min(W, H) * ring.r;
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.rotate(t * ring.speed * 60);
-    for (let i = 0; i < ring.chars; i++) {
-      const angle = (i / ring.chars) * Math.PI * 2;
-      const x = Math.cos(angle) * r;
-      const y = Math.sin(angle) * r;
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(angle + Math.PI/2);
-      ctx.fillStyle = ring.color;
-      ctx.globalAlpha = ring.alpha * (0.5 + 0.5 * Math.sin(t * 0.05 + i));
-      ctx.font = `bold ${Math.min(W,H)*0.028}px JetBrains Mono, monospace`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(rndHex(), 0, 0);
-      ctx.restore();
-    }
-    ctx.restore();
-  }
-
-  function drawCore(t) {
-    const cx = W/2, cy = H/2;
-    const size = Math.min(W,H) * 0.1;
-
-    // Outer glow ring
-    const grad = ctx.createRadialGradient(cx, cy, size*0.5, cx, cy, size*2.5);
-    grad.addColorStop(0, 'rgba(0,229,255,0.12)');
-    grad.addColorStop(1, 'rgba(0,229,255,0)');
-    ctx.beginPath();
-    ctx.arc(cx, cy, size*2.5, 0, Math.PI*2);
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    // Lock body
-    ctx.save();
-    ctx.translate(cx, cy);
-    const pulse = 1 + 0.04 * Math.sin(t * 0.07);
-    ctx.scale(pulse, pulse);
-
-    // Lock shackle
-    ctx.beginPath();
-    ctx.arc(0, -size*0.4, size*0.5, Math.PI, 0, false);
-    ctx.strokeStyle = '#00e5ff';
-    ctx.lineWidth = size * 0.15;
-    ctx.globalAlpha = 0.9;
-    ctx.stroke();
-
-    // Lock body rect
-    ctx.beginPath();
-    const bw = size*1.2, bh = size*0.9;
-    ctx.roundRect(-bw/2, -size*0.1, bw, bh, size*0.12);
-    ctx.fillStyle = 'rgba(0,229,255,0.08)';
-    ctx.fill();
-    ctx.strokeStyle = '#00e5ff';
-    ctx.lineWidth = size * 0.08;
-    ctx.globalAlpha = 0.9;
-    ctx.stroke();
-
-    // Keyhole
-    ctx.beginPath();
-    ctx.arc(0, size*0.25, size*0.15, 0, Math.PI*2);
-    ctx.fillStyle = '#00e5ff';
-    ctx.globalAlpha = 0.8;
-    ctx.fill();
-    ctx.beginPath();
-    ctx.moveTo(-size*0.08, size*0.3);
-    ctx.lineTo(size*0.08, size*0.3);
-    ctx.lineTo(size*0.04, size*0.6);
-    ctx.lineTo(-size*0.04, size*0.6);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.restore();
-    ctx.globalAlpha = 1;
-  }
-
-  function drawDataBits(t) {
-    const cx = W/2, cy = H/2;
-    const r = Math.min(W,H) * 0.45;
-    for (let i = 0; i < 8; i++) {
-      const angle = (i/8)*Math.PI*2 + t*0.01;
-      const x = cx + Math.cos(angle)*r;
-      const y = cy + Math.sin(angle)*r;
-      const sub = Math.min(W,H)*0.07;
-      ctx.beginPath();
-      ctx.roundRect(x-sub/2, y-sub/2, sub, sub, 4);
-      ctx.fillStyle = i%2===0 ? 'rgba(0,229,255,0.08)' : 'rgba(245,197,24,0.08)';
-      ctx.fill();
-      ctx.strokeStyle = i%2===0 ? 'rgba(0,229,255,0.35)' : 'rgba(245,197,24,0.35)';
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
-      ctx.fillStyle = i%2===0 ? '#00e5ff' : '#f5c518';
-      ctx.globalAlpha = 0.7;
-      ctx.font = `${sub*0.45}px JetBrains Mono, monospace`;
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.fillText(Math.random()>0.5?'1':'0', x, y);
-      ctx.globalAlpha = 1;
-    }
-    // connecting lines
-    for (let i = 0; i < 8; i++) {
-      const a1 = (i/8)*Math.PI*2 + t*0.01;
-      const a2 = ((i+1)/8)*Math.PI*2 + t*0.01;
-      ctx.beginPath();
-      ctx.moveTo(cx + Math.cos(a1)*r, cy + Math.sin(a1)*r);
-      ctx.lineTo(cx + Math.cos(a2)*r, cy + Math.sin(a2)*r);
-      ctx.strokeStyle = 'rgba(0,229,255,0.06)';
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, W, H);
-    drawDataBits(t);
-    rings.forEach(ring => drawRing(ring, t));
-    drawCore(t);
-    t++;
-    requestAnimationFrame(animate);
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-  animate();
+  function resize() { W=canvas.width=canvas.offsetWidth; H=canvas.height=canvas.offsetHeight; }
+  const rings=[{r:0.38,speed:0.008,chars:24,color:'#00e5ff',alpha:0.6},{r:0.28,speed:-0.012,chars:16,color:'#f5c518',alpha:0.5},{r:0.18,speed:0.02,chars:10,color:'#39ff14',alpha:0.7}];
+  const hexChars='0123456789ABCDEF';
+  function rndHex(){return hexChars[Math.floor(Math.random()*16)];}
+  function drawRing(ring,t){const cx=W/2,cy=H/2,r=Math.min(W,H)*ring.r;ctx.save();ctx.translate(cx,cy);ctx.rotate(t*ring.speed*60);for(let i=0;i<ring.chars;i++){const angle=(i/ring.chars)*Math.PI*2,x=Math.cos(angle)*r,y=Math.sin(angle)*r;ctx.save();ctx.translate(x,y);ctx.rotate(angle+Math.PI/2);ctx.fillStyle=ring.color;ctx.globalAlpha=ring.alpha*(0.5+0.5*Math.sin(t*0.05+i));ctx.font=`bold ${Math.min(W,H)*0.028}px JetBrains Mono,monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(rndHex(),0,0);ctx.restore();}ctx.restore();}
+  function drawCore(t){const cx=W/2,cy=H/2,size=Math.min(W,H)*0.1;const grad=ctx.createRadialGradient(cx,cy,size*0.5,cx,cy,size*2.5);grad.addColorStop(0,'rgba(0,229,255,0.12)');grad.addColorStop(1,'rgba(0,229,255,0)');ctx.beginPath();ctx.arc(cx,cy,size*2.5,0,Math.PI*2);ctx.fillStyle=grad;ctx.fill();ctx.save();ctx.translate(cx,cy);const pulse=1+0.04*Math.sin(t*0.07);ctx.scale(pulse,pulse);ctx.beginPath();ctx.arc(0,-size*0.4,size*0.5,Math.PI,0,false);ctx.strokeStyle='#00e5ff';ctx.lineWidth=size*0.15;ctx.globalAlpha=0.9;ctx.stroke();ctx.beginPath();const bw=size*1.2,bh=size*0.9;ctx.roundRect(-bw/2,-size*0.1,bw,bh,size*0.12);ctx.fillStyle='rgba(0,229,255,0.08)';ctx.fill();ctx.strokeStyle='#00e5ff';ctx.lineWidth=size*0.08;ctx.globalAlpha=0.9;ctx.stroke();ctx.beginPath();ctx.arc(0,size*0.25,size*0.15,0,Math.PI*2);ctx.fillStyle='#00e5ff';ctx.globalAlpha=0.8;ctx.fill();ctx.restore();ctx.globalAlpha=1;}
+  function drawDataBits(t){const cx=W/2,cy=H/2,r=Math.min(W,H)*0.45;for(let i=0;i<8;i++){const angle=(i/8)*Math.PI*2+t*0.01,x=cx+Math.cos(angle)*r,y=cy+Math.sin(angle)*r,sub=Math.min(W,H)*0.07;ctx.beginPath();ctx.roundRect(x-sub/2,y-sub/2,sub,sub,4);ctx.fillStyle=i%2===0?'rgba(0,229,255,0.08)':'rgba(245,197,24,0.08)';ctx.fill();ctx.strokeStyle=i%2===0?'rgba(0,229,255,0.35)':'rgba(245,197,24,0.35)';ctx.lineWidth=0.5;ctx.stroke();ctx.fillStyle=i%2===0?'#00e5ff':'#f5c518';ctx.globalAlpha=0.7;ctx.font=`${sub*0.45}px JetBrains Mono,monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(Math.random()>0.5?'1':'0',x,y);ctx.globalAlpha=1;}}
+  function animate(){ctx.clearRect(0,0,W,H);drawDataBits(t);rings.forEach(ring=>drawRing(ring,t));drawCore(t);t++;requestAnimationFrame(animate);}
+  resize(); window.addEventListener('resize',resize); animate();
 })();
 
 // TYPEWRITER
 (function(){
-  const roles = [
-    'Sr. Full Stack Developer',
-    'Java · Spring Boot Expert',
-    'Angular · React · Next.js',
-    'Encryption Architect',
-    'QuantumMail Creator',
-    'Cloud · Azure · AWS'
-  ];
-  let ri=0, ci=0, deleting=false;
-  const el = document.getElementById('typewriter');
+  const roles=['Sr. Full Stack Developer','Java · Spring Boot Expert','Angular · React · Next.js','Encryption Architect','QuantumMail Creator','Cloud · Azure · AWS'];
+  let ri=0,ci=0,deleting=false;
+  const el=document.getElementById('typewriter');
   if(!el) return;
-  function type(){
-    const current = roles[ri];
-    if(!deleting){
-      el.textContent = current.slice(0,++ci);
-      if(ci===current.length){ deleting=true; setTimeout(type,1800); return; }
-    } else {
-      el.textContent = current.slice(0,--ci);
-      if(ci===0){ deleting=false; ri=(ri+1)%roles.length; setTimeout(type,300); return; }
-    }
-    setTimeout(type, deleting?45:80);
-  }
+  function type(){const current=roles[ri];if(!deleting){el.textContent=current.slice(0,++ci);if(ci===current.length){deleting=true;setTimeout(type,1800);return;}}else{el.textContent=current.slice(0,--ci);if(ci===0){deleting=false;ri=(ri+1)%roles.length;setTimeout(type,300);return;}}setTimeout(type,deleting?45:80);}
   type();
 })();
 
 // BACK TO TOP
-(function(){
-  const btn = document.getElementById('btt');
-  if(!btn) return;
-  window.addEventListener('scroll', ()=>{
-    btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
-    btn.style.alignItems = 'center';
-    btn.style.justifyContent = 'center';
-  });
-})();
-
+(function(){const btn=document.getElementById('btt');if(!btn)return;window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>400?'flex':'none';btn.style.alignItems='center';btn.style.justifyContent='center';});})();
 
 // HAMBURGER MENU
-function toggleMenu(){
-  const h = document.getElementById('hamburger');
-  const m = document.getElementById('mobileMenu');
-  if(!h||!m) return  h.classList.toggle('open');
-  m.classList.toggle('open');
-}
-function closeMenu(){
-  const h = document.getElementById('hamburger');
-  const m = document.getElementById('mobileMenu');
-  if(h) h.classList.remove('open');
-  if(m) m.classList.remove('open');
-}
+function toggleMenu(){const h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');if(!h||!m)return;h.classList.toggle('open');m.classList.toggle('open');}
+function closeMenu(){const h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');if(h)h.classList.remove('open');if(m)m.classList.remove('open');}
 
 // SCROLL REVEAL
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal,.exp-item').forEach(el=>observer.observe(el));
+
 // ENCRYPTION HEX CURSOR
 (function(){
-  var DOT=document.getElementById('qm-cursor-dot');
-  var CANVAS=document.getElementById('qm-cursor-canvas');
-  if(!DOT||!CANVAS) return;
-  var CTX=CANVAS.getContext('2d');
-  var HEX='0123456789ABCDEF';
-  var CHARS=10, CYAN='#00e5ff', GOLD='#f5c518';
-  var mx=-300, my=-300, t=0, hovering=false;
-  var particles=[];
+  var DOT=document.getElementById('qm-cursor-dot'),CANVAS=document.getElementById('qm-cursor-canvas');
+  if(!DOT||!CANVAS)return;
+  var CTX=CANVAS.getContext('2d'),HEX='0123456789ABCDEF',CHARS=10,CYAN='#00e5ff',GOLD='#f5c518';
+  var mx=-300,my=-300,t=0,hovering=false,particles=[];
   for(var i=0;i<CHARS;i++) particles.push({char:HEX[Math.floor(Math.random()*16)],flip:Math.random()*30,alpha:0.4+Math.random()*0.5});
-  function resize(){ CANVAS.width=window.innerWidth; CANVAS.height=window.innerHeight; }
-  resize(); window.addEventListener('resize',resize);
-  window.addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY; DOT.style.left=mx+'px'; DOT.style.top=my+'px'; });
-  document.addEventListener('mouseover',function(e){ var t2=e.target.tagName; if(t2==='A'||t2==='BUTTON'||e.target.onclick){ hovering=true; DOT.classList.add('hovering'); } });
-  document.addEventListener('mouseout',function(){ hovering=false; DOT.classList.remove('hovering'); });
-  document.addEventListener('mouseleave',function(){ DOT.style.opacity='0'; CTX.clearRect(0,0,CANVAS.width,CANVAS.height); });
-  document.addEventListener('mouseenter',function(){ DOT.style.opacity='1'; });
+  function resize(){CANVAS.width=window.innerWidth;CANVAS.height=window.innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;DOT.style.left=mx+'px';DOT.style.top=my+'px';});
+  document.addEventListener('mouseover',function(e){var t2=e.target.tagName;if(t2==='A'||t2==='BUTTON'||e.target.onclick){hovering=true;DOT.classList.add('hovering');}});
+  document.addEventListener('mouseout',function(){hovering=false;DOT.classList.remove('hovering');});
   function draw(){
     CTX.clearRect(0,0,CANVAS.width,CANVAS.height);
-    var radius=hovering?30:22, speed=hovering?2.2:1.4, fs=hovering?11:9;
-    CTX.font='bold '+fs+'px JetBrains Mono,monospace';
-    CTX.textAlign='center'; CTX.textBaseline='middle';
-    particles.forEach(function(p,i){
-      p.flip-=1;
-      if(p.flip<=0){ p.char=HEX[Math.floor(Math.random()*16)]; p.flip=8+Math.random()*20; p.alpha=0.35+Math.random()*0.6; }
-      var angle=(i/CHARS)*Math.PI*2+t*speed;
-      var x=mx+Math.cos(angle)*radius, y=my+Math.sin(angle)*radius;
-      var color=i%2===0?CYAN:GOLD;
-      var pulse=p.alpha*(0.6+0.4*Math.sin(t*3+i*1.1));
-      CTX.globalAlpha=pulse; CTX.fillStyle=color; CTX.fillText(p.char,x,y);
-    });
-    CTX.beginPath(); CTX.arc(mx,my,hovering?30:22,0,Math.PI*2);
-    CTX.strokeStyle='rgba(0,229,255,0.08)'; CTX.lineWidth=0.8; CTX.globalAlpha=1; CTX.stroke();
-    t+=0.025; requestAnimationFrame(draw);
+    var radius=hovering?30:22,speed=hovering?2.2:1.4,fs=hovering?11:9;
+    CTX.font='bold '+fs+'px JetBrains Mono,monospace';CTX.textAlign='center';CTX.textBaseline='middle';
+    particles.forEach(function(p,i){p.flip-=1;if(p.flip<=0){p.char=HEX[Math.floor(Math.random()*16)];p.flip=8+Math.random()*20;p.alpha=0.35+Math.random()*0.6;}
+    var angle=(i/CHARS)*Math.PI*2+t*speed,x=mx+Math.cos(angle)*radius,y=my+Math.sin(angle)*radius,color=i%2===0?CYAN:GOLD,pulse=p.alpha*(0.6+0.4*Math.sin(t*3+i*1.1));
+    CTX.globalAlpha=pulse;CTX.fillStyle=color;CTX.fillText(p.char,x,y);});
+    CTX.beginPath();CTX.arc(mx,my,hovering?30:22,0,Math.PI*2);CTX.strokeStyle='rgba(0,229,255,0.08)';CTX.lineWidth=0.8;CTX.globalAlpha=1;CTX.stroke();
+    t+=0.025;requestAnimationFrame(draw);
   }
   draw();
 })();
+</script>
 
-// SCROLL REVEAL
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal, .exp-item').forEach(el => observer.observe(el));
+<!-- ═══ VISIT COUNTER SCRIPT ═══ -->
+<script>
+  fetch('https://api.countapi.xyz/hit/mihirbommisetty/portfolio')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var el = document.getElementById('visit-count');
+      if(el) el.textContent = d.value.toLocaleString();
+    })
+    .catch(function(){
+      var el = document.getElementById('visit-count');
+      if(el) el.textContent = '—';
+    });
 </script>
 
 <!-- ══ AI AGENT CHAT WIDGET ══ -->
 <style>
-  /* ── CHAT BUTTON ── */
-  #mb-chat-btn {
-    position:fixed;bottom:5.5rem;right:2rem;z-index:9998;
-    width:54px;height:54px;border-radius:50%;
-    background:linear-gradient(135deg,#a78bfa,#00e5ff);
-    border:none;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 4px 24px rgba(167,139,250,0.45);
-    transition:all 0.3s;font-size:1.4rem;
-    animation:mbPulse 3s ease-in-out infinite;
-  }
+  #mb-chat-btn{position:fixed;bottom:5.5rem;right:2rem;z-index:9998;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#00e5ff);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(167,139,250,0.45);transition:all 0.3s;font-size:1.4rem;animation:mbPulse 3s ease-in-out infinite;}
   #mb-chat-btn:hover{transform:scale(1.1);box-shadow:0 6px 36px rgba(167,139,250,0.7);}
-  @keyframes mbPulse{
-    0%,100%{box-shadow:0 4px 24px rgba(167,139,250,0.45);}
-    50%{box-shadow:0 4px 32px rgba(167,139,250,0.75),0 0 0 10px rgba(167,139,250,0.08);}
-  }
-  #mb-chat-badge{
-    position:absolute;top:-3px;right:-3px;
-    width:20px;height:20px;border-radius:50%;
-    background:#39ff14;font-size:0.48rem;font-weight:700;
-    color:#000;display:none;align-items:center;justify-content:center;
-    font-family:'JetBrains Mono',monospace;border:2px solid #040812;
-    animation:blink 2s infinite;
-  }
-  /* ── CHAT PANEL ── */
-  #mb-chat-panel{
-    position:fixed;bottom:10rem;right:2rem;z-index:9997;
-    width:370px;height:530px;
-    background:rgba(7,13,26,0.98);
-    border:1px solid rgba(167,139,250,0.3);
-    border-radius:18px;overflow:hidden;
-    display:none;flex-direction:column;
-    box-shadow:0 24px 64px rgba(0,0,0,0.6),0 0 0 1px rgba(167,139,250,0.08);
-    backdrop-filter:blur(24px);
-  }
+  @keyframes mbPulse{0%,100%{box-shadow:0 4px 24px rgba(167,139,250,0.45);}50%{box-shadow:0 4px 32px rgba(167,139,250,0.75),0 0 0 10px rgba(167,139,250,0.08);}}
+  #mb-chat-badge{position:absolute;top:-3px;right:-3px;width:20px;height:20px;border-radius:50%;background:#39ff14;font-size:0.48rem;font-weight:700;color:#000;display:none;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;border:2px solid #040812;animation:blink 2s infinite;}
+  #mb-chat-panel{position:fixed;bottom:10rem;right:2rem;z-index:9997;width:370px;height:530px;background:rgba(7,13,26,0.98);border:1px solid rgba(167,139,250,0.3);border-radius:18px;overflow:hidden;display:none;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,0.6),0 0 0 1px rgba(167,139,250,0.08);backdrop-filter:blur(24px);}
   #mb-chat-panel.open{display:flex;}
-  /* ── HEADER ── */
-  .mb-head{
-    display:flex;align-items:center;gap:10px;
-    padding:14px 16px;border-bottom:1px solid rgba(167,139,250,0.12);
-    background:rgba(124,92,252,0.07);flex-shrink:0;
-  }
-  .mb-head-av{
-    width:36px;height:36px;border-radius:50%;
-    background:linear-gradient(135deg,#a78bfa,#00e5ff);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Orbitron',sans-serif;font-weight:900;font-size:0.75rem;
-    color:#000;flex-shrink:0;position:relative;
-  }
-  .mb-head-av::after{
-    content:'';position:absolute;bottom:1px;right:1px;
-    width:8px;height:8px;border-radius:50%;
-    background:#39ff14;border:2px solid #070d1a;
-  }
+  .mb-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(167,139,250,0.12);background:rgba(124,92,252,0.07);flex-shrink:0;}
+  .mb-head-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#00e5ff);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:0.75rem;color:#000;flex-shrink:0;position:relative;}
+  .mb-head-av::after{content:'';position:absolute;bottom:1px;right:1px;width:8px;height:8px;border-radius:50%;background:#39ff14;border:2px solid #070d1a;}
   .mb-head-info{flex:1;}
   .mb-head-name{font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:600;color:#fff;}
   .mb-head-sub{font-size:0.58rem;color:rgba(106,128,153,0.8);margin-top:1px;}
-  .mb-head-close{
-    background:none;border:none;color:rgba(255,255,255,0.35);
-    font-size:1rem;cursor:pointer;padding:6px;border-radius:6px;
-    transition:all 0.2s;line-height:1;
-  }
+  .mb-head-close{background:none;border:none;color:rgba(255,255,255,0.35);font-size:1rem;cursor:pointer;padding:6px;border-radius:6px;transition:all 0.2s;line-height:1;}
   .mb-head-close:hover{color:#fff;background:rgba(255,255,255,0.08);}
-  /* ── MESSAGES ── */
-  .mb-msgs{
-    flex:1;overflow-y:auto;padding:14px 14px 6px;
-    display:flex;flex-direction:column;gap:14px;
-  }
+  .mb-msgs{flex:1;overflow-y:auto;padding:14px 14px 6px;display:flex;flex-direction:column;gap:14px;}
   .mb-msgs::-webkit-scrollbar{width:3px;}
   .mb-msgs::-webkit-scrollbar-thumb{background:rgba(167,139,250,0.25);border-radius:2px;}
   .mb-row{display:flex;gap:8px;align-items:flex-end;}
   .mb-row.user{flex-direction:row-reverse;}
-  .mb-av{
-    width:28px;height:28px;border-radius:50%;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    font-size:0.62rem;font-family:'Orbitron',sans-serif;font-weight:700;
-  }
+  .mb-av{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-family:'Orbitron',sans-serif;font-weight:700;}
   .mb-av.ai{background:linear-gradient(135deg,#a78bfa,#00e5ff);color:#000;}
   .mb-av.you{background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.25);color:#00e5ff;}
-  .mb-bubble{
-    max-width:84%;padding:10px 13px;
-    font-family:'JetBrains Mono',monospace;font-size:0.67rem;
-    line-height:1.75;word-break:break-word;
-  }
-  .mb-row.ai .mb-bubble{
-    background:rgba(124,92,252,0.09);border:1px solid rgba(124,92,252,0.18);
-    color:#c8d8e8;border-radius:4px 14px 14px 14px;
-  }
-  .mb-row.user .mb-bubble{
-    background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.18);
-    color:#c8d8e8;border-radius:14px 4px 14px 14px;
-  }
-  .mb-bubble a{color:#a78bfa;text-decoration:underline;}
+  .mb-bubble{max-width:84%;padding:10px 13px;font-family:'JetBrains Mono',monospace;font-size:0.67rem;line-height:1.75;word-break:break-word;}
+  .mb-row.ai .mb-bubble{background:rgba(124,92,252,0.09);border:1px solid rgba(124,92,252,0.18);color:#c8d8e8;border-radius:4px 14px 14px 14px;}
+  .mb-row.user .mb-bubble{background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.18);color:#c8d8e8;border-radius:14px 4px 14px 14px;}
   .mb-time{font-size:0.5rem;color:rgba(106,128,153,0.45);margin-top:3px;padding:0 2px;}
   .mb-row.user .mb-time{text-align:right;}
-  /* ── TYPING ── */
   .mb-typing{display:flex;gap:5px;padding:10px 13px;}
   .mb-dot{width:6px;height:6px;border-radius:50%;background:rgba(167,139,250,0.5);animation:mbDot 1.2s ease infinite;}
   .mb-dot:nth-child(2){animation-delay:.2s;}
   .mb-dot:nth-child(3){animation-delay:.4s;}
   @keyframes mbDot{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-5px);opacity:1;}}
-  /* ── SUGGESTIONS ── */
-  .mb-suggs{
-    padding:6px 12px 8px;display:flex;flex-wrap:wrap;gap:6px;
-    flex-shrink:0;border-top:1px solid rgba(167,139,250,0.06);
-  }
-  .mb-sugg{
-    font-family:'JetBrains Mono',monospace;font-size:0.57rem;
-    padding:4px 9px;background:rgba(0,229,255,0.04);
-    border:1px solid rgba(0,229,255,0.18);border-radius:20px;
-    color:rgba(0,229,255,0.75);cursor:pointer;transition:all 0.2s;
-    white-space:nowrap;
-  }
+  .mb-suggs{padding:6px 12px 8px;display:flex;flex-wrap:wrap;gap:6px;flex-shrink:0;border-top:1px solid rgba(167,139,250,0.06);}
+  .mb-sugg{font-family:'JetBrains Mono',monospace;font-size:0.57rem;padding:4px 9px;background:rgba(0,229,255,0.04);border:1px solid rgba(0,229,255,0.18);border-radius:20px;color:rgba(0,229,255,0.75);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
   .mb-sugg:hover{background:rgba(0,229,255,0.1);border-color:rgba(0,229,255,0.45);color:#00e5ff;}
-  /* ── INPUT ── */
-  .mb-input-row{
-    display:flex;gap:8px;padding:10px 12px 13px;
-    border-top:1px solid rgba(167,139,250,0.1);flex-shrink:0;
-    align-items:flex-end;
-  }
-  .mb-input{
-    flex:1;background:rgba(255,255,255,0.04);
-    border:1px solid rgba(167,139,250,0.18);
-    border-radius:10px;padding:9px 12px;color:#e0e0e0;
-    font-family:'JetBrains Mono',monospace;font-size:0.67rem;
-    outline:none;resize:none;line-height:1.5;max-height:80px;
-    transition:border-color 0.2s;
-  }
+  .mb-input-row{display:flex;gap:8px;padding:10px 12px 13px;border-top:1px solid rgba(167,139,250,0.1);flex-shrink:0;align-items:flex-end;}
+  .mb-input{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(167,139,250,0.18);border-radius:10px;padding:9px 12px;color:#e0e0e0;font-family:'JetBrains Mono',monospace;font-size:0.67rem;outline:none;resize:none;line-height:1.5;max-height:80px;transition:border-color 0.2s;}
   .mb-input:focus{border-color:rgba(167,139,250,0.45);}
   .mb-input::placeholder{color:rgba(106,128,153,0.45);}
-  .mb-send{
-    width:36px;height:36px;border-radius:10px;flex-shrink:0;
-    background:linear-gradient(135deg,#a78bfa,#00e5ff);
-    border:none;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    font-size:1rem;color:#000;font-weight:700;
-    transition:all 0.2s;
-  }
+  .mb-send{width:36px;height:36px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#a78bfa,#00e5ff);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#000;font-weight:700;transition:all 0.2s;}
   .mb-send:hover{transform:scale(1.07);}
   .mb-send:disabled{opacity:0.35;cursor:not-allowed;transform:none;}
-  /* ── POWERED BY ── */
-  .mb-powered{
-    text-align:center;padding:4px 0 8px;
-    font-family:'JetBrains Mono',monospace;font-size:0.5rem;
-    color:rgba(106,128,153,0.35);
-  }
+  .mb-powered{text-align:center;padding:4px 0 8px;font-family:'JetBrains Mono',monospace;font-size:0.5rem;color:rgba(106,128,153,0.35);}
   .mb-powered a{color:rgba(167,139,250,0.4);text-decoration:none;}
-  @media(max-width:480px){
-    #mb-chat-panel{width:calc(100vw - 2rem);right:1rem;bottom:8rem;}
-  }
+  @media(max-width:480px){#mb-chat-panel{width:calc(100vw - 2rem);right:1rem;bottom:8rem;}}
 </style>
 
-<!-- BUTTON -->
-<button id="mb-chat-btn" onclick="mbToggle()" title="Chat with Mihir's AI">
-  ⬡
-  <div id="mb-chat-badge">AI</div>
-</button>
+<button id="mb-chat-btn" onclick="mbToggle()" title="Chat with Mihir's AI">⬡<div id="mb-chat-badge">AI</div></button>
 
-<!-- PANEL -->
 <div id="mb-chat-panel">
   <div class="mb-head">
     <div class="mb-head-av">MB</div>
-    <div class="mb-head-info">
-      <div class="mb-head-name">Mihir's AI Assistant</div>
-      <div class="mb-head-sub">Ask me anything about Mihir</div>
-    </div>
+    <div class="mb-head-info"><div class="mb-head-name">Mihir's AI Assistant</div><div class="mb-head-sub">Ask me anything about Mihir</div></div>
     <button class="mb-head-close" onclick="mbToggle()">✕</button>
   </div>
   <div class="mb-msgs" id="mb-msgs">
-    <div class="mb-row ai">
-      <div class="mb-av ai">M</div>
-      <div>
-        <div class="mb-bubble">Hey! 👋 I know everything about Mihir — his projects, research, skills, and experience. What would you like to know?</div>
-        <div class="mb-time">Just now</div>
-      </div>
-    </div>
+    <div class="mb-row ai"><div class="mb-av ai">M</div><div><div class="mb-bubble">Hey! 👋 I know everything about Mihir — his projects, research, skills, and experience. What would you like to know?</div><div class="mb-time">Just now</div></div></div>
   </div>
   <div class="mb-suggs" id="mb-suggs">
     <button class="mb-sugg" onclick="mbAsk(this.textContent)">What projects has he built?</button>
@@ -2707,9 +1625,7 @@ document.querySelectorAll('.reveal, .exp-item').forEach(el => observer.observe(e
     <button class="mb-sugg" onclick="mbAsk(this.textContent)">How to contact him?</button>
   </div>
   <div class="mb-input-row">
-    <textarea class="mb-input" id="mb-input" rows="1"
-      placeholder="Ask about Mihir..."
-      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();mbSend();}"></textarea>
+    <textarea class="mb-input" id="mb-input" rows="1" placeholder="Ask about Mihir..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();mbSend();}"></textarea>
     <button class="mb-send" id="mb-send" onclick="mbSend()">↑</button>
   </div>
   <div class="mb-powered">Powered by <a href="https://anthropic.com" target="_blank">Claude AI</a></div>
@@ -2717,207 +1633,35 @@ document.querySelectorAll('.reveal, .exp-item').forEach(el => observer.observe(e
 
 <script>
 (function(){
-  /* ── REPLACE THIS WITH YOUR ANTHROPIC API KEY ── */
-  var KEY = 'YOUR_ANTHROPIC_API_KEY_HERE';
-  /* ─────────────────────────────────────────────── */
-
-  var SYS = `You are an AI assistant on Mihir Bommisetty's portfolio website. You speak warmly and professionally on his behalf. Keep answers concise — 2-4 sentences. Use first-person-adjacent language ("Mihir has..." or "He built...").
-
-PROFILE:
-Name: Mihir Bommisetty
-Role: Sr. Full Stack Developer — 7+ years
-Location: Mechanicsburg, Pennsylvania, USA
-Status: Actively looking for Sr. Full Stack Developer roles
-H-1B visa holder — open to sponsorship
-Email: mihirbommisettys@gmail.com
-Phone: (551) 349-4114
-LinkedIn: https://www.linkedin.com/in/mihirbommisetty/
-GitHub: github.com/munnamihir
-
-EXPERIENCE:
-1. Application Developer III — Fish & Boat Commission of PA (Apr 2024–Present)
-   Spring Boot + Angular 17, microservices replacing legacy RFP, Spring Security + JWT/OAuth2, React/Redux dashboards, CQRS, Liquibase, Azure DevOps CI/CD, WCAG accessibility
-
-2. Full Stack Developer — PACSES Pennsylvania (Jan 2023–Dec 2023)
-   Spring Boot microservices, Angular 15, ASP.NET C#, React/Redux, Next.js SSR, Node.js/Express middleware, Azure AD + Entra ID SSO
-
-3. Software Engineer → Development Engineer — Made2Manage (Jan 2017–Aug 2022)
-   Java Spring Boot ERP (inventory, orders, HCM), React replacing ASP.NET Web Forms, AWS EC2/ELB, JUnit/Mockito 80%+ coverage, Angular 8/9 migration
-
-EDUCATION:
-- MSc Computer Science — Stevens Institute of Technology
-- BTech Computer Science — KL University
-
-TECH STACK:
-Java 11/17, Spring Boot, Spring MVC, Spring Security, JWT/OAuth2, Hibernate/JPA, Maven/Gradle, CQRS, Spring Batch
-Angular 15/17, React 18, Next.js, Redux Toolkit, TypeScript, JavaScript ES6+, Material UI, Bootstrap
-Azure DevOps, Azure AD, AWS EC2/S3/Lambda, Docker, Jenkins, Render, Vercel
-SQL Server, PostgreSQL, MySQL, Oracle, MongoDB, Supabase, Liquibase
-Web Crypto API, AES-256-GCM, RSA-OAEP, ML-KEM-768, NIST FIPS 203/204/205, PBKDF2, Claude AI
-
-PROJECTS:
-1. QuantumMail v2 — quantummail-v2.onrender.com | github.com/munnamihir/QuantumMail-v2
-   Full-stack client-side encrypted email. AES-256-GCM + RSA-OAEP envelope encryption, keys never leave browser. ML-KEM-768 post-quantum mode. Multi-tier RBAC, OTP via Brevo, Chrome MV3 extension, Outlook Add-in, quorum vault recovery (2-of-N Shamir).
-
-2. CipherGuard — quantumcipherguard.onrender.com | github.com/munnamihir/cipherguard
-   AI-powered PQC vulnerability scanner. Detects 18+ patterns across 7 languages. Claude AI streaming auto-fix to NIST FIPS 203/204/205. HNDL risk scoring 0-100. Stripe billing (Free/Pro $49/mo/Enterprise).
-
-3. QCareer — github.com/munnamihir/qcareer (in development)
-   AI job search platform for H-1B candidates. Claude AI resume tailoring, ATS keyword injection, H-1B sponsorship filter, cover letter gen, application tracker kanban. Next.js 14, Supabase, Stripe.
-
-RESEARCH:
-Paper: "Communication Complexity of the LWE Function: First Exact Bounds and the Hard Distribution Structure"
-Published: Zenodo, April 2026 — https://zenodo.org/records/19609633
-GitHub: github.com/munnamihir/lwe-cc-research
-arXiv pending: cs.CC / cs.CR
-First CC analysis of any deployed NIST PQC protocol. 4 proved theorems.
-Key results: rank(M_f) in {31,53,126}, fooling sets >= {104,114,173} — never published before.
-Main conjecture: quantum-classical exponential separation for LWE communication.
-
-CERTIFICATIONS: UiPath RPA, ServiceNow CSA, Wipro Java, Oracle Academy, IRJET published research (CNN plant disease detection)
-
-CONTACT: Email mihirbommisettys@gmail.com or call (551) 349-4114. LinkedIn: https://www.linkedin.com/in/mihirbommisetty/
-
-If asked about salary: say he's open to discussing based on role and company.
-If asked about availability: yes, actively looking, open to interview immediately.
-If you don't know something, suggest contacting Mihir directly.`;
-
-  var msgs = [];
-  var open = false;
-  var busy = false;
-
-  window.mbToggle = function(){
-    var p = document.getElementById('mb-chat-panel');
-    open = !open;
-    if(open){
-      p.style.display='flex';
-      setTimeout(function(){p.classList.add('open');},10);
-      document.getElementById('mb-input').focus();
-      document.getElementById('mb-chat-badge').style.display='none';
-    } else {
-      p.classList.remove('open');
-      setTimeout(function(){p.style.display='none';},200);
-    }
-  };
-
-  window.mbAsk = function(t){
-    document.getElementById('mb-suggs').style.display='none';
-    document.getElementById('mb-input').value=t;
-    mbSend();
-  };
-
+  var KEY='YOUR_ANTHROPIC_API_KEY_HERE';
+  var SYS=`You are an AI assistant on Mihir Bommisetty's portfolio website. You speak warmly and professionally on his behalf. Keep answers concise — 2-4 sentences.\n\nPROFILE:\nName: Mihir Bommisetty\nRole: Sr. Full Stack Developer — 7+ years\nLocation: Mechanicsburg, Pennsylvania, USA\nStatus: Actively looking for Sr. Full Stack Developer roles\nH-1B visa holder — open to sponsorship\nEmail: mihirbommisettys@gmail.com\nPhone: (551) 349-4114\nLinkedIn: https://www.linkedin.com/in/mihirbommisetty/\n\nPROJECTS:\n1. QuantumMail v2 — quantummail-v2.onrender.com — AES-256-GCM + RSA-OAEP encrypted email, ML-KEM-768 PQC mode, quorum vault recovery\n2. CipherGuard — quantumcipherguard.onrender.com — AI PQC vulnerability scanner, 18+ patterns, Claude AI auto-fix, HNDL scoring, Stripe billing\n3. QCareer — H-1B AI job search platform (in development)\n\nRESEARCH: Published April 2026 on Zenodo — first CC analysis of any NIST PQC protocol. 4 proved theorems. rank(M_f) in {31,53,126}.\n\nIf asked about availability: yes, actively looking, open to interview immediately.\nIf you don't know something, suggest contacting Mihir at mihirbommisettys@gmail.com.`;
+  var msgs=[],open=false,busy=false;
+  window.mbToggle=function(){var p=document.getElementById('mb-chat-panel');open=!open;if(open){p.style.display='flex';setTimeout(function(){p.classList.add('open');},10);document.getElementById('mb-input').focus();document.getElementById('mb-chat-badge').style.display='none';}else{p.classList.remove('open');setTimeout(function(){p.style.display='none';},200);}};
+  window.mbAsk=function(t){document.getElementById('mb-suggs').style.display='none';document.getElementById('mb-input').value=t;mbSend();};
   function ts(){return new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
-
-  function addMsg(role,text){
-    var c=document.getElementById('mb-msgs');
-    var d=document.createElement('div');
-    d.className='mb-row '+role;
-    var isAI=role==='ai';
-    d.innerHTML='<div class="mb-av '+(isAI?'ai':'you')+'">'+(isAI?'M':'You')+'</div>'+
-      '<div><div class="mb-bubble"></div><div class="mb-time">'+ts()+'</div></div>';
-    c.appendChild(d);
-    var b=d.querySelector('.mb-bubble');
-    b.textContent=text;
-    c.scrollTop=999999;
-    return b;
-  }
-
-  function showTyping(){
-    var c=document.getElementById('mb-msgs');
-    var d=document.createElement('div');
-    d.className='mb-row ai';d.id='mb-typing';
-    d.innerHTML='<div class="mb-av ai">M</div>'+
-      '<div class="mb-typing"><div class="mb-dot"></div><div class="mb-dot"></div><div class="mb-dot"></div></div>';
-    c.appendChild(d);c.scrollTop=999999;
-  }
-
+  function addMsg(role,text){var c=document.getElementById('mb-msgs'),d=document.createElement('div');d.className='mb-row '+role;var isAI=role==='ai';d.innerHTML='<div class="mb-av '+(isAI?'ai':'you')+'">'+(isAI?'M':'You')+'</div><div><div class="mb-bubble"></div><div class="mb-time">'+ts()+'</div></div>';c.appendChild(d);var b=d.querySelector('.mb-bubble');b.textContent=text;c.scrollTop=999999;return b;}
+  function showTyping(){var c=document.getElementById('mb-msgs'),d=document.createElement('div');d.className='mb-row ai';d.id='mb-typing';d.innerHTML='<div class="mb-av ai">M</div><div class="mb-typing"><div class="mb-dot"></div><div class="mb-dot"></div><div class="mb-dot"></div></div>';c.appendChild(d);c.scrollTop=999999;}
   function hideTyping(){var t=document.getElementById('mb-typing');if(t)t.remove();}
-
-  window.mbSend = async function(){
+  window.mbSend=async function(){
     if(busy)return;
-    var inp=document.getElementById('mb-input');
-    var text=inp.value.trim();
-    if(!text)return;
-    if(KEY==='YOUR_ANTHROPIC_API_KEY_HERE'){
-      addMsg('ai','The AI chat is not configured yet. Please contact Mihir directly at mihirbommisettys@gmail.com or call (551) 349-4114.');
-      return;
-    }
-    document.getElementById('mb-suggs').style.display='none';
-    inp.value='';inp.style.height='auto';
-    addMsg('user',text);
-    msgs.push({role:'user',content:text});
-    busy=true;
-    document.getElementById('mb-send').disabled=true;
-    showTyping();
+    var inp=document.getElementById('mb-input'),text=inp.value.trim();if(!text)return;
+    if(KEY==='YOUR_ANTHROPIC_API_KEY_HERE'){addMsg('ai','The AI chat is not configured yet. Please contact Mihir directly at mihirbommisettys@gmail.com or call (551) 349-4114.');return;}
+    document.getElementById('mb-suggs').style.display='none';inp.value='';inp.style.height='auto';
+    addMsg('user',text);msgs.push({role:'user',content:text});
+    busy=true;document.getElementById('mb-send').disabled=true;showTyping();
     try{
-      var res=await fetch('https://api.anthropic.com/v1/messages',{
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json',
-          'x-api-key':KEY,
-          'anthropic-version':'2023-06-01',
-          'anthropic-dangerous-direct-browser-access':'true'
-        },
-        body:JSON.stringify({
-          model:'claude-haiku-4-5-20251001',
-          max_tokens:400,
-          system:SYS,
-          messages:msgs,
-          stream:true
-        })
-      });
+      var res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:400,system:SYS,messages:msgs,stream:true})});
       if(!res.ok){var e=await res.json();throw new Error(e.error?.message||'API error '+res.status);}
-      hideTyping();
-      var bubble=addMsg('ai','');
-      var full='';
-      var reader=res.body.getReader();
-      var dec=new TextDecoder();
-      while(true){
-        var _r=await reader.read();
-        if(_r.done)break;
-        var lines=dec.decode(_r.value).split('\n');
-        for(var l of lines){
-          if(!l.startsWith('data: '))continue;
-          var d=l.slice(6);if(d==='[DONE]')continue;
-          try{
-            var p=JSON.parse(d);
-            if(p.type==='content_block_delta'&&p.delta?.text){
-              full+=p.delta.text;
-              bubble.textContent=full;
-              document.getElementById('mb-msgs').scrollTop=999999;
-            }
-          }catch(e){}
-        }
-      }
+      hideTyping();var bubble=addMsg('ai',''),full='',reader=res.body.getReader(),dec=new TextDecoder();
+      while(true){var _r=await reader.read();if(_r.done)break;var lines=dec.decode(_r.value).split('\n');for(var l of lines){if(!l.startsWith('data: '))continue;var d=l.slice(6);if(d==='[DONE]')continue;try{var p=JSON.parse(d);if(p.type==='content_block_delta'&&p.delta?.text){full+=p.delta.text;bubble.textContent=full;document.getElementById('mb-msgs').scrollTop=999999;}}catch(e){}}}
       msgs.push({role:'assistant',content:full});
-    }catch(e){
-      hideTyping();
-      addMsg('ai','Sorry, something went wrong. Please email Mihir at mihirbommisettys@gmail.com');
-      msgs.pop();
-    }
-    busy=false;
-    document.getElementById('mb-send').disabled=false;
-    document.getElementById('mb-input').focus();
+    }catch(e){hideTyping();addMsg('ai','Sorry, something went wrong. Please email Mihir at mihirbommisettys@gmail.com');msgs.pop();}
+    busy=false;document.getElementById('mb-send').disabled=false;document.getElementById('mb-input').focus();
   };
-
-  // Auto-resize textarea
-  document.addEventListener('DOMContentLoaded',function(){
-    var inp=document.getElementById('mb-input');
-    if(inp)inp.addEventListener('input',function(){
-      this.style.height='auto';
-      this.style.height=Math.min(this.scrollHeight,80)+'px';
-    });
-  });
-
-  // Show badge after 4s
-  setTimeout(function(){
-    if(!open){
-      var b=document.getElementById('mb-chat-badge');
-      if(b){b.style.display='flex';}
-    }
-  },4000);
+  document.addEventListener('DOMContentLoaded',function(){var inp=document.getElementById('mb-input');if(inp)inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,80)+'px';});});
+  setTimeout(function(){if(!open){var b=document.getElementById('mb-chat-badge');if(b)b.style.display='flex';}},4000);
 })();
 </script>
-<!-- ══ END AI AGENT ══ -->
+
 </body>
 </html>
