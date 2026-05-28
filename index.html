@@ -353,6 +353,82 @@ footer span{color:var(--c)}
 /* More projects mini cards */
 .mp-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden;padding:1.4rem;transition:all .3s}
 .mp-card:hover{transform:translateY(-4px)}
+
+/* ── FLIP CARDS ── */
+.sg-outer{perspective:1000px;cursor:pointer}
+.sg-inner{position:relative;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.25,.46,.45,.94);width:100%;height:100%}
+.sg-inner.flipped{transform:rotateY(180deg)}
+.sg-front,.sg-back{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.sg-front{position:relative}
+.sg-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);padding:1.4rem;background:rgba(0,229,255,.025);border:1px solid rgba(0,229,255,.18);overflow:hidden}
+.sg-back::before{background:
+    linear-gradient(to right,rgba(0,229,255,.55) 1px,transparent 1px) 0 0/16px 16px no-repeat,
+    linear-gradient(to right,rgba(0,229,255,.55) 1px,transparent 1px) 0 100%/16px 16px no-repeat,
+    linear-gradient(to left,rgba(0,229,255,.55) 1px,transparent 1px) 100% 0/16px 16px no-repeat,
+    linear-gradient(to left,rgba(0,229,255,.55) 1px,transparent 1px) 100% 100%/16px 16px no-repeat,
+    linear-gradient(to bottom,rgba(0,229,255,.55) 1px,transparent 1px) 0 0/16px 16px no-repeat,
+    linear-gradient(to bottom,rgba(0,229,255,.55) 1px,transparent 1px) 100% 0/16px 16px no-repeat,
+    linear-gradient(to top,rgba(0,229,255,.55) 1px,transparent 1px) 0 100%/16px 16px no-repeat,
+    linear-gradient(to top,rgba(0,229,255,.55) 1px,transparent 1px) 100% 100%/16px 16px no-repeat}
+.flip-hint{position:absolute;top:8px;right:18px;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,229,255,.3);z-index:12;pointer-events:none;display:flex;align-items:center;gap:.3rem}
+.flip-hint::before{content:'↩';font-size:.55rem}
+.sg-back-title{font-family:'Orbitron',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--g);margin-bottom:1rem;padding-bottom:.65rem;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between}
+.sg-back-title span{font-size:.44rem;color:rgba(0,229,255,.3);font-family:'JetBrains Mono',monospace;font-weight:300;letter-spacing:1px;text-transform:none}
+.proj-ref{display:flex;flex-direction:column;gap:.65rem}
+.pr-item{padding:.7rem .85rem;border-left:2px solid rgba(0,229,255,.25);background:rgba(0,229,255,.03);position:relative;transition:border-color .2s}
+.pr-item:hover{border-left-color:var(--c)}
+.pr-item.purple{border-left-color:rgba(168,85,247,.35);background:rgba(168,85,247,.03)}
+.pr-item.purple:hover{border-left-color:var(--p)}
+.pr-item.gold{border-left-color:rgba(245,197,24,.3);background:rgba(245,197,24,.025)}
+.pr-item.gold:hover{border-left-color:var(--g)}
+.pr-item.green{border-left-color:rgba(0,255,136,.25);background:rgba(0,255,136,.02)}
+.pr-name{font-size:.68rem;font-weight:500;color:#fff;margin-bottom:.18rem;display:flex;align-items:center;gap:.45rem}
+.pr-name a{color:inherit;text-decoration:none;transition:color .2s}
+.pr-name a:hover{color:var(--c)}
+.pr-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.pr-desc{font-size:.58rem;color:var(--mu);line-height:1.65}
+.back-close-hint{margin-top:.9rem;text-align:right;font-size:.46rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,229,255,.2)}
+
+/* ── KONAMI OVERLAY ── */
+#konami{position:fixed;inset:0;z-index:999999;display:none;align-items:center;justify-content:center;background:#000;overflow:hidden}
+#konami.show{display:flex}
+#konami-bg{position:absolute;inset:0;font-family:'JetBrains Mono',monospace;font-size:.55rem;color:rgba(0,255,0,.07);line-height:1.5;padding:1rem;pointer-events:none;overflow:hidden;word-break:break-all;letter-spacing:1px}
+.konami-scanlines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.15) 2px,rgba(0,0,0,.15) 4px);pointer-events:none;z-index:1}
+.konami-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.8) 100%);pointer-events:none;z-index:1}
+#konami-doc{position:relative;z-index:2;width:min(820px,94vw);max-height:90vh;overflow-y:auto;background:rgba(0,8,0,.96);border:1px solid rgba(0,255,0,.2);padding:0;font-family:'JetBrains Mono',monospace}
+#konami-doc::-webkit-scrollbar{width:3px}#konami-doc::-webkit-scrollbar-thumb{background:rgba(0,255,0,.3)}
+.kd-header{background:rgba(0,255,0,.06);border-bottom:1px solid rgba(0,255,0,.15);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.kd-logo{font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:900;color:rgba(0,255,0,.7);letter-spacing:4px}
+.kd-close{background:transparent;border:1px solid rgba(0,255,0,.2);color:rgba(0,255,0,.5);padding:.3rem .8rem;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:2px;transition:all .2s}
+.kd-close:hover{border-color:rgba(0,255,0,.5);color:rgba(0,255,0,.9)}
+.kd-body{padding:2rem}
+.kd-stamp{display:inline-block;border:3px solid rgba(255,0,0,.7);color:rgba(255,0,0,.7);font-size:1.8rem;font-weight:900;letter-spacing:6px;padding:.2rem .8rem;transform:rotate(-12deg);position:absolute;top:2.5rem;right:2.5rem;font-family:'Orbitron',sans-serif;text-transform:uppercase;animation:stampPulse 2s ease-in-out infinite}
+@keyframes stampPulse{0%,100%{opacity:.7}50%{opacity:1}}
+.kd-subject{display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(0,255,0,.1)}
+.kd-avatar{width:72px;height:72px;border:2px solid rgba(0,255,0,.3);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.2rem;color:rgba(0,255,0,.7);flex-shrink:0;position:relative}
+.kd-avatar::before{content:'PHOTO';position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:.38rem;color:rgba(0,255,0,.3);letter-spacing:2px}
+.kd-subject-info{flex:1}
+.kd-field{margin-bottom:.6rem}
+.kd-field-label{font-size:.48rem;letter-spacing:3px;text-transform:uppercase;color:rgba(0,255,0,.4);margin-bottom:.15rem}
+.kd-field-value{font-size:.72rem;color:rgba(0,255,0,.85)}
+.kd-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+.kd-section{padding:1rem 1.2rem;border:1px solid rgba(0,255,0,.1);background:rgba(0,255,0,.02)}
+.kd-section-title{font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:rgba(0,255,0,.4);margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px solid rgba(0,255,0,.08)}
+.kd-stat-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;font-size:.62rem}
+.kd-stat-label{color:rgba(0,255,0,.5)}
+.kd-stat-value{color:rgba(0,255,0,.9);font-weight:600}
+.kd-redact{background:rgba(255,0,0,.15);color:transparent;user-select:none;border-radius:2px;cursor:help;transition:all .3s;display:inline}
+.kd-redact:hover{background:transparent;color:rgba(0,255,0,.85)}
+.kd-message{border:1px solid rgba(0,255,0,.15);padding:1.2rem;margin-top:1.5rem;background:rgba(0,255,0,.03);position:relative}
+.kd-message::before{content:'INTERCEPTED COMMUNICATION · DECRYPTED';position:absolute;top:-9px;left:1rem;font-size:.42rem;letter-spacing:2px;color:rgba(0,255,0,.35);background:#000808;padding:0 .5rem}
+.kd-msg-text{font-size:.68rem;color:rgba(0,255,0,.7);line-height:2;font-style:italic}
+.kd-seq{font-size:.52rem;letter-spacing:2px;color:rgba(0,255,0,.25);margin-bottom:1rem;text-align:center}
+.kd-warning{text-align:center;font-size:.5rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,0,0,.4);margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(0,255,0,.08)}
+.kd-access{text-align:center;font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:rgba(0,255,0,.85);letter-spacing:8px;margin-bottom:1rem;animation:accessPulse 1.5s ease-in-out infinite}
+@keyframes accessPulse{0%,100%{text-shadow:0 0 10px rgba(0,255,0,.4)}50%{text-shadow:0 0 30px rgba(0,255,0,.9),0 0 60px rgba(0,255,0,.4)}}
+/* GLITCH effect on trigger */
+@keyframes glitchFull{0%,100%{transform:none;filter:none}10%{transform:skew(-2deg);filter:hue-rotate(90deg)}20%{transform:translateX(-5px);filter:invert(.1)}30%{transform:skew(1deg) translateX(3px);filter:hue-rotate(180deg)}40%{transform:none;filter:none}50%{transform:translateX(5px) skew(-1deg);filter:brightness(1.5)}60%{transform:none;filter:none}70%{transform:skew(2deg);filter:hue-rotate(270deg)}80%{transform:translateX(-3px);filter:none}90%{transform:skew(-1deg);filter:brightness(.8)}}
+.glitching{animation:glitchFull .35s ease forwards}
 </style>
 </head>
 <body>
@@ -494,54 +570,168 @@ footer span{color:var(--c)}
     <!-- Radar Chart -->
     <div id="radar-wrap" class="rv d2"><canvas id="radar-c" width="420" height="320"></canvas></div>
     <div class="sg-g">
-      <div class="hc sg rv d1"><div class="hlabel">JAVA</div><div class="hid">SG-001</div><div class="scan"></div>
+      <div class="sg-outer rv d1" onclick="flipSg(this)">
+      <div class="sg-inner">
+        <div class="sg-front"><div class="hc sg rv d1"><div class="hlabel">JAVA</div><div class="hid">SG-001</div><div class="scan"></div>
         <div class="sg-head"><div class="sg-t">Java Ecosystem</div><div class="sg-n">8 SKILLS</div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Java 11/17</span><span class="br-pct">96%</span></div><div class="br-track"><div class="br-fill" data-p="96"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Spring Boot / MVC</span><span class="br-pct">95%</span></div><div class="br-track"><div class="br-fill" data-p="95"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Spring Security / JWT</span><span class="br-pct">88%</span></div><div class="br-track"><div class="br-fill" data-p="88"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Hibernate / JPA</span><span class="br-pct">85%</span></div><div class="br-track"><div class="br-fill" data-p="85"></div></div></div>
         <div class="tg-r"><span class="tg">OAuth2</span><span class="tg">Spring Batch</span><span class="tg">Maven</span><span class="tg">CQRS</span><span class="tg">Liquibase</span></div>
+      </div><div class="flip-hint">click to see usage</div></div>
+        <div class="sg-back">
+        <div class="scan" style="animation-delay:1s"></div>
+        <div class="sg-back-title">Java — Used In <span>click again to flip back</span></div>
+        <div class="proj-ref"><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir" target="_blank">PA Gov Portal</a></div>
+          <div class="pr-desc">Spring Boot REST APIs + Spring Security JWT/RBAC + CQRS + Liquibase schema migration. WCAG-compliant government portal.</div>
+        </div><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir" target="_blank">PACSES Microservices</a></div>
+          <div class="pr-desc">Spring Boot modules replacing legacy auth with JWT/OAuth2 across child support enforcement system.</div>
+        </div><div class="pr-item gold">
+          <div class="pr-name"><div class="pr-dot" style="background:#f5c518"></div><a href="https://github.com/munnamihir" target="_blank">Made2Manage ERP</a></div>
+          <div class="pr-desc">5.5yr Java Spring Boot for inventory, order management, and HCM microservices. JUnit/Mockito 80%+ coverage.</div>
+        </div></div>
+        <div class="back-close-hint">↩ click to flip back</div>
       </div>
-      <div class="hc sg rv d2"><div class="hlabel">FRONTEND</div><div class="hid">SG-002</div><div class="scan" style="animation-delay:1.5s"></div>
+      </div>
+    </div>
+      <div class="sg-outer rv d2" onclick="flipSg(this)">
+      <div class="sg-inner">
+        <div class="sg-front"><div class="hc sg rv d2"><div class="hlabel">FRONTEND</div><div class="hid">SG-002</div><div class="scan" style="animation-delay:1.5s"></div>
         <div class="sg-head"><div class="sg-t">Front-End</div><div class="sg-n">8 SKILLS</div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Angular 15/17</span><span class="br-pct">93%</span></div><div class="br-track"><div class="br-fill" data-p="93"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">React 18 / Redux</span><span class="br-pct">90%</span></div><div class="br-track"><div class="br-fill" data-p="90"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Next.js App Router</span><span class="br-pct">86%</span></div><div class="br-track"><div class="br-fill" data-p="86"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">TypeScript / ES6+</span><span class="br-pct">89%</span></div><div class="br-track"><div class="br-fill" data-p="89"></div></div></div>
         <div class="tg-r"><span class="tg">Material UI</span><span class="tg">Tailwind</span><span class="tg">Bootstrap</span></div>
+      </div><div class="flip-hint">click to see usage</div></div>
+        <div class="sg-back">
+        <div class="scan" style="animation-delay:1s"></div>
+        <div class="sg-back-title">Front-End — Used In <span>click again to flip back</span></div>
+        <div class="proj-ref"><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir/QuantumMail-v2" target="_blank">QuantumMail-v2</a></div>
+          <div class="pr-desc">React 18 portal with Web Crypto API encryption/decryption UI. 438 commits. AES-256-GCM + RSA-OAEP flows.</div>
+        </div><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir" target="_blank">PA Gov Portal</a></div>
+          <div class="pr-desc">Angular 17 full replacement of legacy monolithic RFP system. Angular + Redux Toolkit admin dashboards.</div>
+        </div><div class="pr-item purple">
+          <div class="pr-name"><div class="pr-dot" style="background:#a855f7"></div><a href="https://github.com/munnamihir" target="_blank">PACSES</a></div>
+          <div class="pr-desc">React/Redux caseworker dashboards + Next.js SSR public portal for SEO. AngularJS → Angular 8/9 migration at Made2Manage.</div>
+        </div></div>
+        <div class="back-close-hint">↩ click to flip back</div>
       </div>
-      <div class="hc sg rv d3"><div class="hlabel">CLOUD</div><div class="hid">SG-003</div><div class="scan" style="animation-delay:2.5s"></div>
+      </div>
+    </div>
+      <div class="sg-outer rv d3" onclick="flipSg(this)">
+      <div class="sg-inner">
+        <div class="sg-front"><div class="hc sg rv d3"><div class="hlabel">CLOUD</div><div class="hid">SG-003</div><div class="scan" style="animation-delay:2.5s"></div>
         <div class="sg-head"><div class="sg-t">Cloud &amp; DevOps</div><div class="sg-n">7 SKILLS</div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Azure DevOps / Pipelines</span><span class="br-pct">90%</span></div><div class="br-track"><div class="br-fill" data-p="90"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">AWS EC2 / S3 / Lambda</span><span class="br-pct">79%</span></div><div class="br-track"><div class="br-fill" data-p="79"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Azure AD / Entra ID</span><span class="br-pct">82%</span></div><div class="br-track"><div class="br-fill" data-p="82"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Docker / Jenkins</span><span class="br-pct">74%</span></div><div class="br-track"><div class="br-fill" data-p="74"></div></div></div>
         <div class="tg-r"><span class="tg">Vercel</span><span class="tg">Render</span><span class="tg">IIS</span><span class="tg">YAML CI/CD</span></div>
+      </div><div class="flip-hint">click to see usage</div></div>
+        <div class="sg-back">
+        <div class="scan" style="animation-delay:1s"></div>
+        <div class="sg-back-title">Cloud — Used In <span>click again to flip back</span></div>
+        <div class="proj-ref"><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir" target="_blank">PA Gov Portal</a></div>
+          <div class="pr-desc">Azure DevOps YAML CI/CD pipelines for Spring Boot JARs + Angular builds. Azure AD / Entra ID SSO integration.</div>
+        </div><div class="pr-item gold">
+          <div class="pr-name"><div class="pr-dot" style="background:#f5c518"></div><a href="https://github.com/munnamihir" target="_blank">Made2Manage ERP</a></div>
+          <div class="pr-desc">AWS EC2 + ELB deployment of Spring Boot microservices. Git/SVN/ClearCase version control for 6-person team.</div>
+        </div><div class="pr-item purple">
+          <div class="pr-name"><div class="pr-dot" style="background:#a855f7"></div><a href="https://github.com/munnamihir/cipherguard" target="_blank">CipherGuard</a></div>
+          <div class="pr-desc">Vercel deployment + GitHub App webhook integration + Supabase hosted PostgreSQL. Zero-downtime prod deploys.</div>
+        </div></div>
+        <div class="back-close-hint">↩ click to flip back</div>
       </div>
-      <div class="hc sg rv d1"><div class="hlabel">BACKEND</div><div class="hid">SG-004</div><div class="scan" style="animation-delay:.8s"></div>
+      </div>
+    </div>
+      <div class="sg-outer rv d1" onclick="flipSg(this)">
+      <div class="sg-inner">
+        <div class="sg-front"><div class="hc sg rv d1"><div class="hlabel">BACKEND</div><div class="hid">SG-004</div><div class="scan" style="animation-delay:.8s"></div>
         <div class="sg-head"><div class="sg-t">Back-End &amp; APIs</div><div class="sg-n">8 SKILLS</div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">REST Microservices</span><span class="br-pct">94%</span></div><div class="br-track"><div class="br-fill" data-p="94"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Node.js / Express.js</span><span class="br-pct">89%</span></div><div class="br-track"><div class="br-fill" data-p="89"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">ASP.NET Core / C#</span><span class="br-pct">77%</span></div><div class="br-track"><div class="br-fill" data-p="77"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">GraphQL</span><span class="br-pct">71%</span></div><div class="br-track"><div class="br-fill" data-p="71"></div></div></div>
         <div class="tg-r"><span class="tg">WCF SOAP</span><span class="tg">Entity Framework</span><span class="tg">Dapper</span></div>
+      </div><div class="flip-hint">click to see usage</div></div>
+        <div class="sg-back">
+        <div class="scan" style="animation-delay:1s"></div>
+        <div class="sg-back-title">Back-End — Used In <span>click again to flip back</span></div>
+        <div class="proj-ref"><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir/QuantumMail-v2" target="_blank">QuantumMail-v2</a></div>
+          <div class="pr-desc">Node.js/Express REST API with JWT auth, org approval workflow, KEK keyrings, and Brevo OTP integration.</div>
+        </div><div class="pr-item purple">
+          <div class="pr-name"><div class="pr-dot" style="background:#a855f7"></div><a href="https://github.com/munnamihir/cipherguard" target="_blank">CipherGuard</a></div>
+          <div class="pr-desc">Next.js App Router API routes with Claude AI streaming, GitHub App scanner, Stripe webhook handler.</div>
+        </div><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir" target="_blank">PACSES</a></div>
+          <div class="pr-desc">Node.js/Express middleware orchestrating Java microservices ↔ React clients with request caching.</div>
+        </div></div>
+        <div class="back-close-hint">↩ click to flip back</div>
       </div>
-      <div class="hc sg rv d2"><div class="hlabel">DATABASES</div><div class="hid">SG-005</div><div class="scan" style="animation-delay:3.2s"></div>
+      </div>
+    </div>
+      <div class="sg-outer rv d2" onclick="flipSg(this)">
+      <div class="sg-inner">
+        <div class="sg-front"><div class="hc sg rv d2"><div class="hlabel">DATABASES</div><div class="hid">SG-005</div><div class="scan" style="animation-delay:3.2s"></div>
         <div class="sg-head"><div class="sg-t">Databases</div><div class="sg-n">7 SKILLS</div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">SQL Server / T-SQL</span><span class="br-pct">92%</span></div><div class="br-track"><div class="br-fill" data-p="92"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">PostgreSQL / Supabase</span><span class="br-pct">84%</span></div><div class="br-track"><div class="br-fill" data-p="84"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">MongoDB</span><span class="br-pct">70%</span></div><div class="br-track"><div class="br-fill" data-p="70"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Oracle / MySQL</span><span class="br-pct">73%</span></div><div class="br-track"><div class="br-fill" data-p="73"></div></div></div>
         <div class="tg-r"><span class="tg">Stored Procs</span><span class="tg">Liquibase</span><span class="tg">RLS</span></div>
+      </div><div class="flip-hint">click to see usage</div></div>
+        <div class="sg-back">
+        <div class="scan" style="animation-delay:1s"></div>
+        <div class="sg-back-title">Databases — Used In <span>click again to flip back</span></div>
+        <div class="proj-ref"><div class="pr-item gold">
+          <div class="pr-name"><div class="pr-dot" style="background:#f5c518"></div><a href="https://github.com/munnamihir" target="_blank">Made2Manage ERP</a></div>
+          <div class="pr-desc">SQL Server + T-SQL stored procedures and ADO.NET data layers for ERP inventory and order modules.</div>
+        </div><div class="pr-item purple">
+          <div class="pr-name"><div class="pr-dot" style="background:#a855f7"></div><a href="https://github.com/munnamihir/cipherguard" target="_blank">CipherGuard</a></div>
+          <div class="pr-desc">Supabase PostgreSQL + PLpgSQL migrations (10% of codebase). Row Level Security for multi-tenant billing.</div>
+        </div><div class="pr-item gold">
+          <div class="pr-name"><div class="pr-dot" style="background:#f5c518"></div><a href="https://github.com/munnamihir/QCareer" target="_blank">QCareer</a></div>
+          <div class="pr-desc">PLpgSQL schema with Supabase RLS (2.7% of codebase). Hibernate/JPA entity models + Liquibase for PA Portal.</div>
+        </div></div>
+        <div class="back-close-hint">↩ click to flip back</div>
       </div>
-      <div class="hc sg rv d3"><div class="hlabel">CRYPTO</div><div class="hid">SG-006</div><div class="scan" style="animation-delay:1.8s"></div>
+      </div>
+    </div>
+      <div class="sg-outer rv d3" onclick="flipSg(this)">
+      <div class="sg-inner">
+        <div class="sg-front"><div class="hc sg rv d3"><div class="hlabel">CRYPTO</div><div class="hid">SG-006</div><div class="scan" style="animation-delay:1.8s"></div>
         <div class="sg-head"><div class="sg-t">Testing &amp; Crypto</div><div class="sg-n">8 SKILLS</div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">JUnit / Mockito</span><span class="br-pct">88%</span></div><div class="br-track"><div class="br-fill" data-p="88"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">Web Crypto API</span><span class="br-pct">92%</span></div><div class="br-track"><div class="br-fill" data-p="92"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">ML-KEM-768 / FIPS 203</span><span class="br-pct">80%</span></div><div class="br-track"><div class="br-fill" data-p="80"></div></div></div>
         <div class="br-row"><div class="br-head"><span class="br-name">NUnit / xUnit / TDD</span><span class="br-pct">76%</span></div><div class="br-track"><div class="br-fill" data-p="76"></div></div></div>
         <div class="tg-r"><span class="tg">Swagger</span><span class="tg">Postman</span><span class="tg">WCAG/JAWS</span><span class="tg">Stripe</span></div>
+      </div><div class="flip-hint">click to see usage</div></div>
+        <div class="sg-back">
+        <div class="scan" style="animation-delay:1s"></div>
+        <div class="sg-back-title">Testing & Crypto — Used In <span>click again to flip back</span></div>
+        <div class="proj-ref"><div class="pr-item gold">
+          <div class="pr-name"><div class="pr-dot" style="background:#f5c518"></div><a href="https://github.com/munnamihir" target="_blank">Made2Manage ERP</a></div>
+          <div class="pr-desc">JUnit + Mockito achieving 80%+ test coverage across 5.5 years of production ERP microservices.</div>
+        </div><div class="pr-item">
+          <div class="pr-name"><div class="pr-dot" style="background:#00e5ff"></div><a href="https://github.com/munnamihir/QuantumMail-v2" target="_blank">QuantumMail-v2</a></div>
+          <div class="pr-desc">Web Crypto API: AES-256-GCM, RSA-OAEP-SHA256, ML-KEM-768, PBKDF2, quorum vault — 438 commits of crypto code.</div>
+        </div><div class="pr-item purple">
+          <div class="pr-name"><div class="pr-dot" style="background:#a855f7"></div><a href="https://github.com/munnamihir/lwe-cc-research" target="_blank">LWE-CC Research</a></div>
+          <div class="pr-desc">Python NumPy + SciPy LP for first computation of rank, fooling sets, discrepancy bounds. DOI: 10.5281/zenodo.19609632.</div>
+        </div></div>
+        <div class="back-close-hint">↩ click to flip back</div>
       </div>
+      </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1399,6 +1589,193 @@ document.getElementById('rmodal').addEventListener('click',function(e){if(e.targ
 
 /* ══ BACK TO TOP ══ */
 document.getElementById('btt').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'});});
+
+/* ══ FLIP SKILL CARDS ══ */
+window.flipSg = function(outer) {
+  var inner = outer.querySelector('.sg-inner');
+  if (!inner) return;
+  inner.classList.toggle('flipped');
+  /* stop tilt when flipping */
+  outer.style.transform = '';
+};
+/* override tilt for sg-outer */
+document.querySelectorAll('.sg-outer').forEach(function(card) {
+  card.addEventListener('mousemove', function(e) {
+    var inner = card.querySelector('.sg-inner');
+    if (inner && inner.classList.contains('flipped')) return;
+    var rect = card.getBoundingClientRect();
+    var cx = (e.clientX - rect.left) / rect.width - .5;
+    var cy = (e.clientY - rect.top) / rect.height - .5;
+    card.style.transform = 'translateY(-4px) rotateY(' + (cx*7) + 'deg) rotateX(' + (-cy*7) + 'deg)';
+    card.style.transition = 'transform .08s';
+  });
+  card.addEventListener('mouseleave', function() {
+    var inner = card.querySelector('.sg-inner');
+    if (inner && inner.classList.contains('flipped')) return;
+    card.style.transform = '';
+    card.style.transition = 'all .65s cubic-bezier(.25,.46,.45,.94)';
+  });
+});
+
+/* ══ KONAMI CODE ══ */
+(function() {
+  var seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  var buf = [];
+  var timerEl = null;
+
+  function fillKonamiBg() {
+    var bg = document.getElementById('konami-bg');
+    if (!bg) return;
+    var chars = '0123456789ABCDEF ';
+    var txt = '';
+    for (var i = 0; i < 4000; i++) txt += chars[Math.floor(Math.random() * chars.length)];
+    bg.textContent = txt;
+    /* animate it */
+    setInterval(function() {
+      var idx = Math.floor(Math.random() * bg.textContent.length);
+      var arr = bg.textContent.split('');
+      arr[idx] = chars[Math.floor(Math.random() * chars.length)];
+      bg.textContent = arr.join('');
+    }, 40);
+  }
+
+  function startKonamiTimer() {
+    timerEl = document.getElementById('k-timer');
+    /* just counts up for fun */
+    var s = 0;
+    var iv = setInterval(function() {
+      s++;
+      if (timerEl) timerEl.textContent = s;
+      var k = document.getElementById('konami');
+      if (!k || !k.classList.contains('show')) clearInterval(iv);
+    }, 1000);
+  }
+
+  window.closeKonami = function() {
+    var el = document.getElementById('konami');
+    if (el) el.classList.remove('show');
+    document.body.style.overflow = '';
+  };
+
+  function triggerKonami() {
+    /* glitch the page first */
+    document.body.classList.add('glitching');
+    setTimeout(function() { document.body.classList.remove('glitching'); }, 350);
+
+    /* cyan pulse */
+    var pulse = document.createElement('div');
+    pulse.style.cssText = 'position:fixed;inset:0;z-index:99990;background:rgba(0,229,255,.18);pointer-events:none;animation:kPulse .5s ease forwards';
+    var style = document.createElement('style');
+    style.textContent = '@keyframes kPulse{0%{opacity:1}100%{opacity:0}}';
+    document.head.appendChild(style);
+    document.body.appendChild(pulse);
+    setTimeout(function() { pulse.remove(); style.remove(); }, 500);
+
+    /* show overlay after short delay */
+    setTimeout(function() {
+      var el = document.getElementById('konami');
+      if (el) {
+        el.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        fillKonamiBg();
+        startKonamiTimer();
+      }
+    }, 300);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    buf.push(e.key);
+    if (buf.length > seq.length) buf.shift();
+    if (buf.length === seq.length && buf.every(function(k, i) { return k === seq[i]; })) {
+      buf = [];
+      triggerKonami();
+    }
+  });
+
+  /* close on click outside doc */
+  document.getElementById('konami').addEventListener('click', function(e) {
+    if (e.target === this) closeKonami();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeKonami();
+  });
+})();
 </script>
+
+<!-- KONAMI EASTER EGG -->
+<div id="konami">
+  <div id="konami-bg" id="kbg"></div>
+  <div class="konami-scanlines"></div>
+  <div class="konami-vignette"></div>
+  <div id="konami-doc">
+    <div class="kd-header">
+      <div class="kd-logo">MB SYSTEMS · CLEARANCE FILE</div>
+      <button class="kd-close" onclick="closeKonami()">[ ESC ] CLOSE</button>
+    </div>
+    <div class="kd-body" style="position:relative">
+      <div class="kd-stamp">CLASSIFIED</div>
+      <div class="kd-seq">SEQUENCE RECOGNIZED · ↑↑↓↓←→←→BA · ACCESS GRANTED</div>
+      <div class="kd-access">ACCESS GRANTED</div>
+
+      <div class="kd-subject">
+        <div class="kd-avatar">MB</div>
+        <div class="kd-subject-info">
+          <div class="kd-field"><div class="kd-field-label">Subject</div><div class="kd-field-value">BOMMISETTY, MIHIR · Sr. Full Stack Developer</div></div>
+          <div class="kd-field"><div class="kd-field-label">Location</div><div class="kd-field-value">Mechanicsburg, PA 17050 · USA</div></div>
+          <div class="kd-field"><div class="kd-field-label">Status</div><div class="kd-field-value" style="color:rgba(0,255,136,.8)">● ACTIVE · Open to Opportunities · H-1B</div></div>
+          <div class="kd-field"><div class="kd-field-label">Clearance</div><div class="kd-field-value">Full Stack · PQC · Research · <span class="kd-redact" title="hover to reveal">REDACTED</span></div></div>
+        </div>
+      </div>
+
+      <div class="kd-grid">
+        <div class="kd-section">
+          <div class="kd-section-title">Operational Stats</div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Years Active</span><span class="kd-stat-value">7+</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Public Repos</span><span class="kd-stat-value">28</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">QuantumMail Commits</span><span class="kd-stat-value">438</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Technologies</span><span class="kd-stat-value">15+</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Test Coverage (peak)</span><span class="kd-stat-value">80%+</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Lines of Crypto Code</span><span class="kd-stat-value"><span class="kd-redact" title="hover">CLASSIFIED</span></span></div>
+        </div>
+        <div class="kd-section">
+          <div class="kd-section-title">Research Dossier</div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Paper Status</span><span class="kd-stat-value">Published · Zenodo</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">DOI</span><span class="kd-stat-value" style="font-size:.55rem">10.5281/zenodo.19609632</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Proved Theorems</span><span class="kd-stat-value">4</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Open Problems</span><span class="kd-stat-value">5</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Conjectures</span><span class="kd-stat-value">3</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Prior LWE-CC Results</span><span class="kd-stat-value" style="color:rgba(255,0,0,.7)">0 (none before)</span></div>
+        </div>
+        <div class="kd-section">
+          <div class="kd-section-title">Known Capabilities</div>
+          <div class="kd-stat-row"><span class="kd-stat-label">AES-256-GCM</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">ML-KEM-768 (FIPS 203)</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">RSA-OAEP-SHA256</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Spring Boot microservices</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">React / Angular / Next.js</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Quantum resistance</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
+        </div>
+        <div class="kd-section">
+          <div class="kd-section-title">Known Weaknesses</div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Sleep (avg hrs/night)</span><span class="kd-stat-value"><span class="kd-redact" title="hover">REDACTED</span></span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Coffee dependency</span><span class="kd-stat-value" style="color:rgba(255,165,0,.7)">CRITICAL</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Will refactor old code?</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">ALWAYS</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Side project count</span><span class="kd-stat-value" style="color:rgba(255,165,0,.7)">UNCONTROLLED</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Can stop at 1 commit?</span><span class="kd-stat-value" style="color:rgba(255,0,0,.7)">NEVER</span></div>
+          <div class="kd-stat-row"><span class="kd-stat-label">Tabs vs spaces</span><span class="kd-stat-value"><span class="kd-redact" title="hover">CLASSIFIED</span></span></div>
+        </div>
+      </div>
+
+      <div class="kd-message">
+        <div class="kd-msg-text">
+          "If you found this, you're exactly the kind of person I want to work with. Someone who types Konami codes into developer portfolios is someone who pays attention to details, has a sense of humor, and actually explores things thoroughly — which is exactly how I build software.<br><br>
+          The encryption is real. The research is real. The 438 commits are real. And yes, I do stay up too late writing LaTeX proofs about communication complexity.<br><br>
+          Drop me a line: <a href="mailto:mihirbommisettys@gmail.com" style="color:rgba(0,255,136,.8);text-decoration:none">mihirbommisettys@gmail.com</a>"
+        </div>
+      </div>
+      <div class="kd-warning">UNAUTHORIZED ACCESS PROHIBITED · THIS FILE SELF-DESTRUCTS IN <span id="k-timer" style="color:rgba(0,255,0,.5)">—</span> SECONDS (just kidding)</div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
