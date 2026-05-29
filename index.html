@@ -1296,10 +1296,10 @@ footer span{color:var(--c)}
     cro_r.style.left=rx+'px';cro_r.style.top=ry+'px';
     cro_d.style.left=mx+'px';cro_d.style.top=my+'px';
     pctx.clearRect(0,0,pc.width,pc.height);
-    particles=particles.filter(function(p){return p.life>0;});
+    particles=particles.filter(function(p){return p.life>0.01;});
     particles.forEach(function(p){
       p.x+=p.vx;p.y+=p.vy;p.vy+=0.15;p.life-=0.035;p.vx*=.96;
-      pctx.beginPath();pctx.arc(p.x,p.y,p.size*p.life,0,Math.PI*2);
+      var rad=Math.max(0.01,p.size*p.life);pctx.beginPath();pctx.arc(p.x,p.y,rad,0,Math.PI*2);
       pctx.fillStyle=p.color;pctx.globalAlpha=p.life;pctx.fill();pctx.globalAlpha=1;
     });
     requestAnimationFrame(loop);
@@ -1693,11 +1693,16 @@ document.querySelectorAll('.sg-outer').forEach(function(card) {
   });
 
   /* close on click outside doc */
-  document.getElementById('konami').addEventListener('click', function(e) {
-    if (e.target === this) closeKonami();
-  });
+  var konamiEl = document.getElementById('konami');
+  if (konamiEl) {
+    konamiEl.addEventListener('click', function(e) {
+      if (e.target === this) closeKonami();
+    });
+  }
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeKonami();
+    if (e.key === 'Escape') {
+      closeKonami();
+    }
   });
 })();
 </script>
