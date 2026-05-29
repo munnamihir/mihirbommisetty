@@ -1708,79 +1708,360 @@ document.querySelectorAll('.sg-outer').forEach(function(card) {
 </script>
 
 <!-- KONAMI EASTER EGG -->
+<style>
+@keyframes scanBar{0%{transform:translateX(-100%)}50%{transform:translateX(100%)}100%{transform:translateX(100%)}}
+</style>
 <div id="konami">
-  <div id="konami-bg" id="kbg"></div>
+  <div id="konami-bg"></div>
   <div class="konami-scanlines"></div>
   <div class="konami-vignette"></div>
   <div id="konami-doc">
+
     <div class="kd-header">
-      <div class="kd-logo">MB SYSTEMS · CLEARANCE FILE</div>
-      <button class="kd-close" onclick="closeKonami()">[ ESC ] CLOSE</button>
+      <div>
+        <div class="kd-logo">MB SYSTEMS &middot; CLASSIFIED DOSSIER</div>
+        <div style="font-size:.42rem;color:rgba(0,255,0,.3);letter-spacing:3px;margin-top:.2rem">LEVEL 5 CLEARANCE &middot; KONAMI PROTOCOL ACTIVE</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div style="text-align:right;font-size:.44rem;color:rgba(0,255,0,.3);letter-spacing:1px;line-height:1.8">
+          <div>FILE REF: <span style="color:rgba(0,255,0,.6)">MB-2024-FS-CRYPTO</span></div>
+          <div>CLASSIFICATION: <span style="color:rgba(255,0,0,.7)">TOP SECRET</span></div>
+          <div>SESSION: +<span id="k-timer" style="color:rgba(0,255,0,.5)">0</span>s</div>
+        </div>
+        <button class="kd-close" onclick="closeKonami()">[ ESC ] CLOSE</button>
+      </div>
     </div>
+
     <div class="kd-body" style="position:relative">
       <div class="kd-stamp">CLASSIFIED</div>
-      <div class="kd-seq">SEQUENCE RECOGNIZED · ↑↑↓↓←→←→BA · ACCESS GRANTED</div>
-      <div class="kd-access">ACCESS GRANTED</div>
+      <div style="text-align:center;margin-bottom:2rem">
+        <div class="kd-access">ACCESS GRANTED</div>
+        <div class="kd-seq">SEQUENCE RECOGNIZED &middot; &#8593;&#8593;&#8595;&#8595;&#8592;&#8594;&#8592;&#8594;BA &middot; WELCOME, OPERATIVE</div>
+      </div>
 
-      <div class="kd-subject">
-        <div class="kd-avatar">MB</div>
-        <div class="kd-subject-info">
-          <div class="kd-field"><div class="kd-field-label">Subject</div><div class="kd-field-value">BOMMISETTY, MIHIR · Sr. Full Stack Developer</div></div>
-          <div class="kd-field"><div class="kd-field-label">Location</div><div class="kd-field-value">Mechanicsburg, PA 17050 · USA</div></div>
-          <div class="kd-field"><div class="kd-field-label">Status</div><div class="kd-field-value" style="color:rgba(0,255,136,.8)">● ACTIVE · Open to Opportunities · H-1B</div></div>
-          <div class="kd-field"><div class="kd-field-label">Clearance</div><div class="kd-field-value">Full Stack · PQC · Research · <span class="kd-redact" title="hover to reveal">REDACTED</span></div></div>
+      <!-- SECTION 01: IDENTITY -->
+      <div style="border:1px solid rgba(0,255,0,.15);margin-bottom:1.5rem;background:rgba(0,255,0,.02)">
+        <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 01 &mdash; SUBJECT IDENTITY</div>
+        <div style="padding:1.2rem;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem;flex-shrink:0">
+            <div class="kd-avatar">MB</div>
+            <div style="font-size:.4rem;color:rgba(0,255,0,.3);letter-spacing:1px;margin-top:1.6rem;text-align:center">BIOMETRIC<br>VERIFIED</div>
+            <div style="width:52px;height:4px;background:rgba(0,255,0,.08);overflow:hidden;position:relative"><div style="position:absolute;width:60%;height:100%;background:rgba(0,255,0,.4);animation:scanBar 2s ease-in-out infinite"></div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem 2rem;flex:1;min-width:260px">
+            <div class="kd-field"><div class="kd-field-label">Full Name</div><div class="kd-field-value">BOMMISETTY, MIHIR</div></div>
+            <div class="kd-field"><div class="kd-field-label">Designation</div><div class="kd-field-value">Sr. Full Stack Developer</div></div>
+            <div class="kd-field"><div class="kd-field-label">Location</div><div class="kd-field-value">Mechanicsburg, PA 17050</div></div>
+            <div class="kd-field"><div class="kd-field-label">Coordinates</div><div class="kd-field-value" style="font-size:.6rem">40.2148&deg;N &middot; 77.0089&deg;W</div></div>
+            <div class="kd-field"><div class="kd-field-label">Status</div><div class="kd-field-value" style="color:rgba(0,255,136,.8)">&bull; ACTIVE &middot; Open to Work</div></div>
+            <div class="kd-field"><div class="kd-field-label">Visa</div><div class="kd-field-value">H-1B &middot; Sponsorship OK</div></div>
+            <div class="kd-field"><div class="kd-field-label">Education</div><div class="kd-field-value">MSc CS &middot; Stevens Institute</div></div>
+            <div class="kd-field"><div class="kd-field-label">GitHub</div><div class="kd-field-value">github.com/munnamihir &middot; 28 repos</div></div>
+            <div class="kd-field"><div class="kd-field-label">Email</div><div class="kd-field-value" style="font-size:.6rem">mihirbommisettys@gmail.com</div></div>
+            <div class="kd-field"><div class="kd-field-label">Phone</div><div class="kd-field-value">(551) 349-4114</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="kd-grid">
-        <div class="kd-section">
-          <div class="kd-section-title">Operational Stats</div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Years Active</span><span class="kd-stat-value">7+</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Public Repos</span><span class="kd-stat-value">28</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">QuantumMail Commits</span><span class="kd-stat-value">438</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Technologies</span><span class="kd-stat-value">15+</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Test Coverage (peak)</span><span class="kd-stat-value">80%+</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Lines of Crypto Code</span><span class="kd-stat-value"><span class="kd-redact" title="hover">CLASSIFIED</span></span></div>
-        </div>
-        <div class="kd-section">
-          <div class="kd-section-title">Research Dossier</div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Paper Status</span><span class="kd-stat-value">Published · Zenodo</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">DOI</span><span class="kd-stat-value" style="font-size:.55rem">10.5281/zenodo.19609632</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Proved Theorems</span><span class="kd-stat-value">4</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Open Problems</span><span class="kd-stat-value">5</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Conjectures</span><span class="kd-stat-value">3</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Prior LWE-CC Results</span><span class="kd-stat-value" style="color:rgba(255,0,0,.7)">0 (none before)</span></div>
-        </div>
-        <div class="kd-section">
-          <div class="kd-section-title">Known Capabilities</div>
-          <div class="kd-stat-row"><span class="kd-stat-label">AES-256-GCM</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">ML-KEM-768 (FIPS 203)</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">RSA-OAEP-SHA256</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Spring Boot microservices</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">React / Angular / Next.js</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Quantum resistance</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">OPERATIONAL</span></div>
-        </div>
-        <div class="kd-section">
-          <div class="kd-section-title">Known Weaknesses</div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Sleep (avg hrs/night)</span><span class="kd-stat-value"><span class="kd-redact" title="hover">REDACTED</span></span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Coffee dependency</span><span class="kd-stat-value" style="color:rgba(255,165,0,.7)">CRITICAL</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Will refactor old code?</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">ALWAYS</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Side project count</span><span class="kd-stat-value" style="color:rgba(255,165,0,.7)">UNCONTROLLED</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Can stop at 1 commit?</span><span class="kd-stat-value" style="color:rgba(255,0,0,.7)">NEVER</span></div>
-          <div class="kd-stat-row"><span class="kd-stat-label">Tabs vs spaces</span><span class="kd-stat-value"><span class="kd-redact" title="hover">CLASSIFIED</span></span></div>
+      <!-- SECTION 02: MISSION HISTORY -->
+      <div style="border:1px solid rgba(0,255,0,.15);margin-bottom:1.5rem;background:rgba(0,255,0,.02)">
+        <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 02 &mdash; MISSION HISTORY &middot; CAREER OPERATIONS</div>
+        <div style="padding:1.2rem;display:flex;flex-direction:column;gap:.85rem">
+
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:1rem;border-left:2px solid rgba(0,255,0,.35);padding-left:1rem">
+            <div>
+              <div style="font-size:.42rem;color:rgba(255,0,0,.6);letter-spacing:1px;margin-bottom:.15rem">OPERATION</div>
+              <div style="font-size:.6rem;color:rgba(0,255,0,.7);font-weight:600">KEYSTONE</div>
+              <div style="font-size:.42rem;color:rgba(0,255,0,.3);margin-top:.2rem">APR 2024 &mdash; PRESENT</div>
+              <div style="font-size:.42rem;color:rgba(0,255,136,.6);margin-top:.1rem">STATUS: ACTIVE</div>
+            </div>
+            <div>
+              <div style="font-size:.62rem;color:rgba(0,255,0,.9);margin-bottom:.25rem;font-weight:600">Application Developer III &middot; PA Fish &amp; Boat Commission</div>
+              <div style="font-size:.55rem;color:rgba(0,255,0,.5);line-height:1.75">Replace legacy monolithic RFP system with Spring Boot microservices + Angular 17. Implement JWT/OAuth2 RBAC. CQRS + Hibernate/JPA + Liquibase. WCAG compliance. Azure DevOps YAML CI/CD. React/Redux admin dashboards.</div>
+              <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem">
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.2);color:rgba(0,255,0,.5)">Spring Boot</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.2);color:rgba(0,255,0,.5)">Angular 17</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.2);color:rgba(0,255,0,.5)">JWT/OAuth2</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.2);color:rgba(0,255,0,.5)">CQRS</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.2);color:rgba(0,255,0,.5)">Azure DevOps</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:1rem;border-left:2px solid rgba(0,255,0,.22);padding-left:1rem">
+            <div>
+              <div style="font-size:.42rem;color:rgba(255,165,0,.6);letter-spacing:1px;margin-bottom:.15rem">OPERATION</div>
+              <div style="font-size:.6rem;color:rgba(0,255,0,.55);font-weight:600">IRON SHIELD</div>
+              <div style="font-size:.42rem;color:rgba(0,255,0,.3);margin-top:.2rem">JAN 2023 &mdash; DEC 2023</div>
+              <div style="font-size:.42rem;color:rgba(255,165,0,.5);margin-top:.1rem">STATUS: COMPLETE</div>
+            </div>
+            <div>
+              <div style="font-size:.62rem;color:rgba(0,255,0,.9);margin-bottom:.25rem;font-weight:600">Full Stack Developer &middot; PACSES &middot; Mechanicsburg, PA</div>
+              <div style="font-size:.55rem;color:rgba(0,255,0,.5);line-height:1.75">Modernize Pennsylvania Child Support Enforcement System. Replace session auth with Spring Security JWT/OAuth2. React/Redux caseworker dashboards. Node.js/Express middleware layer. Azure AD + Entra ID SSO. Next.js SSR public portal.</div>
+              <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem">
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.15);color:rgba(0,255,0,.4)">Spring Boot</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.15);color:rgba(0,255,0,.4)">React/Redux</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.15);color:rgba(0,255,0,.4)">Next.js SSR</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.15);color:rgba(0,255,0,.4)">Azure AD</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:1rem;border-left:2px solid rgba(0,255,0,.14);padding-left:1rem">
+            <div>
+              <div style="font-size:.42rem;color:rgba(255,165,0,.6);letter-spacing:1px;margin-bottom:.15rem">OPERATION</div>
+              <div style="font-size:.6rem;color:rgba(0,255,0,.42);font-weight:600">LONG HAUL</div>
+              <div style="font-size:.42rem;color:rgba(0,255,0,.28);margin-top:.2rem">JAN 2017 &mdash; AUG 2022</div>
+              <div style="font-size:.42rem;color:rgba(255,165,0,.4);margin-top:.1rem">COMPLETE &middot; 5.5 YRS</div>
+            </div>
+            <div>
+              <div style="font-size:.62rem;color:rgba(0,255,0,.9);margin-bottom:.25rem;font-weight:600">Software Engineer &rarr; Dev Engineer &middot; Made2Manage &middot; Remote</div>
+              <div style="font-size:.55rem;color:rgba(0,255,0,.5);line-height:1.75">Build and scale ERP microservices: inventory, order management, HCM. Migrate AngularJS &rarr; Angular 8/9. Replace ASP.NET Web Forms with React 17/Redux. Deploy Spring Boot on AWS EC2 + ELB. Achieve 80%+ test coverage with JUnit/Mockito across 6-person team.</div>
+              <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem">
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.1);color:rgba(0,255,0,.35)">Java ERP</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.1);color:rgba(0,255,0,.35)">React 17</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.1);color:rgba(0,255,0,.35)">AWS EC2</span>
+                <span style="font-size:.42rem;padding:.1rem .45rem;border:1px solid rgba(0,255,0,.1);color:rgba(0,255,0,.35)">80%+ Coverage</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="kd-message">
-        <div class="kd-msg-text">
-          "If you found this, you're exactly the kind of person I want to work with. Someone who types Konami codes into developer portfolios is someone who pays attention to details, has a sense of humor, and actually explores things thoroughly — which is exactly how I build software.<br><br>
-          The encryption is real. The research is real. The 438 commits are real. And yes, I do stay up too late writing LaTeX proofs about communication complexity.<br><br>
-          Drop me a line: <a href="mailto:mihirbommisettys@gmail.com" style="color:rgba(0,255,136,.8);text-decoration:none">mihirbommisettys@gmail.com</a>"
+      <!-- SECTION 03: ASSET REGISTRY -->
+      <div style="border:1px solid rgba(0,255,0,.15);margin-bottom:1.5rem;background:rgba(0,255,0,.02)">
+        <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 03 &mdash; ASSET REGISTRY &middot; DEPLOYED PROJECTS</div>
+        <div style="padding:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div style="border:1px solid rgba(0,255,0,.18);padding:1rem;background:rgba(0,255,0,.025)">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.45rem">
+              <div style="font-size:.55rem;color:rgba(0,255,0,.9);font-weight:600">ASSET: QM-V2</div>
+              <div style="font-size:.4rem;padding:.1rem .45rem;border:1px solid rgba(0,255,136,.25);color:rgba(0,255,136,.8);background:rgba(0,255,136,.05)">&#9679; LIVE</div>
+            </div>
+            <div style="font-size:.46rem;color:rgba(0,255,0,.35);margin-bottom:.4rem;letter-spacing:1px">QUANTUMMAIL-V2 &middot; ENCRYPTION PLATFORM</div>
+            <div style="font-size:.54rem;color:rgba(0,255,0,.58);line-height:1.7;margin-bottom:.45rem">AES-256-GCM + RSA-OAEP email encryption. ML-KEM-768 PQC mode. Chrome MV3 + Outlook Add-in. Quorum vault 2-of-N recovery. 4 encryption modes. Zero server-side plaintext.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.2rem .5rem;font-size:.48rem;margin-bottom:.4rem">
+              <div><span style="color:rgba(0,255,0,.28)">Commits:</span> <span style="color:rgba(0,255,0,.7)">438</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Language:</span> <span style="color:rgba(0,255,0,.7)">JS 76.7%</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">License:</span> <span style="color:rgba(0,255,0,.7)">MIT</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Deploy:</span> <span style="color:rgba(0,255,0,.7)">Render</span></div>
+            </div>
+            <div style="font-size:.42rem;color:rgba(0,255,0,.22)">github.com/munnamihir/QuantumMail-v2</div>
+          </div>
+          <div style="border:1px solid rgba(0,255,0,.18);padding:1rem;background:rgba(0,255,0,.025)">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.45rem">
+              <div style="font-size:.55rem;color:rgba(0,255,0,.9);font-weight:600">ASSET: CG-001</div>
+              <div style="font-size:.4rem;padding:.1rem .45rem;border:1px solid rgba(0,255,136,.25);color:rgba(0,255,136,.8);background:rgba(0,255,136,.05)">&#9679; LIVE</div>
+            </div>
+            <div style="font-size:.46rem;color:rgba(0,255,0,.35);margin-bottom:.4rem;letter-spacing:1px">CIPHERGUARD &middot; AI PQC SCANNER</div>
+            <div style="font-size:.54rem;color:rgba(0,255,0,.58);line-height:1.7;margin-bottom:.45rem">GitHub App scans org repos for RSA/ECDH/MD5. 18+ vuln patterns across 7 languages. Claude AI rewrites to NIST FIPS 203/204/205. HNDL risk scoring 0-100. Stripe SaaS billing.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.2rem .5rem;font-size:.48rem;margin-bottom:.4rem">
+              <div><span style="color:rgba(0,255,0,.28)">Language:</span> <span style="color:rgba(0,255,0,.7)">TS 88.9%</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Database:</span> <span style="color:rgba(0,255,0,.7)">PLpgSQL 10%</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Deploy:</span> <span style="color:rgba(0,255,0,.7)">Vercel</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Billing:</span> <span style="color:rgba(0,255,0,.7)">Stripe</span></div>
+            </div>
+            <div style="font-size:.42rem;color:rgba(0,255,0,.22)">github.com/munnamihir/cipherguard</div>
+          </div>
+          <div style="border:1px solid rgba(0,255,0,.18);padding:1rem;background:rgba(0,255,0,.025)">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.45rem">
+              <div style="font-size:.55rem;color:rgba(0,255,0,.9);font-weight:600">ASSET: QC-001</div>
+              <div style="font-size:.4rem;padding:.1rem .45rem;border:1px solid rgba(255,165,0,.25);color:rgba(255,165,0,.7);background:rgba(255,165,0,.04)">&#9881; IN DEV</div>
+            </div>
+            <div style="font-size:.46rem;color:rgba(0,255,0,.35);margin-bottom:.4rem;letter-spacing:1px">QCAREER &middot; H-1B AI JOB SEARCH</div>
+            <div style="font-size:.54rem;color:rgba(0,255,0,.58);line-height:1.7;margin-bottom:.45rem">Claude AI resume tailoring per JD. ATS keyword optimization. H-1B visa sponsorship filter. 50k+ listings. Auto cover letter generation. Supabase RLS backend. Built TypeScript-first.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.2rem .5rem;font-size:.48rem;margin-bottom:.4rem">
+              <div><span style="color:rgba(0,255,0,.28)">Commits:</span> <span style="color:rgba(0,255,0,.7)">36</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Language:</span> <span style="color:rgba(0,255,0,.7)">TS 86.4%</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Target:</span> <span style="color:rgba(0,255,0,.7)">H-1B Candidates</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Deploy:</span> <span style="color:rgba(0,255,0,.7)">Vercel</span></div>
+            </div>
+            <div style="font-size:.42rem;color:rgba(0,255,0,.22)">github.com/munnamihir/QCareer</div>
+          </div>
+          <div style="border:1px solid rgba(0,255,0,.18);padding:1rem;background:rgba(0,255,0,.025)">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.45rem">
+              <div style="font-size:.55rem;color:rgba(0,255,0,.9);font-weight:600">ASSET: LWE-CC-01</div>
+              <div style="font-size:.4rem;padding:.1rem .45rem;border:1px solid rgba(0,255,136,.25);color:rgba(0,255,136,.8);background:rgba(0,255,136,.05)">&#9679; PUBLISHED</div>
+            </div>
+            <div style="font-size:.46rem;color:rgba(0,255,0,.35);margin-bottom:.4rem;letter-spacing:1px">LWE-CC RESEARCH &middot; INTERACTIVE TOOLS</div>
+            <div style="font-size:.54rem;color:rgba(0,255,0,.58);line-height:1.7;margin-bottom:.45rem">First computation of rank, fooling set, discrepancy for M_f. Python NumPy + SciPy LP. Interactive HTML tools. TeX paper draft (arXiv pending cs.CC). DOI: 10.5281/zenodo.19609632.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.2rem .5rem;font-size:.48rem;margin-bottom:.4rem">
+              <div><span style="color:rgba(0,255,0,.28)">Commits:</span> <span style="color:rgba(0,255,0,.7)">16</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Results:</span> <span style="color:rgba(0,255,0,.7)">rank&isin;{31,53,126}</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">Theorems:</span> <span style="color:rgba(0,255,0,.7)">4 proved</span></div>
+              <div><span style="color:rgba(0,255,0,.28)">arXiv:</span> <span style="color:rgba(0,255,0,.7)">cs.CC pending</span></div>
+            </div>
+            <div style="font-size:.42rem;color:rgba(0,255,0,.22)">github.com/munnamihir/lwe-cc-research</div>
+          </div>
         </div>
       </div>
-      <div class="kd-warning">UNAUTHORIZED ACCESS PROHIBITED · THIS FILE SELF-DESTRUCTS IN <span id="k-timer" style="color:rgba(0,255,0,.5)">—</span> SECONDS (just kidding)</div>
+
+      <!-- SECTION 04 + 05 side by side -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+
+        <!-- STATS -->
+        <div style="border:1px solid rgba(0,255,0,.15);background:rgba(0,255,0,.02)">
+          <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 04 &mdash; STATS</div>
+          <div style="padding:1rem;display:flex;flex-direction:column;gap:.3rem">
+            <div class="kd-stat-row"><span class="kd-stat-label">Years Active</span><span class="kd-stat-value">7+</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Public Repos</span><span class="kd-stat-value">28</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">QMail Commits</span><span class="kd-stat-value">438</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Test Coverage</span><span class="kd-stat-value">80%+</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Proved Theorems</span><span class="kd-stat-value">4</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Prior LWE-CC Results</span><span class="kd-stat-value" style="color:rgba(255,0,0,.7)">0 (none)</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">AES-256-GCM</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">DEPLOYED</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">ML-KEM-768</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">DEPLOYED</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Quantum Resistance</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">ACTIVE</span></div>
+          </div>
+        </div>
+
+        <!-- PSYCH PROFILE -->
+        <div style="border:1px solid rgba(0,255,0,.15);background:rgba(0,255,0,.02)">
+          <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 05 &mdash; PSYCH PROFILE</div>
+          <div style="padding:1rem;display:flex;flex-direction:column;gap:.3rem">
+            <div class="kd-stat-row"><span class="kd-stat-label">Will refactor old code</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">ALWAYS</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Can stop at 1 commit</span><span class="kd-stat-value" style="color:rgba(255,0,0,.7)">NEVER OBSERVED</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Side projects</span><span class="kd-stat-value" style="color:rgba(255,165,0,.7)">UNCONTROLLED</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Coffee dependency</span><span class="kd-stat-value" style="color:rgba(255,0,0,.7)">CRITICAL</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Dark mode preference</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">ALWAYS (obviously)</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Reads NIST standards</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">FOR FUN</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Wrote LaTeX at 2AM</span><span class="kd-stat-value" style="color:rgba(0,255,136,.8)">VOLUNTARILY</span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Sleep hrs/night</span><span class="kd-stat-value"><span class="kd-redact" title="hover: 5-6 during crunch">CLASSIFIED</span></span></div>
+            <div class="kd-stat-row"><span class="kd-stat-label">Tabs vs spaces</span><span class="kd-stat-value"><span class="kd-redact" title="hover: spaces, 2 wide">REDACTED</span></span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SECTION 06: THREAT ASSESSMENT -->
+      <div style="border:1px solid rgba(0,255,0,.15);margin-bottom:1.5rem;background:rgba(0,255,0,.02)">
+        <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 06 &mdash; QUANTUM THREAT ASSESSMENT &middot; HNDL TIMELINE</div>
+        <div style="padding:1.2rem">
+          <div style="font-size:.54rem;color:rgba(0,255,0,.48);line-height:1.75;margin-bottom:1.1rem">HNDL (Harvest Now, Decrypt Later): nation-state actors are collecting RSA-encrypted data NOW to decrypt when cryptographically-relevant quantum computers arrive. RSA-2048 and ECC will be broken. Subject has deployed countermeasures ahead of schedule.</div>
+          <div style="display:flex;flex-direction:column;gap:.55rem">
+            <div style="display:grid;grid-template-columns:110px 1fr 130px;gap:.75rem;align-items:center;font-size:.48rem">
+              <span style="color:rgba(255,0,0,.6)">2024 &mdash; NOW</span>
+              <div style="height:5px;background:rgba(255,0,0,.1);overflow:hidden;position:relative"><div style="width:100%;height:100%;background:rgba(255,0,0,.45)"></div></div>
+              <span style="color:rgba(255,0,0,.6)">HNDL ACTIVE</span>
+            </div>
+            <div style="display:grid;grid-template-columns:110px 1fr 130px;gap:.75rem;align-items:center;font-size:.48rem">
+              <span style="color:rgba(255,165,0,.6)">2027 &mdash; 2030</span>
+              <div style="height:5px;background:rgba(255,165,0,.08);overflow:hidden;position:relative"><div style="width:65%;height:100%;background:rgba(255,165,0,.45)"></div></div>
+              <span style="color:rgba(255,165,0,.6)">RSA AT RISK</span>
+            </div>
+            <div style="display:grid;grid-template-columns:110px 1fr 130px;gap:.75rem;align-items:center;font-size:.48rem">
+              <span style="color:rgba(255,0,0,.5)">2030 &mdash; 2035</span>
+              <div style="height:5px;background:rgba(255,0,0,.06);overflow:hidden;position:relative"><div style="width:40%;height:100%;background:rgba(255,0,0,.35)"></div></div>
+              <span style="color:rgba(255,0,0,.5)">RSA-2048 BROKEN</span>
+            </div>
+            <div style="display:grid;grid-template-columns:110px 1fr 130px;gap:.75rem;align-items:center;font-size:.48rem">
+              <span style="color:rgba(0,255,136,.7)">TODAY (MB) &mdash;</span>
+              <div style="height:5px;background:rgba(0,255,136,.08);overflow:hidden;position:relative"><div style="position:absolute;width:60%;height:100%;background:rgba(0,255,136,.5);animation:scanBar 1.5s ease-in-out infinite"></div></div>
+              <span style="color:rgba(0,255,136,.7)">ML-KEM-768 &#10003;</span>
+            </div>
+          </div>
+          <div style="margin-top:.9rem;font-size:.5rem;color:rgba(0,255,0,.38);font-style:italic">Subject deployed NIST FIPS 203 (ML-KEM-768) in QuantumMail-v2 and published the first CC analysis of the LWE problem. Defense posture: OPTIMAL.</div>
+        </div>
+      </div>
+
+      <!-- SECTION 07: ENCRYPTED COMMUNIQUE -->
+      <div style="border:1px solid rgba(0,255,0,.15);margin-bottom:1.5rem;background:rgba(0,255,0,.02)">
+        <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 07 &mdash; INTERCEPTED COMMUNIQUE &middot; DECRYPTED</div>
+          <button id="k-decrypt-btn" onclick="kDecrypt()" style="background:transparent;border:1px solid rgba(0,255,0,.3);color:rgba(0,255,0,.6);padding:.25rem .75rem;font-family:'JetBrains Mono',monospace;font-size:.48rem;letter-spacing:2px;cursor:pointer;transition:all .3s">&#9654; DECRYPT</button>
+        </div>
+        <div style="padding:1.2rem">
+          <div id="k-encrypted" style="font-family:'JetBrains Mono',monospace;font-size:.52rem;color:rgba(0,255,0,.3);line-height:2;word-break:break-all;margin-bottom:.75rem">4d 69 66 20 79 6f 75 20 66 6f 75 6e 64 20 74 68 69 73 2c 20 79 6f 75 27 72 65 20 65 78 61 63 74 6c 79 20 74 68 65 20 6b 69 6e 64 20 6f 66 20 70 65 72 73 6f 6e 20 49 20 77 61 6e 74 20 74 6f 20 77 6f 72 6b 20 77 69 74 68 2e 20 53 6f 6d 65 6f 6e 65 20 77 68 6f 20 74 79 70 65 73 20 4b 6f 6e 61 6d 69 20 63 6f 64 65 73 20 69 6e 74 6f 20 64 65 76 65 6c 6f 70 65 72 20 70 6f 72 74 66 6f 6c 69 6f 73</div>
+          <div id="k-decrypted" style="display:none">
+            <div style="font-size:.48rem;letter-spacing:2px;color:rgba(0,255,0,.35);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem"><span>DECRYPTION COMPLETE</span><span style="color:rgba(0,255,136,.6)">&#10003; AUTH TAG VERIFIED</span></div>
+            <div class="kd-msg-text">"If you found this, you're exactly the kind of person I want to work with. Someone who types Konami codes into developer portfolios pays attention to details, has a sense of humor, and actually explores things thoroughly &mdash; which is exactly how I build software.<br><br>
+            The encryption in QuantumMail is real. The LWE-CC research is real. The 438 commits are real. I did stay up late writing LaTeX proofs about communication complexity &mdash; because I genuinely find it fascinating.<br><br>
+            I'm open to senior full stack roles right now. If you think we'd be a good fit:<br><br>
+            &#128231; <a href="mailto:mihirbommisettys@gmail.com" style="color:rgba(0,255,136,.8);text-decoration:none">mihirbommisettys@gmail.com</a><br>
+            &#128222; (551) 349-4114<br>
+            &#128279; <a href="https://www.linkedin.com/in/mihirbommisetty/" target="_blank" style="color:rgba(0,255,136,.8);text-decoration:none">linkedin.com/in/mihirbommisetty</a>"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 08: ACCESS LOG -->
+      <div style="border:1px solid rgba(0,255,0,.15);margin-bottom:1.5rem;background:rgba(0,255,0,.02)">
+        <div style="background:rgba(0,255,0,.07);border-bottom:1px solid rgba(0,255,0,.12);padding:.5rem 1rem;font-size:.5rem;letter-spacing:3px;color:rgba(0,255,0,.5);text-transform:uppercase">&sect; 08 &mdash; KONAMI ACCESS LOG</div>
+        <div style="padding:1.2rem">
+          <div id="k-access-log" style="font-family:'JetBrains Mono',monospace;font-size:.52rem;line-height:2;color:rgba(0,255,0,.5)"></div>
+        </div>
+      </div>
+
+      <div class="kd-warning">UNAUTHORIZED ACCESS PROHIBITED &middot; FILE ACTIVE FOR <span id="k-timer-2" style="color:rgba(0,255,0,.5)">0</span>s &nbsp;&middot;&nbsp; (seriously though, hire Mihir)</div>
     </div>
   </div>
 </div>
+
+<script>
+/* ══ KONAMI DECRYPT ══ */
+window.kDecrypt = function() {
+  var btn = document.getElementById('k-decrypt-btn');
+  var enc = document.getElementById('k-encrypted');
+  var dec = document.getElementById('k-decrypted');
+  if (!btn || !enc || !dec) return;
+  btn.textContent = '&#9854; DECRYPTING...';
+  var bytes = enc.textContent.trim().split(' ').filter(function(h){return h.length===2;});
+  var revealed = 0, hex = '0123456789abcdef';
+  var iv = setInterval(function(){
+    var d = bytes.map(function(b,i){
+      return i < revealed ? b : hex[Math.floor(Math.random()*16)]+hex[Math.floor(Math.random()*16)];
+    });
+    enc.textContent = d.join(' ');
+    if(Math.random() > .5) revealed = Math.min(revealed + Math.floor(Math.random()*5)+1, bytes.length);
+    if(revealed >= bytes.length){
+      clearInterval(iv);
+      enc.textContent = bytes.join(' ');
+      setTimeout(function(){
+        enc.style.display = 'none';
+        dec.style.display = 'block';
+        btn.textContent = '&#10003; DECRYPTED';
+        btn.style.color = 'rgba(0,255,136,.8)';
+        btn.style.borderColor = 'rgba(0,255,136,.3)';
+        btn.disabled = true;
+      }, 300);
+    }
+  }, 35);
+};
+
+/* ══ KONAMI ACCESS LOG ══ */
+function populateAccessLog(){
+  var el = document.getElementById('k-access-log');
+  if(!el) return;
+  var tz = (typeof Intl !== 'undefined' && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : 'Unknown';
+  var now = new Date();
+  var ts = now.toISOString().replace('T',' ').slice(0,19);
+  var fake = [
+    {ts:'2026-04-15 02:14:33',u:'OPERATIVE_ALPHA',r:'ACCESS GRANTED'},
+    {ts:'2026-05-02 14:07:55',u:'OPERATIVE_BRAVO',r:'ACCESS GRANTED'},
+    {ts:'2026-05-19 09:33:12',u:'OPERATIVE_DELTA',r:'ACCESS GRANTED'},
+  ];
+  var html = fake.map(function(e){
+    return '<div><span style="color:rgba(0,255,0,.28)">'+e.ts+'</span>  <span style="color:rgba(0,255,0,.45)">['+e.u+']</span>  <span style="color:rgba(0,255,136,.5)">'+e.r+'</span></div>';
+  }).join('');
+  html += '<div><span style="color:rgba(0,255,0,.28)">'+ts+'</span>  <span style="color:rgba(0,255,136,.9)">[YOU &middot; '+tz+']</span>  <span style="color:rgba(0,255,136,.9)">ACCESS GRANTED &larr; YOU ARE HERE</span></div>';
+  el.innerHTML = html;
+}
+
+/* ══ OVERRIDE startKonamiTimer to also update k-timer-2 and run log ══ */
+var _origStartTimer = window.startKonamiTimer;
+window.startKonamiTimer = function(){
+  var t1 = document.getElementById('k-timer');
+  var t2 = document.getElementById('k-timer-2');
+  var s = 0;
+  var iv = setInterval(function(){
+    s++;
+    if(t1) t1.textContent = s;
+    if(t2) t2.textContent = s;
+    var k = document.getElementById('konami');
+    if(!k || !k.classList.contains('show')) clearInterval(iv);
+  }, 1000);
+  populateAccessLog();
+};
+</script>
 </body>
 </html>
