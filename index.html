@@ -6,6 +6,7 @@
 <title>Mihir Bommisetty · Sr. Full Stack Developer</title>
 <meta name="description" content="Sr. Full Stack Developer · Encryption Architect · LWE-CC Researcher · Mechanicsburg PA">
 <meta property="og:title" content="Mihir Bommisetty · Engineer + Researcher">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23020508'/%3E%3Crect x='1' y='1' width='30' height='30' rx='5.5' fill='none' stroke='%2300f0ff' stroke-opacity='0.35'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='%2300f0ff'%3EMB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -116,6 +117,8 @@ section{padding:8rem 0;position:relative}
 .eyebrow.v::before{background:linear-gradient(to right,transparent,var(--violet))}
 .eyebrow.g{color:var(--gold)}
 .eyebrow.g::before{background:linear-gradient(to right,transparent,var(--gold))}
+.eyebrow.gr{color:var(--green)}
+.eyebrow.gr::before{background:linear-gradient(to right,transparent,var(--green))}
 .stitle{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;line-height:.95;letter-spacing:-1.5px;margin-bottom:.35rem}
 .ssub{font-size:.8rem;color:var(--muted);line-height:2;max-width:560px;margin-bottom:3rem}
 .gb{position:absolute;inset:0;pointer-events:none;
@@ -165,6 +168,15 @@ section{padding:8rem 0;position:relative}
     linear-gradient(to bottom,rgba(251,191,36,.6) 1px,transparent 1px) 100% 0 / 14px 14px no-repeat,
     linear-gradient(to top,rgba(251,191,36,.6) 1px,transparent 1px) 0 100% / 14px 14px no-repeat,
     linear-gradient(to top,rgba(251,191,36,.6) 1px,transparent 1px) 100% 100% / 14px 14px no-repeat}
+.gc.gr::before{background:
+    linear-gradient(to right,rgba(0,255,136,.6) 1px,transparent 1px) 0 0 / 14px 14px no-repeat,
+    linear-gradient(to right,rgba(0,255,136,.6) 1px,transparent 1px) 0 100% / 14px 14px no-repeat,
+    linear-gradient(to left,rgba(0,255,136,.6) 1px,transparent 1px) 100% 0 / 14px 14px no-repeat,
+    linear-gradient(to left,rgba(0,255,136,.6) 1px,transparent 1px) 100% 100% / 14px 14px no-repeat,
+    linear-gradient(to bottom,rgba(0,255,136,.6) 1px,transparent 1px) 0 0 / 14px 14px no-repeat,
+    linear-gradient(to bottom,rgba(0,255,136,.6) 1px,transparent 1px) 100% 0 / 14px 14px no-repeat,
+    linear-gradient(to top,rgba(0,255,136,.6) 1px,transparent 1px) 0 100% / 14px 14px no-repeat,
+    linear-gradient(to top,rgba(0,255,136,.6) 1px,transparent 1px) 100% 100% / 14px 14px no-repeat}
 /* Scan line */
 .scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,240,255,.6),transparent);top:-1px;animation:scan 5s ease-in-out infinite;z-index:9;pointer-events:none}
 @keyframes scan{0%{top:-1%;opacity:0}4%{opacity:1}96%{opacity:.4}100%{top:101%;opacity:0}}
@@ -323,6 +335,7 @@ section{padding:8rem 0;position:relative}
 .proj-badge-c{color:var(--cyan);border:1px solid rgba(0,240,255,.22);background:rgba(0,240,255,.04)}
 .proj-badge-v{color:var(--violet);border:1px solid rgba(124,58,237,.22);background:rgba(124,58,237,.04)}
 .proj-badge-g{color:var(--gold);border:1px solid rgba(251,191,36,.22);background:rgba(251,191,36,.04)}
+.proj-badge-gr{color:var(--green);border:1px solid rgba(0,255,136,.22);background:rgba(0,255,136,.04)}
 .proj-badge .pbdot{width:6px;height:6px;border-radius:50%;flex-shrink:0;animation:bpulse 2s infinite}
 .proj-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-1.5px;color:#fff;line-height:.9;margin-bottom:1rem}
 .proj-desc{font-size:.8rem;color:var(--mid);line-height:2.1;margin-bottom:2rem;max-width:480px}
@@ -333,6 +346,7 @@ section{padding:8rem 0;position:relative}
 .plink-v{color:var(--violet);border:1px solid rgba(124,58,237,.2);background:rgba(124,58,237,.04)}
 .plink-v:hover{border-color:var(--violet);background:rgba(124,58,237,.1)}
 .plink-g{color:var(--gold);border:1px solid rgba(251,191,36,.2);background:rgba(251,191,36,.04)}
+.plink-gr{color:var(--green);border:1px solid rgba(0,255,136,.2);background:rgba(0,255,136,.04)}
 .plink-g:hover{border-color:var(--gold);background:rgba(251,191,36,.1)}
 /* Feature grid */
 .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1.8rem}
@@ -346,6 +360,7 @@ section{padding:8rem 0;position:relative}
 .tp-c{font-family:'JetBrains Mono',monospace;font-size:.52rem;padding:.2rem .7rem;border:1px solid rgba(0,240,255,.2);color:var(--cyan);background:rgba(0,240,255,.04)}
 .tp-v{font-family:'JetBrains Mono',monospace;font-size:.52rem;padding:.2rem .7rem;border:1px solid rgba(124,58,237,.2);color:var(--violet);background:rgba(124,58,237,.04)}
 .tp-g{font-family:'JetBrains Mono',monospace;font-size:.52rem;padding:.2rem .7rem;border:1px solid rgba(251,191,36,.2);color:var(--gold);background:rgba(251,191,36,.04)}
+.tp-gr{font-family:'JetBrains Mono',monospace;font-size:.52rem;padding:.2rem .7rem;border:1px solid rgba(0,255,136,.2);color:var(--green);background:rgba(0,255,136,.04)}
 /* Lang bar */
 .lang-bar-wrap{margin-bottom:1.5rem}
 .lang-bar-label{font-family:'JetBrains Mono',monospace;font-size:.48rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
@@ -496,13 +511,14 @@ footer span{color:var(--cyan)}
 
 <!-- NAV DOTS -->
 <div id="nav-dots">
-  <div class="ndot on" data-s="Hero" onclick="scrollTo({top:0,behavior:'smooth'})"></div>
+  <div class="ndot on" data-s="Hero"></div>
   <div class="ndot" data-s="About" onclick="gS('about')"></div>
   <div class="ndot" data-s="Skills" onclick="gS('skills')"></div>
   <div class="ndot" data-s="Experience" onclick="gS('experience')"></div>
   <div class="ndot" data-s="QuantumMail" onclick="gS('qm')"></div>
   <div class="ndot" data-s="CipherGuard" onclick="gS('cg')"></div>
   <div class="ndot" data-s="QCareer" onclick="gS('qc')"></div>
+  <div class="ndot" data-s="Voxa" onclick="gS('voxa')"></div>
   <div class="ndot" data-s="Research" onclick="gS('research')"></div>
   <div class="ndot" data-s="Contact" onclick="gS('contact')"></div>
 </div>
@@ -526,6 +542,9 @@ footer span{color:var(--cyan)}
   <a href="#skills" onclick="cM()">Skills</a>
   <a href="#experience" onclick="cM()">Experience</a>
   <a href="#qm" onclick="cM()">QuantumMail</a>
+  <a href="#cg" onclick="cM()">CipherGuard</a>
+  <a href="#qc" onclick="cM()">QCareer</a>
+  <a href="#voxa" onclick="cM()">Voxa</a>
   <a href="#research" onclick="cM()">Research</a>
   <a href="#contact" onclick="cM()">Contact</a>
 </div>
@@ -601,7 +620,7 @@ footer span{color:var(--cyan)}
       </span>
     </h1>
     <p class="hero-role"><span id="typewriter"></span><span class="role-cursor">|</span></p>
-    <p class="hero-desc">7+ years architecting enterprise systems across government, manufacturing &amp; technology. Creator of <strong>QuantumMail-v2</strong>, <strong>CipherGuard</strong> &amp; <strong>QCareer</strong>. Independent researcher — <strong>first CC analysis of any NIST PQC protocol</strong>.</p>
+    <p class="hero-desc">7+ years architecting enterprise systems across government, manufacturing &amp; technology. Creator of <strong>QuantumMail-v2</strong>, <strong>CipherGuard</strong>, <strong>QCareer</strong> &amp; <strong>Voxa</strong>. Independent researcher — <strong>first CC analysis of any NIST PQC protocol</strong>.</p>
     <div class="hero-ctas">
       <a href="#qm" class="btn btn-primary" id="btn-proj">↗ View Projects</a>
       <button class="btn btn-outline" onclick="openResume()">↓ Resume</button>
@@ -641,7 +660,7 @@ footer span{color:var(--cyan)}
       <div class="about-body rvl d1">
         <p>Results-driven <strong>Sr. Full Stack Developer</strong> with deep expertise in Java full stack using Spring Boot, Spring MVC, Spring Security, and RESTful Microservices — paired with Angular 17+, React/Redux, and Next.js App Router.</p>
         <p>Delivered enterprise-grade applications across <strong>government portals, manufacturing ERP, and child support enforcement</strong>. Equally at home designing Hibernate/JPA entity models and crafting pixel-perfect React dashboards.</p>
-        <p>Independently built <strong>QuantumMail-v2</strong> (438 commits), <strong>CipherGuard</strong> (Next.js + GitHub App), and <strong>QCareer</strong>. Published <strong>original LWE-CC research</strong> — first exact CC bounds for any NIST PQC protocol. DOI: 10.5281/zenodo.19609632.</p>
+        <p>Independently built <strong>QuantumMail-v2</strong> (438 commits), <strong>CipherGuard</strong> (Next.js + GitHub App), <strong>QCareer</strong>, and <strong>Voxa</strong> (trust-first professional network). Published <strong>original LWE-CC research</strong> — first exact CC bounds for any NIST PQC protocol. DOI: 10.5281/zenodo.19609632.</p>
         <div class="stat-grid">
           <div class="gc stat-card rv d2"><div class="scan"></div><div class="stat-n" data-t="7" data-s="+">0+</div><div class="stat-l">Years Experience</div></div>
           <div class="gc stat-card rv d3"><div class="scan" style="animation-delay:1.5s"></div><div class="stat-n" data-t="28" data-s="">0</div><div class="stat-l">Public Repos</div></div>
@@ -1034,6 +1053,68 @@ footer span{color:var(--cyan)}
 </section>
 
 <!-- ══════════════════════════════════════
+     VOXA
+══════════════════════════════════════ -->
+<section id="voxa" class="proj-section" style="background:var(--deep)">
+  <div class="gb"></div>
+  <div class="proj-wm" style="color:rgba(0,255,136,.016)">VOXA</div>
+  <div class="con" style="position:relative;z-index:1">
+    <p class="eyebrow gr rv">Project 04 · Next.js 14 · Prisma · Clerk · Vercel</p>
+    <div class="proj-grid-r">
+      <div class="rvl d1">
+        <div class="gc gr" style="padding:0">
+          <div class="gc-label" style="color:rgba(0,255,136,.45)">VOXA · RECRUITER/DASHBOARD.TSX</div><div class="gc-id">TRUST GRAPH</div>
+          <div class="scan" style="background:linear-gradient(90deg,transparent,rgba(0,255,136,.55),transparent)"></div>
+          <div class="terminal" style="border:none">
+            <div class="term-bar" style="border-color:rgba(0,255,136,.1)"><div class="td" style="background:#ff5f57"></div><div class="td" style="background:#febc2e"></div><div class="td" style="background:#28c840"></div>
+              <span class="term-title" style="color:rgba(0,255,136,.35)">voxa/app/recruiter/dashboard/page.tsx</span><span style="font-size:.5rem;margin-left:auto;color:var(--green)">● Live</span>
+            </div>
+            <div class="term-body">
+              <div style="display:flex;justify-content:space-between;margin-bottom:.7rem"><span class="tgr" style="font-weight:700;font-family:'Space Grotesk',sans-serif;font-size:.6rem">Voxa</span><span class="tgr" style="font-size:.48rem">● TRUST MODE</span></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem;margin-bottom:.7rem">
+                <div style="background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.1);padding:.4rem;text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--green)">12</div><div style="font-family:'JetBrains Mono',monospace;font-size:.44rem;color:var(--muted)">Vouches</div></div>
+                <div style="background:rgba(0,240,255,.04);border:1px solid rgba(0,240,255,.1);padding:.4rem;text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--cyan)">94</div><div style="font-family:'JetBrains Mono',monospace;font-size:.44rem;color:var(--muted)">Trust Score</div></div>
+                <div style="background:rgba(124,58,237,.04);border:1px solid rgba(124,58,237,.1);padding:.4rem;text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--violet)">7</div><div style="font-family:'JetBrains Mono',monospace;font-size:.44rem;color:var(--muted)">Open Roles</div></div>
+              </div>
+              <div class="tm" style="font-size:.5rem;margin-bottom:.35rem">Candidates ranked by vouch-weighted trust ✓</div>
+              <div style="background:rgba(0,255,136,.03);border:1px solid rgba(0,255,136,.08);padding:.4rem;margin-bottom:.25rem">
+                <div style="display:flex;justify-content:space-between"><span class="tw" style="font-size:.56rem">Priya N. · Sr. Backend</span><span class="tgr" style="font-size:.48rem">★ 96</span></div>
+                <span class="tm" style="font-size:.48rem">8 vouches · 3 mutual · verified employer ✓</span>
+              </div>
+              <div style="background:rgba(0,240,255,.03);border:1px solid rgba(0,240,255,.08);padding:.4rem;margin-bottom:.25rem">
+                <div style="display:flex;justify-content:space-between"><span class="tw" style="font-size:.56rem">Marcus L. · Full Stack</span><span class="tgr" style="font-size:.48rem">★ 91</span></div>
+                <span class="tm" style="font-size:.48rem">6 vouches · 2 mutual · ID verified ✓</span>
+              </div>
+              <div style="border-top:1px solid rgba(0,255,136,.08);padding-top:.4rem;display:flex;justify-content:space-between"><span style="color:var(--green);font-size:.52rem">⬡ Floating chat</span><span class="tm" style="font-size:.48rem"> 2 new messages · rate-limited ✓</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rvr d2">
+        <div class="proj-badge proj-badge-gr"><div class="pbdot" style="background:var(--green)"></div>Live · voxa-wine-alpha.vercel.app</div>
+        <h2 class="proj-title">Vox<span style="color:var(--green)">a</span></h2>
+        <div class="lang-bar-wrap">
+          <div class="lang-bar-label">TypeScript · Next.js 14 App Router · Prisma · Clerk</div>
+          <div class="lang-bar"><div style="width:91%;background:#3178c6"></div><div style="width:6%;background:#563d7c"></div><div style="width:3%;background:#e34c26"></div></div>
+        </div>
+        <p class="proj-desc">Trust-first professional network where reputation is earned through vouches, not follower counts. Members vouch for people they've actually worked with, building a weighted trust graph that recruiters can sort and filter. Jobs board, recruiter dashboard, and real-time floating chat — hardened for production.</p>
+        <div class="proj-links">
+          <a href="https://voxa-wine-alpha.vercel.app" target="_blank" class="plink plink-gr">🌐 Live App</a>
+          <a href="https://github.com/munnamihir" target="_blank" class="plink plink-c">⚙ GitHub</a>
+        </div>
+        <div class="feat-grid">
+          <div class="feat" style="border-color:rgba(0,255,136,.12)"><div class="feat-ic">🤝</div><div><div class="feat-nm">Trust & Vouch Graph</div><div class="feat-ds">Reputation from peer vouches and mutual connections — not vanity metrics.</div></div></div>
+          <div class="feat" style="border-color:rgba(0,255,136,.12)"><div class="feat-ic">🧑‍💼</div><div><div class="feat-nm">Recruiter Dashboard</div><div class="feat-ds">Sort candidates by vouch-weighted trust score with verified-employer filters.</div></div></div>
+          <div class="feat" style="border-color:rgba(0,255,136,.12)"><div class="feat-ic">💬</div><div><div class="feat-nm">Floating Real-Time Chat</div><div class="feat-ds">Persistent in-app messaging anchored across every route.</div></div></div>
+          <div class="feat" style="border-color:rgba(0,255,136,.12)"><div class="feat-ic">🛡️</div><div><div class="feat-nm">Production Hardening</div><div class="feat-ds">Rate limiting across 11 routes, error boundaries, OG meta, Clerk auth.</div></div></div>
+        </div>
+        <div class="tech-pills"><span class="tp-gr">Next.js 14</span><span class="tp-gr">TypeScript</span><span class="tp-gr">Prisma</span><span class="tp-gr">Clerk</span><span class="tp-gr">PostgreSQL</span><span class="tp-gr">Jobs Board</span><span class="tp-gr">Rate Limiting</span><span class="tp-gr">Vercel</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      RESEARCH — SPOTLIGHT
 ══════════════════════════════════════ -->
 <section id="research" style="background:#000b18;padding:8rem 0">
@@ -1171,7 +1252,7 @@ footer span{color:var(--cyan)}
   </div>
 </section>
 
-<button id="btt" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="btt" aria-label="Back to top">↑</button>
 
 <footer>
   <p>Designed &amp; engineered by <span>Mihir Bommisetty</span> · 2026 · All rights reserved</p>
@@ -1473,7 +1554,7 @@ window.addEventListener('scroll',function(){
   var nav=document.getElementById('nav'),btt=document.getElementById('btt');
   var dots=document.querySelectorAll('.ndot');
   var links=document.querySelectorAll('.nav-links a[data-sec]');
-  var secs=['hero','about','skills','experience','qm','cg','qc','research','contact'];
+  var secs=['hero','about','skills','experience','qm','cg','qc','voxa','research','contact'];
   window.addEventListener('scroll',function(){
     var sy=window.scrollY;
     nav.classList.toggle('solid',sy>60);
@@ -1484,6 +1565,25 @@ window.addEventListener('scroll',function(){
   });
 })();
 window.gS=function(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});};
+
+/* ══ ROBUST SMOOTH SCROLL-TO-TOP (rAF, not interrupted by scroll listeners) ══ */
+window.scrollToTop=function(){
+  var start=window.scrollY||document.documentElement.scrollTop,t0=null,dur=520;
+  if(start<=0)return;
+  function step(ts){
+    if(t0===null)t0=ts;
+    var p=Math.min((ts-t0)/dur,1),ease=1-Math.pow(1-p,3);
+    window.scrollTo(0,start*(1-ease));
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+};
+(function(){
+  var btt=document.getElementById('btt');
+  if(btt)btt.addEventListener('click',window.scrollToTop);
+  var heroDot=document.querySelector('.ndot[data-s="Hero"]');
+  if(heroDot)heroDot.addEventListener('click',window.scrollToTop);
+})();
 
 /* ══ HAMBURGER ══ */
 (function(){var h=document.getElementById('hbg'),m=document.getElementById('mmenu');h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});})();
